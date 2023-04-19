@@ -12,7 +12,7 @@ const Meta = () => {
       
       <title>Manuel Garcia Genta | Web Developer</title>
       <meta name="description" content="GGManolo is a Creative Frontend Deveveloper" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta property="og:image" content="/og.jpg" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   )
