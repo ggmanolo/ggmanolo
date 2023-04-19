@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from 'react';
 import s from './hero.module.scss'
 
 const Hero = () => {
-  const [fontLoaded, setFontLoaded] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const [showWord, setShowWord] = useState(true);
 
@@ -24,21 +23,9 @@ const Hero = () => {
     return () => clearInterval(intervalId);
   }, [words]);
 
-  useEffect(() => {
-    const checkFontLoaded = async () => {
-      const font = new FontFace('MyFont', 'url(/fonts/myfont.woff2) format("woff2")');
-      await font.load();
-      if (document.fonts.check(font)) {
-        setFontLoaded(true);
-      }
-    };
-
-    checkFontLoaded();
-  }, []);
-
   return (
-    <div className={s.retrobg}>
-      <h1 className={s.title} style={{opacity: fontLoaded ? 1 : 0}}>
+    <div id="hero" className={s.retrobg}>
+      <h1 className={s.title}>
         GGMANOLO{' '}
         <span style={{opacity: showWord ? 1 : 0}}>{words[wordIndex]}</span>
       </h1>

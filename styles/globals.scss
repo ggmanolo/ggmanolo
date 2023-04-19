@@ -22,8 +22,9 @@ html {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color-scheme: light;
-  background-color: white;
+  color-scheme: dark;
+  color: var(--white);
+  background-color: var(--black);
 }
 
 body {
