@@ -6,7 +6,7 @@ const Hero = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [showWord, setShowWord] = useState(true);
 
-  const words = useMemo(() => ['DEVELOPER', 'DESIGNER', 'ENTREPRENEUR'], []);
+  const words = useMemo(() => ['DEVELOPER', 'DESIGNER', 'PIXEL PERFECT'], []);
 
 
   useEffect(() => {
@@ -25,10 +25,10 @@ const Hero = () => {
 
   return (
     <div id="hero" className={s.retrobg}>
-      <h1 className={s.title}>
-        GGMANOLO{' '}
-        <span style={{opacity: showWord ? 1 : 0}}>{words[wordIndex]}</span>
-      </h1>
+      <div className={s.title}>
+        <h1>GGMANOLO</h1>
+        <h2 style={{opacity: showWord ? 1 : 0}}>{words[wordIndex]}</h2>
+      </div>
 
       <div className={s.sky}>
         <div className={s.stars}>

@@ -10,14 +10,21 @@
 .title {
   position: absolute;
   font-family: var(--font-wildworld);
-  font-size: 70px;
   text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-
+  
   animation: 5s linear infinite flicker;
+  
+  h1 {
+    font-size: 70px;
+  }
+  
+  h2 {
+    font-size: 50px;
+  }
 }
 
 .sky {
@@ -123,7 +130,7 @@
 
 @keyframes flicker {
   0%, 100% {
-    color: var(--blue);
+    color: var(--blue-60);
     opacity: 0;
     text-shadow: none;
   }
@@ -133,7 +140,7 @@
     text-shadow: 0 0 1px var(--white), 0 0 2px var(--white), 0 0 3px var(--white), 0 0 4px var(--cyan), 0 0 7px var(--cyan), 0 0 8px var(--cyan), 0 0 10px var(--cyan), 0 0 150px var(--cyan);
 	}
 	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    color: var(--blue);
+    color: var(--blue-60);
 		opacity: 0.4;
 		text-shadow: none;
 	}
