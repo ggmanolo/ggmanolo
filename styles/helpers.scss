@@ -1,0 +1,50 @@
+@use 'sass:string';
+@use 'sass:math';
+
+$desktop-large: 1920px;
+$desktop: 1440px;
+$tablet: 1024px;
+$mid-tablet: 620px;
+$mobile: 767px;
+
+@mixin desktop-large {
+  @media (max-width: $desktop-large) {
+    @content;
+  }
+}
+
+@mixin min-desktop {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin min-tablet {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin orientation-landscape {
+  @media only screen and (orientation: landscape) {
+    @content;
+  }
+}

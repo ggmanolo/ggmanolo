@@ -1,3 +1,5 @@
+@import '../../../styles/helpers.scss';
+
 .retrobg {
 	position: relative;
 	overflow: hidden;
@@ -15,15 +17,22 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  
   animation: 5s linear infinite flicker;
   
   h1 {
     font-size: 70px;
+
+    @include mobile {
+      font-size: 34px;
+    }
   }
   
   h2 {
-    font-size: 50px;
+    font-size: 48px;
+
+    @include mobile {
+      font-size: 24px;
+    }
   }
 }
 
