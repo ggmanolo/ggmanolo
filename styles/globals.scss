@@ -1,9 +1,11 @@
 @import './reset';
+@import 'https://fonts.googleapis.com/css?family=VT323';
 
 :root {
   --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
   --font-wildworld: 'Wild World';
+  --font-vt: 'VT323', monospace;
   
   --white: #ffffff;
   --black: #000000;
@@ -26,9 +28,10 @@ html {
   color-scheme: dark;
   color: var(--white);
   background-color: var(--black);
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-vt);
   position: relative;
 }
