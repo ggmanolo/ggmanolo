@@ -1,12 +1,43 @@
 .who-section {
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   background: var(--magenta);
+  padding-bottom: 240px;
 }
 
 .title {
   font-size: 50px;
+  margin-bottom: 20px;
 }
 
 .description {
   font-size: 24px;
+  position: relative;
+  background: var(--whiteish);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, .2);
+  color: var(--black);
+  padding: 15px;
+}
+
+.bubble {
+  position: absolute;
+  left: 205px;
+  bottom: -25px;
+  border-right: 21px solid transparent;
+  border-top: 20px solid rgba(0, 0, 0, .2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    left : -2px;
+    bottom: 4px;
+    border-right: 21px solid transparent;
+    border-top: 21px solid var(--whiteish);
+  }
+}
+
+.avatar {
+  position: absolute;
+  bottom: 0;
 }
