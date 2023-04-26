@@ -136,9 +136,9 @@
   }
   
   h2 {
-    margin-top: 20px;
     animation: 5s linear infinite flicker;
     font-size: 120px;
+    margin-top: 20px;
     transition: all 200ms;
 
     @include mobile {
@@ -152,18 +152,19 @@
   left: 50%;
   top: 50%;
   transform: translateX(-50%);
-  margin: 150px auto 0;
+  margin: 200px auto 0;
   z-index: 1;
 
   span {
     width: 35px;
     height: 35px;
+    animation: pulse 2s infinite;
     display: block;
-    border-bottom: 10px solid var(--orange);
-    border-right: 10px solid var(--orange);
+    border-bottom: 10px solid var(--white);
+    border-right: 10px solid var(--white);
+    filter: var(--glow-shadow);
     margin: 5px;
     transform: rotate(45deg);
-    animation: pulse 2s infinite;
 
     &:nth-child(2) {
       animation-delay: -250ms;
@@ -179,16 +180,13 @@
   0% {
     opacity: 0;
     transform: rotate(45deg) translate(-15px, -15px);
-    filter: none;
   }
   50% {
     opacity: 1;
-    filter: var(--glow-shadow);
   }
   100% {
     opacity: 0;
     transform: rotate(45deg) translate(15px, 15px);
-    filter: none;
   }
 }
 
