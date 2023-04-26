@@ -117,9 +117,18 @@
     color: transparent;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: var(--glow-shadow-lg);
     font-size: 270px;
     margin-top: 15px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: 'GGMANOLO';
+      left: 0;
+      text-shadow: var(--glow);
+      top: 0;
+      z-index: -1;
+    }
     
     @include mobile {
       font-size: 34px;
