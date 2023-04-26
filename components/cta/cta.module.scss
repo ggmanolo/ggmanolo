@@ -4,7 +4,8 @@
   text-decoration: underline;
   text-decoration-style: dashed;
   text-transform: uppercase;
-  transition: opacity 0.2s linear;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
 
   > span {
     display: flex;
@@ -12,8 +13,20 @@
   }
 
   &:hover {
-    opacity: 0.6;
+    background:
+    linear-gradient(to right, white 4px, transparent 4px) 0 0,
+    linear-gradient(to right, white 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, white 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, white 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, white 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, white 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, white 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, white 4px, transparent 4px) 100% 100%;
+
+    background-repeat: no-repeat;
+    background-size: 8px 8px;
   }
+
 
   &:active {
     opacity: 0.4;
@@ -33,7 +46,7 @@
   justify-content: center;
   transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
 
-  > span {
+  >span {
     display: flex;
     align-items: center;
     justify-content: center;
