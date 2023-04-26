@@ -15,11 +15,14 @@ const Who = () => {
             design. Skilled in HTML, CSS, JavaScript, and various front-end
             frameworks like React and Next.js. Experienced in building
             responsive and mobile-friendly web applications that deliver
-            exceptional user experiences. I am dedicated to creating
-            pixel-perfect designs that are accessible, responsive, and
-            cross-browser compatible. As a UI/UX specialist, I thrive on finding
-            creative solutions to complex design challenges and ensuring that
-            every user interaction is intuitive and seamless.
+            exceptional user experiences.
+          </p>
+          <p>
+            I am dedicated to creating pixel-perfect designs that are
+            accessible, responsive, and cross-browser compatible. As a UI/UX
+            specialist, I thrive on finding creative solutions to complex design
+            challenges and ensuring that every user interaction is intuitive and
+            seamless.
           </p>
           <div className={s.bubble} />
         </article>

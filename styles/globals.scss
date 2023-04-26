@@ -5,17 +5,22 @@
 :root {
   --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
-  --font-wildworld: 'Wild World';
+  --font-title: 'Game Over';
   --font-vt: 'VT323', monospace;
   
   --black: #000000;
   --white: #ffffff;
   --whiteish: #efefef;
+  --orange: #e0650a;
   --magenta: #a3c;
   --pink: #bf578c;
   --cyan: #0ff;
   --blue: #224499;
   --blue-60: rgba(34, 68, 153, 0.6);
+
+  --glow: 0 0 1px var(--white), 0 0 2px var(--white), 0 0 3px var(--white), 0 0 4px var(--cyan), 0 0 7px var(--cyan), 0 0 8px var(--cyan), 0 0 10px var(--cyan), 0 0 150px var(--cyan);
+  --glow-shadow: drop-shadow(0 0 1px var(--white)) drop-shadow(0 0 2px var(--white)) drop-shadow(0 0 3px var(--white)) drop-shadow(0 0 4px var(--cyan));
+  --glow-shadow-lg: drop-shadow(0 0 1px var(--white)) drop-shadow(0 0 2px var(--white)) drop-shadow(0 0 3px var(--white)) drop-shadow(0 0 4px var(--cyan)) drop-shadow(0 0 150px var(--cyan));
 }
 
 html {

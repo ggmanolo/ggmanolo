@@ -9,33 +9,6 @@
   height: 100vh;
 }
 
-.title {
-  position: absolute;
-  font-family: var(--font-wildworld);
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  animation: 5s linear infinite flicker;
-  
-  h1 {
-    font-size: 70px;
-
-    @include mobile {
-      font-size: 34px;
-    }
-  }
-  
-  h2 {
-    font-size: 48px;
-
-    @include mobile {
-      font-size: 24px;
-    }
-  }
-}
-
 .sky {
   position: absolute;
   display: flex;
@@ -52,6 +25,7 @@
   width: 100%;
   height: 100%;
 }
+
 .star {
   position: absolute;
   border-radius: 50%;
@@ -128,6 +102,87 @@
   }
 }
 
+.title {
+  position: absolute;
+  font-family: var(--font-title);
+  left: 50%;
+  line-height: 0.5;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  
+  h1 {
+    background: linear-gradient(to right, rgba(255, 215, 255, 0) 0%, rgba(225, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0) 61%), linear-gradient(rgb(97, 183, 217) 52%, rgb(224, 246, 255) 60%, rgb(78, 99, 132) 61%);
+    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: var(--glow-shadow-lg);
+    font-size: 270px;
+    margin-top: 15px;
+    
+    @include mobile {
+      font-size: 34px;
+    }
+  }
+  
+  h2 {
+    margin-top: 20px;
+    animation: 5s linear infinite flicker;
+    font-size: 120px;
+    transition: all 200ms;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  margin: 150px auto 0;
+  z-index: 1;
+
+  span {
+    width: 35px;
+    height: 35px;
+    display: block;
+    border-bottom: 10px solid var(--orange);
+    border-right: 10px solid var(--orange);
+    margin: 5px;
+    transform: rotate(45deg);
+    animation: pulse 2s infinite;
+
+    &:nth-child(2) {
+      animation-delay: -250ms;
+    }
+
+    &:nth-child(3) {
+      animation-delay: -500ms;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-15px, -15px);
+    filter: none;
+  }
+  50% {
+    opacity: 1;
+    filter: var(--glow-shadow);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(15px, 15px);
+    filter: none;
+  }
+}
+
 @keyframes retrobg-lines-anim {
 	from {
     transform: rotateX( 84deg ) translateY( 0 );
@@ -146,8 +201,8 @@
 	3%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 97% {
     color: var(--white);
 		opacity: 1;
-    text-shadow: 0 0 1px var(--white), 0 0 2px var(--white), 0 0 3px var(--white), 0 0 4px var(--cyan), 0 0 7px var(--cyan), 0 0 8px var(--cyan), 0 0 10px var(--cyan), 0 0 150px var(--cyan);
-	}
+    text-shadow: var(--glow);
+  }
 	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
     color: var(--blue-60);
 		opacity: 0.4;

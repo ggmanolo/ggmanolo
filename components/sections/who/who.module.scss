@@ -12,12 +12,17 @@
 
 .description {
   font-size: 24px;
+  line-height: 140%;
   position: relative;
   background: var(--whiteish);
   border-radius: 4px;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, .2);
   color: var(--black);
   padding: 15px;
+
+  p:not(:last-child)  {
+    margin-bottom: 24px;
+  }
 }
 
 .bubble {
