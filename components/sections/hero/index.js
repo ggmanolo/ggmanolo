@@ -1,8 +1,9 @@
 import React, { useRef } from "react"
-
-import s from "./hero.module.scss"
 import { useGoogleFontsLoaded } from "@/hooks/use-google-fonts-loaded"
 import clsx from "clsx"
+import Space from "./space"
+
+import s from "./hero.module.scss"
 
 const Hero = () => {
   const containerRef = useRef(null)
@@ -43,6 +44,7 @@ const Hero = () => {
           />
         </svg>
       </div>
+      <Space />
     </div>
   )
 }

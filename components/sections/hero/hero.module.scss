@@ -1,8 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  background-color: var(--black);
-  background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, var(--black) 60%);
+  background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, transparent 60%);
   background-size: cover;
   background-position: top center;
   overflow: hidden;
@@ -59,6 +58,15 @@
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
   transition: all 1500ms ease;
+}
+
+.space {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .loaded {
