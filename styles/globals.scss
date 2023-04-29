@@ -47,6 +47,10 @@ h1 {
   font-size: 120px;
   font-weight: 900;
   line-height: 1.2;
+
+  @include mobile {
+    font-size: 52px;
+  }
 }
 
 h2 {

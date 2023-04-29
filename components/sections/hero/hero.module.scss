@@ -1,3 +1,5 @@
+@import '@/styles/helpers.scss';
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -32,6 +34,10 @@
   -webkit-text-stroke-color: var(--white);
   opacity: 0;
   transition: opacity 900ms ease 900ms;
+
+  @include mobile {
+    top: 32px;
+  }
 }
 
 .subtitle {
@@ -48,12 +54,20 @@
   text-shadow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink), 0 0 45px rgba(209, 0, 177, 0.8);
   opacity: 0;
   transition: opacity 900ms ease 1200ms;
+
+  @include mobile {
+    font-size: 80px;
+  }
 }
 
 .triangle {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
   transition: all 1500ms ease;
+
+  @include mobile {
+    width: calc(100% - 64px);
+  }
 }
 
 .space {
