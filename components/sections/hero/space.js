@@ -52,6 +52,9 @@ const Space = () => {
           star.z = canvas.width
         }
       }
+
+      // Update focalLength based on scroll position
+      focalLength = canvas.width * 2 + window.pageYOffset / 10
     }
 
     function drawStars() {
@@ -87,8 +90,13 @@ const Space = () => {
     let animate = true
     executeFrame()
 
+    // Add scroll event listener
+    window.addEventListener("scroll", moveStars)
+
     return () => {
       animate = false
+      // Remove scroll event listener
+      window.removeEventListener("scroll", moveStars)
     }
   }, [])
 
