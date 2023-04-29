@@ -9,17 +9,18 @@
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
   --font-orbitron: 'Orbitron', sans-serif;
   --font-yellowtail: 'Yellowtail', cursive;
-  --font-vt: 'VT323', monospace;
   
   --black: #000000;
   --white: #ffffff;
-  --whiteish: #efefef;
-  --orange: #e0650a;
-  --magenta: #a3c;
-  --pink: #bf578c;
+  --dark: #23233f;
+  --light: #efefef;
+
   --cyan: #0ff;
-  --blue: #224499;
-  --blue-60: rgba(34, 68, 153, 0.6);
+  --pink: #d100b1;
+  --pink-light: #E1A0CE;
+  --blue: #151C60;
+  --blue-light: #C6CBF5;
+  --blue-dark: #23233f;
 }
 
 html {
@@ -33,11 +34,25 @@ html {
   -moz-osx-font-smoothing: grayscale;
   color-scheme: dark;
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--dark);
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-vt);
+  font-family: var(--font-orbitron);
   position: relative;
+}
+
+h1 {
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 48px;
 }

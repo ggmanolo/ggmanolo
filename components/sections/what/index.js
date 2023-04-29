@@ -8,7 +8,7 @@ const What = () => {
   return (
     <Section id="what" className={s["what-section"]}>
       <span>02.</span>
-      <h2 className={s.title}>What I do?</h2>
+      <h3 className={s.title}>What I do?</h3>
       <article className={s.description}>
         <p>
           I have over <span>{years}+ years</span> of experience working as a

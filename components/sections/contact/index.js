@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <Section id="contact" className={s["contact-section"]}>
       <span>03.</span>
-      <h2 className={s.title}>Contact me.</h2>
+      <h3 className={s.title}>Contact me.</h3>
       <article className={s.description}>
         <p>Let's work together to build something amazing!</p>
         <p>

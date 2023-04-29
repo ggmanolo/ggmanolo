@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, transparent 60%);
+  background-image: radial-gradient(ellipse farthest-corner at center top, var(--blue-dark) 0%, transparent 60%);
   background-size: cover;
   background-position: top center;
   overflow: hidden;
@@ -20,14 +20,10 @@
 
 .title {
   position: absolute;
-  background: linear-gradient(to bottom, #151C60, #C6CBF5 40%, black 40%, #E1A0CE 65%, var(--white));
+  background: linear-gradient(to bottom, var(--blue), var(--blue-light) 40%, var(--black) 40%, var(--pink-light) 65%, var(--white));
   background-clip: text;
   color: transparent;
   font-display: block;
-  font-family: var(--font-orbitron);
-  font-size: 120px;
-  font-weight: 900;
-  line-height: 1.2;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
@@ -42,14 +38,14 @@
   position: absolute;
   top: 60px;
   width: 100%;
-  color: #d100b1;
+  color: var(--pink);
   font-display: block;
   font-family: var(--font-yellowtail);
   font-size: 140px;
   text-align: center;
   text-decoration: underline;
   transform: skew(-10deg) rotate(-10deg);
-  text-shadow: 0 0 1px #d100b1, 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px #d100b1, 0 0 45px rgba(209, 0, 177, 0.8);
+  text-shadow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink), 0 0 45px rgba(209, 0, 177, 0.8);
   opacity: 0;
   transition: opacity 900ms ease 1200ms;
 }

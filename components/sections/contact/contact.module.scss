@@ -1,19 +1,18 @@
 .contact-section {
   min-height: 100vh;
-  background: var(--pink);
+  background: var(--dark);
 }
 
 .title {
-  font-size: 50px;
+  margin-bottom: 24px;
 }
 
 .description {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .email {
-  color: var(--blue);
-  font-size: 32px;
+  color: var(--pink);
   text-decoration-line: underline;
   text-decoration-style: dashed;
 }

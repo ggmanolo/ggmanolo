@@ -1,14 +1,14 @@
 .what-section {
   min-height: 100vh;
-  background: var(--blue-60);
+  background: var(--dark);
 }
 
 .title {
-  font-size: 50px;
+  margin-bottom: 24px;
 }
 
 .description {
-  font-size: 24px;
+  font-size: 18px;
 
   span {
     color: var(--pink);

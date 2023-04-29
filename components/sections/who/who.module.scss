@@ -1,24 +1,23 @@
 .who-section {
   position: relative;
   min-height: 100vh;
-  background: var(--magenta);
+  background: var(--dark);
   padding-bottom: 240px;
 }
 
 .title {
-  font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .description {
   font-size: 24px;
   line-height: 140%;
   position: relative;
-  background: var(--whiteish);
+  background: var(--light);
   border-radius: 4px;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, .2);
-  color: var(--black);
-  padding: 15px;
+  color: var(--dark);
+  padding: 16px;
 
   p:not(:last-child)  {
     margin-bottom: 24px;
@@ -38,7 +37,7 @@
     left : -2px;
     bottom: 4px;
     border-right: 21px solid transparent;
-    border-top: 21px solid var(--whiteish);
+    border-top: 21px solid var(--light);
   }
 }
 

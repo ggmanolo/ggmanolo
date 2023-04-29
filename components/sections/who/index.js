@@ -6,7 +6,7 @@ const Who = () => {
   return (
     <Section id="who" className={s["who-section"]}>
       <span>01.</span>
-      <h2 className={s.title}>Who am I?</h2>
+      <h3 className={s.title}>Who am I?</h3>
       <div>
         <article className={s.description}>
           <p>Hi, my name is Manuel Garcia Genta a.k.a. GGManolo.</p>
