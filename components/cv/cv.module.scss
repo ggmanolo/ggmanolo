@@ -1,0 +1,217 @@
+.button {
+  align-items: center;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  color: var(--pink);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  padding: 12px;
+
+  &:hover {
+    animation: border-flicker 2s linear forwards;
+
+    span {
+      animation: text-flicker 2s linear forwards;
+    }
+
+    svg {
+      animation: letter-flicker 3s linear infinite;
+    }
+  }
+  
+  span {
+    font-size: 24px;
+  }
+
+  svg {
+    height: 32px;
+    margin-left: 12px;
+  }
+}
+
+@keyframes text-flicker {
+  2% { 
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  3% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  6% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  9% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  11% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  14% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  18% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  32% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  33% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  37% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  39% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  43% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  46% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  47% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  100% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+}
+
+@keyframes letter-flicker {
+    2% { 
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  3% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  6% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  9% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  11% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  14% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  18% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  32% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  33% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  37% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  39% {
+    color: rgba(120, 0, 50, .5);
+    text-shadow: none;
+  }
+  40% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+  100% {
+    color: var(--pink);
+    text-shadow: 0 0 15px var(--pink);
+  }
+}
+
+@keyframes border-flicker {
+  2% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+  3% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  5% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+  6% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  7% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+  9% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  13% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+  16% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  18% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+  22% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  34% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+  36% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  54% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+  100% {
+    border: 3px solid var(--cyan);
+    box-shadow: 0 0 15px -1px var(--cyan), 
+    0 0 12px -1px var(--cyan) inset;
+  }
+}

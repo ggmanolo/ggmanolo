@@ -1,6 +1,7 @@
 import Section from "@/components/section"
 import s from "./contact.module.scss"
 import Link from "next/link"
+import DownloadCV from "@/components/cv"
 
 const Contact = () => {
   return (
@@ -14,6 +15,7 @@ const Contact = () => {
             man.mdp@gmail.com
           </Link>
         </p>
+        <DownloadCV />
       </article>
     </Section>
   )

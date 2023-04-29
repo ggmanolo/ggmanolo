@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head"
 
 const Meta = () => {
   return (
@@ -9,9 +9,12 @@ const Meta = () => {
         key="viewport"
         content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no"
       />
-      
+
       <title>Manuel Garcia Genta | Web Developer</title>
-      <meta name="description" content="GGManolo is a Creative Frontend Deveveloper" />
+      <meta
+        name="description"
+        content="GGManolo is a Creative Frontend Deveveloper"
+      />
       <meta property="og:image" content="/og.jpg" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
