@@ -100,7 +100,12 @@ const Space = () => {
     }
   }, [])
 
-  return <canvas id="space" ref={canvasRef} className={s.space} />
+  return (
+    <div className={s.space}>
+      <canvas id="space" ref={canvasRef} />
+      <div className={s.gradient} />
+    </div>
+  )
 }
 
 export default Space

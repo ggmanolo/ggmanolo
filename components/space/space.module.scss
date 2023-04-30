@@ -6,3 +6,14 @@
   left: 0;
   z-index: -1;
 }
+
+.gradient {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  background-image: radial-gradient(ellipse farthest-corner at center top, var(--blue-dark) 0%, transparent 60%);
+  background-position: top center;
+  background-size: cover;
+  left: 0;
+  top: 0;
+}

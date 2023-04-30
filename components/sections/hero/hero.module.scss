@@ -3,9 +3,6 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: radial-gradient(ellipse farthest-corner at center top, var(--blue-dark) 0%, transparent 60%);
-  background-size: cover;
-  background-position: top center;
   overflow: hidden;
 }
 
