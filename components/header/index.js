@@ -9,9 +9,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.pageYOffset + 80
-      const viewportHeight = window.innerHeight
-      setScrolled(scrolled > viewportHeight)
+      const scrolled = window.pageYOffset
+      setScrolled(scrolled > 0)
     }
     window.addEventListener("scroll", handleScroll)
 
@@ -23,7 +22,7 @@ const Header = () => {
   return (
     <header className={clsx(s.header, scrolled && s.fixed)}>
       <nav className={s.wrapper}>
-        <CtaLink href="#hero" name="Hi">
+        <CtaLink href="#hero" name="Hello">
           Hello
         </CtaLink>
         <CtaLink href="#who" name="Who">

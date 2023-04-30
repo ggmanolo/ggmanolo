@@ -26,6 +26,7 @@ const CtaLink = forwardRef((props, ref) => {
   return (
     <Link
       aria-label={name}
+      data-content={name}
       className={clsx(className, s.link)}
       href={href}
       ref={ref}
