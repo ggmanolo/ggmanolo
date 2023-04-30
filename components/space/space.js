@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react"
 
-import s from "./hero.module.scss"
+import s from "./space.module.scss"
 
 const Space = () => {
   const canvasRef = useRef(null)

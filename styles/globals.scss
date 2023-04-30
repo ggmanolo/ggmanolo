@@ -1,6 +1,6 @@
 @import './helpers';
 @import './reset';
-@import 'https://fonts.googleapis.com/css?family=VT323';
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=block';
 @import 'https://fonts.googleapis.com/css2?family=Yellowtail&display=block';
 @import 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=block';
 
@@ -9,6 +9,7 @@
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
   --font-orbitron: 'Orbitron', sans-serif;
   --font-yellowtail: 'Yellowtail', cursive;
+  --font-inter: 'Inter', sans-serif;
   
   --black: #000000;
   --white: #ffffff;
@@ -39,7 +40,7 @@ html {
 }
 
 body {
-  font-family: var(--font-orbitron);
+  font-family: var(--font-inter);
   position: relative;
 }
 
@@ -47,6 +48,7 @@ h1 {
   font-size: 120px;
   font-weight: 900;
   line-height: 1.2;
+  font-family: var(--font-orbitron);
 
   @include mobile {
     font-size: 52px;

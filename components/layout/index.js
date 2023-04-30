@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import Meta from '@/components/meta'
-import Header from '../header';
+import PropTypes from "prop-types"
+import Meta from "@/components/meta"
+import Header from "../header"
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Meta />
