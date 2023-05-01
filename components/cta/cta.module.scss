@@ -1,66 +1,16 @@
 @import '@/styles/helpers.scss';
 
 .link {
-  position: relative;
   display: inline-block;
-  font-size: 24px;
-  text-decoration: none;
-  color: var(--light);
-  z-index: 1;
-
-  &:before,
-  &:after {
-    content: attr(data-content);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    @include mobile {
-      content: none;
-    }
-  }
-
-  &:before {
-    color: var(--cyan);
-    z-index: -1;
-  }
-
-  &:after {
-    color: var(--pink);
-    z-index: -2;
-  }
-
+  color: var(--white);
+  text-decoration: underline;
+  transition: all 200ms ease;
+  
   &:hover {
-    &:before {
-      animation: glitchy 0.3s ease 0.3s infinite;
-    }
-
-    &:after {
-      animation: glitchy 0.3s ease infinite reverse;
-    }
+    color: rgba(255, 255, 255, 0.64);
   }
-}
-
-@keyframes glitchy {
-  0% {
-    transform: translate(-2px, 2px);
-  }
-
-  25% {
-    transform: translate(-2px, -2px);
-  }
-
-  50% {
-    transform: translate(2px, 2px);
-  }
-
-  75% {
-    transform: translate(2px, -2px);
-  }
-
-  100% {
-    transform: translate(-2px, 2px);
+  
+  @include mobile {
+    color: var(--white);
   }
 }
