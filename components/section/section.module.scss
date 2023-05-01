@@ -1,8 +1,10 @@
-.section {
-  padding: 120px 24px;
-}
+@import '@/styles/helpers.scss';
 
-.wrapper {
-  width: min(100%, 800px);
+.section {
+  width: min(calc(100% - 48px), 1280px);
   margin: 0 auto;
+
+  @include mobile {
+    width: calc(100% - 32px);
+  }
 }

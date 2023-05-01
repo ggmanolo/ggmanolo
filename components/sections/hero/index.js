@@ -7,8 +7,8 @@ import s from "./hero.module.scss"
 const Hero = () => {
   const containerRef = useRef(null)
   const isFontsLoaded = useGoogleFontsLoaded([
-    "'Open Sans', sans-serif",
-    "'Montserrat', sans-serif"
+    "'Orbitron', sans-serif",
+    "'Yellowtail', cursive"
   ])
 
   return (

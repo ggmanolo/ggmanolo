@@ -1,6 +1,6 @@
 @import './helpers';
 @import './reset';
-@import 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=block';
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=block';
 @import 'https://fonts.googleapis.com/css2?family=Yellowtail&display=block';
 @import 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=block';
 
@@ -9,13 +9,13 @@
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
   --font-orbitron: 'Orbitron', sans-serif;
   --font-yellowtail: 'Yellowtail', cursive;
-  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
   
   --black: #000000;
   --white: #ffffff;
-  --dark: #191919;
+  --dark: #0a0a0a;
+  --gray: #888888;
   --light: #efefef;
-
   --cyan: #0ff;
   --pink: #d100b1;
   --pink-light: #e1a0ce;
@@ -25,7 +25,7 @@
 }
 
 html {
-  line-height: 1.5;
+  line-height: 1.6;
   box-sizing: border-box;
   text-rendering: geometricprecision;
   -webkit-text-size-adjust: 100%;
@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-roboto);
   position: relative;
 }
 
