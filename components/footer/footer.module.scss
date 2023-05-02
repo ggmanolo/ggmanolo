@@ -1,7 +1,11 @@
 @import '@/styles/helpers.scss';
 
-.section {
+.footer {
+  height: 122px;
   width: var(--width);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
 
   @include mobile {

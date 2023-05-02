@@ -33,7 +33,7 @@ const CtaLink = forwardRef((props, ref) => {
       onClick={handleClick}
       {...rest}
     >
-      <span>{children}</span>
+      {children}
     </Link>
   )
 })
