@@ -37,7 +37,7 @@ const Hero = () => {
           </linearGradient>
           <path
             fill="url(#a)"
-            stroke="#36e2f8"
+            stroke="var(--cyan)"
             strokeWidth={3}
             d="M2.8 1.5h400l-200 300-200-300z"
           />

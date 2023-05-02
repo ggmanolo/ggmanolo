@@ -1,6 +1,9 @@
+import clsx from "clsx"
+import PropTypes from "prop-types"
+
 import s from "./cv.module.scss"
 
-const DownloadCV = () => {
+const DownloadCV = ({ className }) => {
   const cvUrl =
     "https://docs.google.com/document/d/1WrMCdQJS4F9K_cGo0ywcTvJpiNwFspbOLbD6tek1tUU/export?format=pdf"
   const cvFilename = "my-cv.pdf"
@@ -20,7 +23,7 @@ const DownloadCV = () => {
   }
 
   return (
-    <button onClick={handleDownloadClick} className={s.button}>
+    <button onClick={handleDownloadClick} className={clsx(s.button, className)}>
       <span>Download Resume</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <path
@@ -33,6 +36,10 @@ const DownloadCV = () => {
       </svg>
     </button>
   )
+}
+
+DownloadCV.propTypes = {
+  className: PropTypes.string
 }
 
 export default DownloadCV

@@ -33,7 +33,7 @@
   transition: opacity 900ms ease 900ms;
 
   @include mobile {
-    top: 32px;
+    top: 12px;
   }
 }
 
@@ -55,6 +55,7 @@
 
   @include mobile {
     font-size: 80px;
+    top: 24px;
   }
 }
 
@@ -64,7 +65,8 @@
   transition: all 1500ms ease;
 
   @include mobile {
-    width: calc(100% - 64px);
+    height: auto;
+    width: 220px;
   }
 }
 

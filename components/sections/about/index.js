@@ -11,7 +11,7 @@ const About = () => {
           <br />
           A.K.A. <span>GGManolo</span>
         </h3>
-        <DownloadCV />
+        <DownloadCV className={s.desktop} />
       </div>
       <article className={s.description}>
         <p>
@@ -28,6 +28,7 @@ const About = () => {
           ensuring that every user interaction is intuitive and seamless.
         </p>
       </article>
+      <DownloadCV className={s.mobile} />
     </Section>
   )
 }

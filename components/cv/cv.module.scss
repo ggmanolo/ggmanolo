@@ -1,6 +1,7 @@
 @import '@/styles/helpers.scss';
 
 .button {
+  width: fit-content;
   height: 42px;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -17,13 +18,16 @@
   transition: all 200ms ease;
   
   &:hover {
-    color: rgba(255, 255, 255, 0.64);
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.64);
   }
   
   @include mobile {
+    width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.84);
   }
 
   svg {
