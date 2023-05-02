@@ -1,0 +1,11 @@
+{
+    "name": "GGManolo",
+    "short_name": "GGManolo",
+    "icons": [{
+        "src": "/img/google-touch-icon.png",
+        "sizes": "512x512"
+    }],
+    "background_color": "#0a0a0a",
+    "theme_color": "#0a0a0a",
+    "display": "fullscreen"
+}
