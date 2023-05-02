@@ -23,8 +23,9 @@
   --blue-light: #c6cbf5;
   --blue-dark: #23233f;
 
+  --separator: linear-gradient(90deg, transparent 0%, var(--gray) 50%, transparent 100%);
   --width: min(calc(100% - 48px), 1280px);
-  --width-mobile: calc(100% - 32px);
+  --width-mobile: calc(100% - 40px);
 }
 
 html {

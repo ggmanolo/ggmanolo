@@ -5,8 +5,8 @@ import s from "./footer.module.scss"
 const Footer = () => {
   return (
     <footer className={s.footer}>
-      <p>
-        Like the site?{" "}
+      <p className={s.github}>
+        <span>Like the site? </span>
         <CtaLink
           href="https://github.com/ggmanolo/ggmanolo"
           name="Check the code"

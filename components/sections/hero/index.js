@@ -12,7 +12,7 @@ const Hero = () => {
   ])
 
   return (
-    <div id="hero" className={s.hero} ref={containerRef}>
+    <section id="hero" className={s.hero} ref={containerRef}>
       <div className={clsx(s.wrapper, isFontsLoaded && s.loaded)}>
         <h1 className={s.title}>GGMANOLO</h1>
         <h2 className={s.subtitle}>Developer</h2>
@@ -43,7 +43,7 @@ const Hero = () => {
           />
         </svg>
       </div>
-    </div>
+    </section>
   )
 }
 

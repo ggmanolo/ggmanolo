@@ -6,11 +6,12 @@ import PropTypes from "prop-types"
 import s from "./cta.module.scss"
 
 const CtaLink = forwardRef((props, ref) => {
-  const { className, href, name, children, ...rest } = props
+  const { className, href, name, children, isActive = false, ...rest } = props
+  const hash = href.startsWith("#") ? href.slice(1) : null
 
   const handleClick = useCallback(
     (e) => {
-      if (href.startsWith("#")) {
+      if (hash) {
         e.preventDefault()
         const destination = document.querySelector(href)
         if (destination) {
@@ -20,17 +21,17 @@ const CtaLink = forwardRef((props, ref) => {
         }
       }
     },
-    [href]
+    [hash, href]
   )
 
   return (
     <Link
       aria-label={name}
       data-content={name}
-      className={clsx(className, s.link)}
+      className={clsx(className, s.link, isActive && s.active)}
       href={href}
       ref={ref}
-      onClick={handleClick}
+      onClick={isActive ? null : handleClick}
       {...rest}
     >
       {children}
@@ -42,7 +43,8 @@ CtaLink.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
   name: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  isActive: PropTypes.bool
 }
 
 CtaLink.displayName = "CtaLink"

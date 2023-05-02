@@ -1,23 +1,72 @@
+@import '@/styles/helpers.scss';
+
 .header {
   width: 100%;
-  height: 80px;
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-image-source: var(--separator);
+  left: 0;
+  right: 0;
   position: fixed;
-  z-index: 1;
   top: 0;
   transition: background-color 0.5s ease;
-}
-
-.fixed {
-  backdrop-filter: blur(5px);
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  z-index: 1;
 }
 
 .wrapper {
-  width: min(100%, 1200px);
-  height: 100%;
+  height: 88px;
+  width: var(--width);
   align-items: center;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 182px auto 182px;
+  left: 0;
   margin: 0 auto;
-  padding: 0 24px;
+
+  @include mobile {
+    width: var(--width-mobile);
+    grid-template-columns: auto;
+  }
+}
+
+.scrolled {
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.ggmanolo {
+  height: 36px;
+  width: 36px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.button {
+  position: relative;
+  
+  @include mobile {
+    display: none;
+  }
+}
+
+.copy {
+  width: 16px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.check {
+  position: absolute;
+  right: 0;
 }

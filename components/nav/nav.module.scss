@@ -1,0 +1,15 @@
+.nav {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  margin: 0 auto;
+  
+  .link {
+    height: 42px;
+    border-radius: 32px;
+    font-size: 14px;
+    line-height: 1.43;
+    padding: 0 24px;
+    text-decoration: none;
+  }
+}
