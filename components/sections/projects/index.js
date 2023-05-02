@@ -1,6 +1,8 @@
 import Section from "@/components/section"
 import { useYearsSince } from "@/hooks/use-years-since"
 import CtaLink from "@/components/cta"
+import Project from "@/components/project"
+import { PROJECTS_DATA } from "./Data"
 
 import s from "./projects.module.scss"
 
@@ -24,6 +26,11 @@ const Projects = () => {
           </CtaLink>
         </p>
       </article>
+      <div className={s.projects}>
+        {PROJECTS_DATA.map((project, index) => (
+          <Project key={index} data={project} />
+        ))}
+      </div>
     </Section>
   )
 }
