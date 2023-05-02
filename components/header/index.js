@@ -36,7 +36,13 @@ const Header = () => {
     <header className={clsx(s.header, scrolled && s.scrolled)}>
       <div className={s.wrapper}>
         <div className={s.ggmanolo}>
-          <Image alt="profile" src="/avatar.png" height={36} width={36} />
+          <Image
+            alt="profile"
+            src="/img/avatar.png"
+            height={36}
+            width={36}
+            quality={100}
+          />
         </div>
         <Nav />
         <button

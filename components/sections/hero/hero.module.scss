@@ -32,7 +32,7 @@
   opacity: 0;
   transition: opacity 900ms ease 900ms;
 
-  @include mobile {
+  @include tablet {
     top: 12px;
   }
 }
@@ -47,11 +47,18 @@
   font-size: 138px;
   line-height: 1.52;
   opacity: 0;
+  margin-left: -24px;
   text-align: center;
   text-decoration: underline;
   transform: skew(-10deg) rotate(-10deg);
   text-shadow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink), 0 0 45px rgba(209, 0, 177, 0.8);
   transition: opacity 900ms ease 1200ms;
+
+  @include tablet {
+    font-size: 120px;
+    margin-left: 0;
+    top: 60px;
+  }
 
   @include mobile {
     font-size: 80px;
@@ -79,4 +86,28 @@
   .triangle {
     stroke-dashoffset: 0;
   }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+  z-index: -1;
+
+  &-loaded {
+    opacity: 1;
+  }
+}
+
+.stars {
+  height: 973px;
+  width: 825px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
 }

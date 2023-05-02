@@ -1,15 +1,23 @@
-import React, { useRef } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import { useGoogleFontsLoaded } from "@/hooks/use-google-fonts-loaded"
+import Image from "next/image"
+import Stars from "./stars"
 import clsx from "clsx"
 
 import s from "./hero.module.scss"
 
 const Hero = () => {
   const containerRef = useRef(null)
+  const [isImageLoaded, setImageLoaded] = useState(false)
+
   const isFontsLoaded = useGoogleFontsLoaded([
     "'Orbitron', sans-serif",
     "'Yellowtail', cursive"
   ])
+
+  const handleImageLoad = useCallback(() => {
+    setImageLoaded(true)
+  }, [])
 
   return (
     <section id="hero" className={s.hero} ref={containerRef}>
@@ -42,6 +50,20 @@ const Hero = () => {
             d="M2.8 1.5h400l-200 300-200-300z"
           />
         </svg>
+      </div>
+      <div className={s.stars}>
+        <Stars />
+      </div>
+      <div className={clsx(s.bg, isImageLoaded && s["bg-loaded"])}>
+        <Image
+          alt="background"
+          src="/img/bg.png"
+          fill
+          quality={100}
+          sizes="100"
+          onLoad={handleImageLoad}
+          priority
+        />
       </div>
     </section>
   )

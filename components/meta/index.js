@@ -15,8 +15,8 @@ const Meta = () => {
         name="description"
         content="GGManolo is a Creative Frontend Deveveloper"
       />
-      <meta property="og:image" content="/og.jpg" />
-      <link rel="icon" href="/favicon.ico" />
+      <meta property="og:image" content="/img/og.jpg" />
+      <link rel="icon" href="/img/favicon.ico" />
     </Head>
   )
 }

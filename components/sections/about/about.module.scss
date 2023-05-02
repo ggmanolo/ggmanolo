@@ -50,13 +50,13 @@
   }
 }
 
-.desktop {
+button.desktop {
   @include mobile {
     display: none;
   }
 }
 
-.mobile {
+button.mobile {
   display: none;
 
   @include mobile {

@@ -52,6 +52,10 @@ h1 {
   line-height: 1.2;
   font-family: var(--font-orbitron);
 
+  @include tablet {
+    font-size: 100px;
+  }
+
   @include mobile {
     font-size: 52px;
   }
