@@ -7,7 +7,11 @@ const Footer = () => {
     <footer className={s.footer}>
       <p>
         Like the site?{" "}
-        <CtaLink href="#hero" name="Hello">
+        <CtaLink
+          href="https://github.com/ggmanolo/ggmanolo"
+          name="Check the code"
+          target="_blank"
+        >
           Check the code
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <g clipPath="url(#github)">
@@ -26,7 +30,7 @@ const Footer = () => {
           </svg>
         </CtaLink>
       </p>
-      <CtaLink href="#hero" name="Back to top">
+      <CtaLink href="#hero" name="Back to top" className={s.back}>
         Back to top
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
           <path

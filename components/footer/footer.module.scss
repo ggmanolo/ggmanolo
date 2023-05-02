@@ -4,6 +4,9 @@
   height: 122px;
   width: var(--width);
   align-items: center;
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #666666 50%, rgba(0, 0, 0, 0) 100%);
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -11,4 +14,8 @@
   @include mobile {
     width: var(--width-mobile);
   }
+}
+
+.back {
+  text-decoration: none;
 }
