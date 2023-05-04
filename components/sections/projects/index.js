@@ -75,6 +75,7 @@ const Projects = () => {
             ref={prevButtonRef}
             disabled={prevButtonDisabled}
             name="Previous Project"
+            aria-label="Previous Project"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +92,7 @@ const Projects = () => {
             ref={nextButtonRef}
             disabled={nextButtonDisabled}
             name="Next Project"
+            aria-label="Next Project"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
