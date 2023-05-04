@@ -5,17 +5,27 @@ import s from "./project.module.scss"
 import Image from "next/image"
 import clsx from "clsx"
 
-const Project = ({ data, className, key }) => {
+const Project = ({ data, className }) => {
   return (
-    <div className={clsx(s.card, className)} key={key}>
+    <div className={clsx(s.card, className)}>
       <div className={s.logo}>{data.logo}</div>
       <div className={s.img}>
-        <Image alt={data.title} src={data.img} fill />
+        <Image
+          alt={data.title}
+          src={data.img}
+          fill
+          sizes="(max-width: 767px) 100vw, 406px"
+        />
       </div>
       <div className={s.date}>{data.date}</div>
       <h4 className={s.title}>{data.title}</h4>
       <div className={s.description}>{data.description}</div>
-      <CtaLink href={data.url} className={s.cta} target="_blank">
+      <CtaLink
+        href={data.url}
+        className={s.cta}
+        target="_blank"
+        name="View Project"
+      >
         View Project
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
           <path
@@ -40,8 +50,7 @@ Project.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
-  }).isRequired,
-  key: PropTypes.key
+  }).isRequired
 }
 
 export default Project

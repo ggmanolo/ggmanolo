@@ -53,3 +53,28 @@
     }
   }
 }
+
+.controls {
+  display: none;
+
+  @include mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 48px;
+  }
+
+  button {
+    color: var(--white);
+    padding: 4px;
+    
+    &:disabled {
+      pointer-events: none;
+      color: var(--gray);
+    }
+
+    > svg {
+      height: 24px;
+    }
+  }
+}

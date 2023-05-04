@@ -1,5 +1,6 @@
 export const PROJECTS_DATA = [
   {
+    id: 0,
     logo: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 52 20">
         <path
@@ -16,6 +17,7 @@ export const PROJECTS_DATA = [
     url: "https://scale.com/"
   },
   {
+    id: 1,
     logo: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 24" fill="none">
         <path
@@ -53,6 +55,7 @@ export const PROJECTS_DATA = [
     url: "https://graphite.dev/"
   },
   {
+    id: 2,
     logo: <h5>MrBallen</h5>,
     img: "/img/projects/mrballen.png",
     date: "2022",
@@ -61,6 +64,7 @@ export const PROJECTS_DATA = [
     url: "https://shopmrballen.com/"
   },
   {
+    id: 3,
     logo: <h5>Ranboo</h5>,
     img: "/img/projects/ranboo.png",
     date: "2022",
@@ -69,6 +73,7 @@ export const PROJECTS_DATA = [
     url: "https://ranboo.fashion/"
   },
   {
+    id: 4,
     logo: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 468 263">
         <path
@@ -88,6 +93,7 @@ export const PROJECTS_DATA = [
     url: "https://theysaid.io/"
   },
   {
+    id: 5,
     logo: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 468 263">
         <path
@@ -108,6 +114,7 @@ export const PROJECTS_DATA = [
     url: "https://app.theysaid.io/"
   },
   {
+    id: 6,
     logo: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -129,6 +136,7 @@ export const PROJECTS_DATA = [
     url: "https://makingsense.com/"
   },
   {
+    id: 7,
     logo: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
