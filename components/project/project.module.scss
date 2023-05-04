@@ -16,23 +16,28 @@
 }
 
 .logo {
+  $size: 32px;
+  font-size: calc($size - 4px);
+  font-weight: 700;
+  line-height: $size;
   margin-bottom: 28px;
+  
+  > svg {
+    height: $size;
+  }
 }
 
 .img {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 812/406;
   margin-bottom: 24px;
   border: 1px solid var(--white-08);
   border-radius: 6px;
   overflow: hidden;
   position: relative;
   
-  @include mobile {
-  }
-  
   img {
-    object-fit: cover;
+    // object-fit: contain;
   }
 }
 

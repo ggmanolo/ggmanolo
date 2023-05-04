@@ -46,10 +46,10 @@
   }
 
   &__slide {
-    width: 458px;
+    min-width: 458px;
 
     @include mobile {
-      width: calc(100vw - 40px);
+      min-width: calc(100vw - 40px);
     }
   }
 }

@@ -8,7 +8,7 @@ import { PROJECTS_DATA } from "./Data"
 import s from "./projects.module.scss"
 
 const Projects = () => {
-  const [emblaRef] = useEmblaCarousel({ align: "start" })
+  const [emblaRef] = useEmblaCarousel({ align: "start", dragFree: true })
   const years = useYearsSince("2014-12-01")
 
   return (
