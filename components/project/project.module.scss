@@ -1,10 +1,18 @@
+@import '@/styles/helpers.scss';
+
 .card {
-  width: min(calc(100vw - 48px), 458px);
+  width: 458px;
   background: var(--white-02);
   border: 1px solid var(--white-08);
   border-radius: 16px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 44px 24px 24px;
+  
+  @include mobile {
+    min-width: 340px;
+    padding: 24px;
+  }
 }
 
 .logo {
@@ -13,12 +21,19 @@
 
 .img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   margin-bottom: 24px;
   border: 1px solid var(--white-08);
   border-radius: 6px;
   overflow: hidden;
   position: relative;
+  
+  @include mobile {
+  }
+  
+  img {
+    object-fit: cover;
+  }
 }
 
 .date {
@@ -43,9 +58,11 @@
 
 .cta {
   height: 42px;
+  width: fit-content;
   border-radius: 99999px;
   font-size: 14px;
   line-height: 1.43;
+  margin-top: auto;
   padding: 0 24px;
   text-decoration: none;
   // gradient border with radius

@@ -11,7 +11,7 @@
   letter-spacing: -0.93px;
   line-height: 1.75;
   margin-bottom: 40px;
-  
+
   @include mobile {
     font-size: 28px;
     line-height: 1.46;
@@ -37,7 +37,19 @@
 }
 
 .projects {
-  display: flex;
-  gap: 32px;
   margin-top: 96px;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    gap: 48px;
+  }
+
+  &__slide {
+    width: 458px;
+
+    @include mobile {
+      width: calc(100vw - 40px);
+    }
+  }
 }

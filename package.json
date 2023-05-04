@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "embla-carousel-react": "^8.0.0-rc03",
     "eslint": "^8.38.0",
     "eslint-config-next": "13.3.0",
     "gsap": "^3.11.5",

@@ -3,10 +3,11 @@ import CtaLink from "../cta"
 
 import s from "./project.module.scss"
 import Image from "next/image"
+import clsx from "clsx"
 
-const Project = ({ data }) => {
+const Project = ({ data, className, key }) => {
   return (
-    <div className={s.card}>
+    <div className={clsx(s.card, className)} key={key}>
       <div className={s.logo}>{data.logo}</div>
       <div className={s.img}>
         <Image alt={data.title} src={data.img} fill />
@@ -31,6 +32,7 @@ const Project = ({ data }) => {
 }
 
 Project.propTypes = {
+  className: PropTypes.string,
   data: PropTypes.shape({
     logo: PropTypes.node,
     img: PropTypes.string.isRequired,
@@ -38,7 +40,8 @@ Project.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  key: PropTypes.key
 }
 
 export default Project
