@@ -49,7 +49,7 @@ const Hero = () => {
       <div className={s.stars}>
         <Stars />
       </div>
-      <BgSvg className={s.bgsvg} />
+      {/* <BgSvg className={s.bgsvg} /> */}
     </section>
   )
 }
