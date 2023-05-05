@@ -24,8 +24,6 @@ const Projects = () => {
       prevButtonRef.current.addEventListener("click", emblaApi.scrollPrev)
       nextButtonRef.current.addEventListener("click", emblaApi.scrollNext)
 
-      console.log(emblaApi)
-
       const updateButtons = () => {
         setPrevButtonDisabled(emblaApi.scrollProgress() === 0)
         setNextButtonDisabled(emblaApi.scrollProgress() === 1)

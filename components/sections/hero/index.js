@@ -1,10 +1,10 @@
 import React, { useRef } from "react"
 import { useGoogleFontsLoaded } from "@/hooks/use-google-fonts-loaded"
-import Stars from "./stars"
 import clsx from "clsx"
+import Stars from "./stars"
+// import BgSvg from "./bg"
 
 import s from "./hero.module.scss"
-import BgSvg from "./bg"
 
 const Hero = () => {
   const containerRef = useRef(null)
