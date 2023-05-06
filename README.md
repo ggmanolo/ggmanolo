@@ -1,6 +1,6 @@
 # Hi, I'm Manuel Garcia Genta A.K.A. GGManolo!
 
-Welcome to my personal website! Here you can find some of my projects and collaborations, as well as information about me and my interests.
+Here you can find some of my projects and collaborations, as well as information about me and my interests.
 
 ## Contact
 
