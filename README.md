@@ -1,15 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hi, I'm Manuel Garcia Genta A.K.A. GGManolo!
 
-## Getting Started
+Welcome to my personal website! Here you can find some of my projects and collaborations, as well as information about me and my interests.
 
-First, run the development server:
+## Contact
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+If you'd like to get in touch, you can reach me via email at [man.mdp@gmail.com](mailto:man.mdp@gmail.com) or through my [LinkedIn profile](https://www.linkedin.com/in/ggmanolo/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Let's build something awesome together!
+
+I'm always looking for new projects and collaborations. If you have an idea you'd like to work on together, feel free to drop me a line. Looking forward to hearing from you!
