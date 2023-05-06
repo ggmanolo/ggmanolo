@@ -1,0 +1,18 @@
+.canvas {
+  --gradient-color-1: #671D6B;
+  --gradient-color-2: #322046;
+  --gradient-color-3: #371837;
+  --gradient-color-4: #8c45d3;
+}
+
+.base {
+  height: 100%;
+  opacity: 0;
+  transition: opacity 2000ms ease;
+  position: relative;
+  z-index: -1;
+}
+
+.base[data-is-loaded='true'] {
+  opacity: 1;
+}
