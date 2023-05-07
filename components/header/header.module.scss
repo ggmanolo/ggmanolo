@@ -24,7 +24,7 @@
   width: var(--width);
   align-items: center;
   display: grid;
-  grid-template-columns: 182px auto 182px;
+  grid-template-columns: 190px auto 190px;
   left: 0;
   margin: 0 auto;
 
@@ -49,6 +49,12 @@
 
 .button {
   position: relative;
+  padding: 0 4px;
+
+  svg {
+    height: 16px;
+    min-width: 16px;
+  }
   
   @include mobile {
     display: none;
@@ -58,16 +64,14 @@
 .copy {
   width: 16px;
   opacity: 0;
-  transform: scale(0.8);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .show {
   opacity: 1;
-  transform: scale(1);
 }
 
 .check {
   position: absolute;
-  right: 0;
+  right: 4px;
 }
