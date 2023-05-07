@@ -3,6 +3,11 @@
 .projects-section {
   padding-bottom: 80px;
   padding-top: 80px;
+
+  @include mobile {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 }
 
 .title {
@@ -44,13 +49,21 @@
   &__container {
     display: flex;
     gap: 48px;
+    
+    @include tablet {
+      gap: 32px;
+    }
+    
+    @include mobile {
+      gap: 24px;
+    }
   }
 
   &__slide {
     min-width: 458px;
 
     @include mobile {
-      min-width: calc(100vw - 40px);
+      min-width: calc(100vw - 64px);
     }
   }
 }
