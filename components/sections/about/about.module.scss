@@ -6,12 +6,13 @@
   gap: 48px;
   padding-bottom: 160px;
   padding-top: 80px;
-
+  
   @include mobile {
     display: flex;
     flex-direction: column;
     grid-template-columns: auto;
     gap: 0;
+    padding-bottom: 80px;
   }
 }
 
@@ -24,7 +25,7 @@
   margin-bottom: 40px;
 
   @include mobile {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 1.46;
   }
 

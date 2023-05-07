@@ -48,6 +48,10 @@ body {
   position: relative;
 }
 
+*:focus {
+  outline-color: var(--pink) !important;
+}
+
 h1 {
   font-size: 120px;
   font-weight: 900;
