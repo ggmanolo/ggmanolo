@@ -1,9 +1,9 @@
 import clsx from "clsx"
 import MeshGradient from "./mesh-gradient"
 
-import s from "./webgl.module.scss"
+import s from "./gradient.module.scss"
 
-const MeshBackground = () => (
+const Gradient = () => (
   <div className={s.wrapper}>
     <div className={clsx(s.overlay, s.up)} />
     <div className={clsx(s.overlay, s.down)} />
@@ -11,4 +11,4 @@ const MeshBackground = () => (
   </div>
 )
 
-export default MeshBackground
+export default Gradient
