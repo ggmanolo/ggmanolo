@@ -8,6 +8,7 @@ import s from "./cta.module.scss"
 const CtaLink = forwardRef((props, ref) => {
   const { className, href, name, children, isActive = false, ...rest } = props
   const hash = href.startsWith("#") ? href.slice(1) : null
+  const isButton = props.variant === "button"
 
   const handleClick = useCallback(
     (e) => {
@@ -28,7 +29,12 @@ const CtaLink = forwardRef((props, ref) => {
     <Link
       aria-label={name}
       data-content={name}
-      className={clsx(className, s.link, isActive && s.active)}
+      className={clsx(
+        className,
+        s.link,
+        isActive && !isButton && s.active,
+        isButton && s.button
+      )}
       href={href}
       ref={ref}
       onClick={isActive ? null : handleClick}
@@ -44,7 +50,8 @@ CtaLink.propTypes = {
   href: PropTypes.string,
   name: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
+  variant: PropTypes.string
 }
 
 CtaLink.displayName = "CtaLink"

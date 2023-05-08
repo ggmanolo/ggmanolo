@@ -58,36 +58,5 @@
 }
 
 .cta {
-  height: 42px;
-  width: fit-content;
-  border-radius: 99999px;
-  font-size: 14px;
-  line-height: 1.43;
   margin-top: auto;
-  padding: 0 24px;
-  text-decoration: none;
-  // gradient border with radius
-  $border: 1px;
-  background: var(--dark);
-  background-clip: padding-box;
-  border: solid $border transparent;
-  position: relative;
-
-  &:before {
-    position: absolute;
-    background-image: linear-gradient(258.55deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0.5) 100%);
-    border-radius: inherit;
-    bottom: 0;
-    content: '';
-    left: 0;
-    margin: -$border;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-
-  &:hover {
-    background-color: var(--black);
-    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.1);
-  }
 }

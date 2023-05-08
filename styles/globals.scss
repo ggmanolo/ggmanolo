@@ -15,6 +15,7 @@
   --white: #ffffff;
   --white-02: rgba(255, 255, 255, 0.02);
   --white-08: rgba(255, 255, 255, 0.08);
+  --white-2: rgba(255, 255, 255, 0.2);
   --dark: #0a0a0a;
   --gray: #888888;
   --cyan: #36E2F8;
@@ -23,7 +24,7 @@
   --blue: #151c60;
   --blue-light: #c6cbf5;
 
-  --separator: linear-gradient(90deg, transparent 0%, var(--white-08) 50%, transparent 100%);
+  --separator: linear-gradient(90deg, transparent 0%, var(--white-2) 50%, transparent 100%);
   --width: min(calc(100% - 48px), 1280px);
   --width-mobile: calc(100% - 40px);
 }

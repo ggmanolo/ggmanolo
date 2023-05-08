@@ -78,8 +78,9 @@
 }
 
 .loaded {
-  .title,
-  .subtitle {
+  .stars,
+  .subtitle,
+  .title {
     opacity: 1;
   }
 
@@ -104,7 +105,9 @@
   width: 825px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  opacity: 0;
   pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 900ms ease;
   z-index: -1;
 }

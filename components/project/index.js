@@ -25,6 +25,7 @@ const Project = ({ data, className }) => {
         className={s.cta}
         target="_blank"
         name="View Project"
+        variant="button"
       >
         View Project
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">

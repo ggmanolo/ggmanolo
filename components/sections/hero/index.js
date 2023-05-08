@@ -15,8 +15,12 @@ const Hero = () => {
   ])
 
   return (
-    <section id="hero" className={s.hero} ref={containerRef}>
-      <div className={clsx(s.wrapper, isFontsLoaded && s.loaded)}>
+    <section
+      id="hero"
+      className={clsx(s.hero, isFontsLoaded && s.loaded)}
+      ref={containerRef}
+    >
+      <div className={s.wrapper}>
         <h1 className={s.title}>GGMANOLO</h1>
         <h2 className={s.subtitle}>Developer</h2>
         <svg
