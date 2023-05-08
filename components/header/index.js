@@ -23,7 +23,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.pageYOffset
-      setScrolled(scrolled > 0)
+      setScrolled(scrolled > 150)
     }
     window.addEventListener("scroll", handleScroll)
 

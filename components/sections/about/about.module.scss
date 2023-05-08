@@ -5,14 +5,15 @@
   grid-template-columns: auto min(584px, 50%);
   gap: 48px;
   padding-bottom: 160px;
-  padding-top: 80px;
+  padding-top: 160px;
   
   @include mobile {
     display: flex;
     flex-direction: column;
     grid-template-columns: auto;
     gap: 0;
-    padding-bottom: 80px;
+    padding-bottom: 56px;
+    padding-top: 88px;
   }
 }
 

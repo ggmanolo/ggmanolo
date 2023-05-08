@@ -2,9 +2,9 @@ import React, { useRef } from "react"
 import { useGoogleFontsLoaded } from "@/hooks/use-google-fonts-loaded"
 import clsx from "clsx"
 import Stars from "./stars"
+import MeshBackground from "@/components/webgl"
 
 import s from "./hero.module.scss"
-import MeshBackground from "@/components/webgl"
 
 const Hero = () => {
   const containerRef = useRef(null)

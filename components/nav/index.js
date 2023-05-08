@@ -8,7 +8,7 @@ const Nav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const fromTop = window.scrollY + 88 // adjust for fixed navbar
+      const fromTop = window.scrollY + 140 // adjust for fixed navbar
       const sections = document.querySelectorAll("section")
 
       sections.forEach((section) => {

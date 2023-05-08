@@ -2,7 +2,7 @@ import { useYearsSince } from "@/hooks/use-years-since"
 import useEmblaCarousel from "embla-carousel-react"
 import CtaLink from "@/components/cta"
 import Project from "@/components/project"
-import Section from "@/components/section"
+import Wrapper from "@/components/wrapper"
 import { PROJECTS_DATA } from "./Data"
 
 import s from "./projects.module.scss"
@@ -18,8 +18,8 @@ const Projects = () => {
   const years = useYearsSince("2014-12-01")
 
   return (
-    <>
-      <Section id="projects" className={s["projects-section"]}>
+    <section id="projects">
+      <Wrapper className={s["projects-section"]}>
         <h3 className={s.title}>
           With <span>+{years} years</span> of experience
           <br />
@@ -35,9 +35,9 @@ const Projects = () => {
             </CtaLink>
           </p>
         </article>
-      </Section>
+      </Wrapper>
       <div className={s.projects} ref={emblaRef}>
-        <Section className={s.projects__container}>
+        <Wrapper className={s.projects__container}>
           {PROJECTS_DATA.map((project) => (
             <Project
               key={project.id}
@@ -45,9 +45,9 @@ const Projects = () => {
               className={s.projects__slide}
             />
           ))}
-        </Section>
+        </Wrapper>
       </div>
-    </>
+    </section>
   )
 }
 

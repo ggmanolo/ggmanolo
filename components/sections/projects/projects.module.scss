@@ -3,10 +3,10 @@
 .projects-section {
   padding-bottom: 80px;
   padding-top: 80px;
-
+  
   @include mobile {
     padding-bottom: 0;
-    padding-top: 0;
+    padding-top: 88px;
   }
 }
 
@@ -43,9 +43,13 @@
 }
 
 .projects {
-  margin-top: 96px;
+  margin-top: 80px;
   overflow: hidden;
-
+  
+  @include mobile {
+    margin-top: 96px;
+  }
+  
   &__container {
     display: flex;
     gap: 48px;
