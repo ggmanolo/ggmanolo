@@ -15,7 +15,8 @@ const Galaxy = () => {
       0.1,
       2000
     )
-    const renderer = new THREE.WebGLRenderer({ alpha: true })
+    camera.minDistance = 500
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
     renderer.setSize(container.clientWidth, container.clientHeight)
     renderer.setClearColor(0x000000, 0)
     container.appendChild(renderer.domElement)
@@ -49,8 +50,7 @@ const Galaxy = () => {
     const animate = () => {
       requestAnimationFrame(animate)
 
-      starPoints.rotation.x += 0.0001
-      starPoints.rotation.y += 0.0001
+      starPoints.rotation.z += 0.0002
 
       renderer.render(scene, camera)
     }
