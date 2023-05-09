@@ -10,10 +10,10 @@ const Galaxy = () => {
     const container = containerRef.current
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
-      50,
+      100,
       container.clientWidth / container.clientHeight,
       0.1,
-      1000
+      2000
     )
     const renderer = new THREE.WebGLRenderer({ alpha: true })
     renderer.setSize(container.clientWidth, container.clientHeight)
@@ -24,18 +24,18 @@ const Galaxy = () => {
     const starsMaterial = new THREE.PointsMaterial({
       color: 0xffffff,
       transparent: true, // Set material to transparent
-      opacity: 0.5, // Set material opacity
+      opacity: 1, // Set material opacity
       size: 1
     })
 
-    const starCount = 3000
+    const starCount = 2000
     const positions = new Float32Array(starCount * 3)
 
     for (let i = 0; i < starCount; i++) {
       const i3 = i * 3
       positions[i3] = (Math.random() - 0.5) * 1000
       positions[i3 + 1] = (Math.random() - 0.5) * 1000
-      positions[i3 + 2] = Math.random() * 1000 - 1100
+      positions[i3 + 2] = Math.random() * 200 - 400
     }
 
     starsGeometry.setAttribute(

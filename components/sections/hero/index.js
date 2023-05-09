@@ -2,7 +2,6 @@ import React, { useRef } from "react"
 import clsx from "clsx"
 import { useGoogleFontsLoaded } from "@/hooks/use-google-fonts-loaded"
 import Gradient from "@/components/gradient"
-import Galaxy from "@/components/galaxy"
 import Stars from "./stars"
 
 import s from "./hero.module.scss"
@@ -54,7 +53,6 @@ const Hero = () => {
       <div className={s.stars}>
         <Stars />
       </div>
-      <Galaxy />
       <Gradient />
     </section>
   )
