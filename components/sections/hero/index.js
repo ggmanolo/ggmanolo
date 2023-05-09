@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import clsx from "clsx"
 import { useGoogleFontsLoaded } from "@/hooks/use-google-fonts-loaded"
 import Gradient from "@/components/gradient"
-// import Stars from "./stars"
+import Stars from "@/components/stars"
 
 import s from "./hero.module.scss"
 
@@ -50,9 +50,9 @@ const Hero = () => {
           />
         </svg>
       </div>
-      {/* <div className={s.stars}>
+      <div className={s.stars}>
         <Stars />
-      </div> */}
+      </div>
       <Gradient />
     </section>
   )

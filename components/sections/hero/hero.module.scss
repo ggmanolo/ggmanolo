@@ -100,14 +100,19 @@
 }
 
 .stars {
-  position: absolute;
-  height: 973px;
-  width: 825px;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: opacity 900ms ease;
-  z-index: -1;
+  display: none;
+  
+  @include mobile {
+    position: absolute;
+    height: 973px;
+    width: 825px;
+    display: block;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 900ms ease;
+    z-index: -1;
+  }
 }
