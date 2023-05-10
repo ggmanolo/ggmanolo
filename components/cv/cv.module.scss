@@ -20,14 +20,14 @@
   &:hover {
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid var(--white-2);
-    color: rgba(255, 255, 255, 0.64);
-  }
-  
-  @include mobile {
-    width: 100%;
-    border: 1px solid var(--white-08);
-    background: var(--white-08);
-    color: rgba(255, 255, 255, 0.84);
+    color: var(--white-6);
+    
+    @include mobile {
+      width: 100%;
+      border: 1px solid var(--white-08);
+      background: var(--white-08);
+      color: rgba(255, 255, 255, 0.84);
+    }
   }
 
   svg {
