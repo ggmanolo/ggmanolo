@@ -22,15 +22,14 @@
   background: linear-gradient(to bottom, var(--blue), var(--blue-light) 40%, var(--black) 40%, var(--pink-light) 65%, var(--white));
   background-clip: text;
   color: transparent;
-  font-display: block;
   margin: 0;
+  opacity: 0;
   text-align: center;
   text-transform: uppercase;
   top: -4px;
+  will-change: transform;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--white);
-  opacity: 0;
-  transition: opacity 900ms ease 900ms;
 
   @include tablet {
     top: 12px;
@@ -42,7 +41,6 @@
   top: 45px;
   width: 100%;
   color: var(--pink);
-  font-display: block;
   font-family: var(--font-yellowtail);
   font-size: 138px;
   line-height: 1.52;
@@ -52,7 +50,6 @@
   text-decoration: underline;
   transform: skew(-10deg) rotate(-10deg);
   text-shadow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink), 0 0 45px rgba(209, 0, 177, 0.8);
-  transition: opacity 900ms ease 1200ms;
 
   @include tablet {
     font-size: 120px;
@@ -69,23 +66,11 @@
 .triangle {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
-  transition: all 1500ms ease;
+  opacity: 0;
 
   @include mobile {
     height: auto;
     width: 220px;
-  }
-}
-
-.loaded {
-  .stars,
-  .subtitle,
-  .title {
-    opacity: 1;
-  }
-
-  .triangle {
-    stroke-dashoffset: 0;
   }
 }
 

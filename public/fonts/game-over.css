@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'Game Over';
-    src: url('./Game-Over.woff2') format('woff2'),
-        url('./Game-Over.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-}

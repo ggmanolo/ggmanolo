@@ -47,8 +47,9 @@ const Header = () => {
         <Nav />
         <button
           name="email"
-          className={clsx(s_cta.link, s.button)}
+          className={clsx(s_cta.link, s.button, copySuccess && s.success)}
           onClick={() => copyToClipboard("man.mdp@gmail.com")}
+          data-tooltip={copySuccess ? "Copied!" : undefined}
         >
           man.mdp@gmail.com
           <svg

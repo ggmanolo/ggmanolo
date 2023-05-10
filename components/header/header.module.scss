@@ -51,6 +51,16 @@
 .button {
   position: relative;
   padding: 0 4px;
+  transition: all 200ms ease-out;
+
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 200ms ease-in;
+  }
 
   svg {
     height: 16px;
@@ -62,10 +72,23 @@
   }
 }
 
+.success {
+  color: transparent;
+  
+  &:hover {
+    color: transparent;
+  }
+
+  &::after {
+    color: var(--white-6);
+    opacity: 1;
+  }
+}
+
 .copy {
   width: 16px;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.2s ease;
 }
 
 .show {
@@ -73,6 +96,7 @@
 }
 
 .check {
+  color: var(--white-6);
   position: absolute;
   right: 4px;
 }
