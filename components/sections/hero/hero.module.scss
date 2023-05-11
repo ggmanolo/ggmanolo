@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  z-index: 1;
 }
 
 .title {
@@ -49,16 +50,17 @@
   text-align: center;
   text-decoration: underline;
   transform: skew(-10deg) rotate(-10deg);
+  will-change: transform;
   text-shadow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink), 0 0 45px rgba(209, 0, 177, 0.8);
 
   @include tablet {
     font-size: 120px;
-    margin-left: 0;
     top: 60px;
   }
-
+  
   @include mobile {
     font-size: 80px;
+    margin-left: -20px;
     top: 24px;
   }
 }
@@ -93,11 +95,10 @@
     width: 825px;
     display: block;
     left: 50%;
-    opacity: 0;
     pointer-events: none;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(60deg);
     transition: opacity 900ms ease;
-    z-index: -1;
+    z-index: 1;
   }
 }

@@ -31,7 +31,7 @@
   @include mobile {
     height: 80px;
     width: var(--width-mobile);
-    grid-template-columns: auto;
+    display: flex;
   }
 }
 

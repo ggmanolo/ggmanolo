@@ -13,33 +13,64 @@ const Hero = () => {
 
   useEffect(() => {
     const tl = gsap.timeline()
+    const heroSection = containerRef.current
 
-    tl.fromTo(
-      triangleRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 0.5, delay: 0.5 }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tl.fromTo(
+              triangleRef.current,
+              { opacity: 0 },
+              { opacity: 1, duration: 0.5, delay: 0.5 }
+            )
+              .to(triangleRef.current, {
+                strokeDashoffset: 0,
+                duration: 1,
+                ease: "slowmo.inout"
+              })
+              .fromTo(
+                titleRef.current,
+                { autoAlpha: 0, scale: 2.5 },
+                { autoAlpha: 1, scale: 1, duration: 1.2, ease: "slowmo.inout" },
+                ">0.2"
+              )
+              .fromTo(
+                subTitleRef.current,
+                { autoAlpha: 0, y: -10, skew: "-10deg", rotate: "-10deg" },
+                {
+                  autoAlpha: 1,
+                  y: 0,
+                  duration: 1.2,
+                  ease: "sine.inout",
+                  skew: "-10deg",
+                  rotate: "-10deg"
+                },
+                ">0.2"
+              )
+
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.5 }
     )
-      .to(triangleRef.current, {
-        strokeDashoffset: 0,
-        duration: 1.2,
-        ease: "slowmo.inout"
-      })
-      .fromTo(
-        titleRef.current,
-        { autoAlpha: 0, scale: 3 },
-        { autoAlpha: 1, scale: 1, duration: 1.4, ease: "slowmo.inout" },
-        ">0.2"
-      )
-      .fromTo(
-        subTitleRef.current,
-        { autoAlpha: 0, y: -10 },
-        { autoAlpha: 1, y: 0, duration: 1.2, ease: "sine.inout" },
-        ">0.2"
-      )
+
+    if (heroSection) {
+      observer.observe(heroSection)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
   }, [])
 
   return (
     <section id="hero" className={s.hero} ref={containerRef}>
+      <Gradient />
+      <div className={s.stars}>
+        <Stars />
+      </div>
       <div className={s.wrapper}>
         <h1 className={s.title} ref={titleRef}>
           GGMANOLO
@@ -75,10 +106,6 @@ const Hero = () => {
           />
         </svg>
       </div>
-      <div className={s.stars}>
-        <Stars />
-      </div>
-      <Gradient />
     </section>
   )
 }
