@@ -4,28 +4,32 @@ import * as THREE from "three"
 import s from "./galaxy.module.scss"
 
 const Galaxy = () => {
-  const containerRef = useRef(null)
+  const canvasRef = useRef(null)
 
   useEffect(() => {
-    const container = containerRef.current
+    const canvas = canvasRef.current
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      alpha: true,
+      antialias: true
+    })
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
       100,
-      container.clientWidth / container.clientHeight,
+      canvas.clientWidth / canvas.clientHeight,
       0.1,
       2000
     )
     camera.minDistance = 500
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
-    renderer.setSize(container.clientWidth, container.clientHeight)
+
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight)
     renderer.setClearColor(0x000000, 0)
-    container.appendChild(renderer.domElement)
 
     const starsGeometry = new THREE.BufferGeometry()
     const starsMaterial = new THREE.PointsMaterial({
       color: 0xffffff,
-      transparent: true, // Set material to transparent
-      opacity: 1, // Set material opacity
+      transparent: true,
+      opacity: 1,
       size: 1
     })
 
@@ -58,7 +62,7 @@ const Galaxy = () => {
     animate()
   }, [])
 
-  return <div ref={containerRef} className={s.galaxy} />
+  return <canvas ref={canvasRef} className={s.galaxy} />
 }
 
 export default Galaxy
