@@ -26,14 +26,20 @@ const Hero = () => {
             )
               .to(triangleRef.current, {
                 strokeDashoffset: 0,
-                duration: 1,
+                duration: 0.85,
                 ease: "slowmo.inout"
               })
               .fromTo(
                 titleRef.current,
-                { autoAlpha: 0, scale: 2.5 },
-                { autoAlpha: 1, scale: 1, duration: 1.2, ease: "slowmo.inout" },
-                ">0.2"
+                { autoAlpha: 0, scale: 1.2, y: -10 },
+                {
+                  autoAlpha: 1,
+                  scale: 1,
+                  duration: 0.75,
+                  y: 0,
+                  ease: "slowmo.inout"
+                },
+                ">0.3"
               )
               .fromTo(
                 subTitleRef.current,
@@ -41,7 +47,7 @@ const Hero = () => {
                 {
                   autoAlpha: 1,
                   y: 0,
-                  duration: 1.2,
+                  duration: 0.85,
                   ease: "sine.inout",
                   skew: "-10deg",
                   rotate: "-10deg"
