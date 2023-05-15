@@ -15,6 +15,8 @@ const Project = ({ data, className }) => {
           src={data.img}
           fill
           sizes="(max-width: 767px) 100vw, 406px"
+          placeholder="blur"
+          blurDataURL={data.placeholder}
         />
       </div>
       <div className={s.date}>{data.date}</div>
@@ -47,6 +49,7 @@ Project.propTypes = {
   data: PropTypes.shape({
     logo: PropTypes.node,
     img: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
