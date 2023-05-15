@@ -33,7 +33,7 @@ const Galaxy = () => {
       size: 1
     })
 
-    const starCount = 2000
+    const starCount = 1500
     const positions = new Float32Array(starCount * 3)
 
     for (let i = 0; i < starCount; i++) {
@@ -54,7 +54,7 @@ const Galaxy = () => {
     const animate = () => {
       requestAnimationFrame(animate)
 
-      starPoints.rotation.z += 0.0002
+      starPoints.rotation.z += 0.000165
 
       renderer.render(scene, camera)
     }
