@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import { Analytics } from "@vercel/analytics/react"
 import { Roboto, Yellowtail, Orbitron } from "next/font/google"
 import clsx from "clsx"
 
@@ -24,11 +25,18 @@ const orbitron = Orbitron({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main
-      className={clsx(roboto.className, yellowtail.variable, orbitron.variable)}
-    >
-      <Component {...pageProps} />
-    </main>
+    <>
+      <main
+        className={clsx(
+          roboto.className,
+          yellowtail.variable,
+          orbitron.variable
+        )}
+      >
+        <Component {...pageProps} />
+      </main>
+      <Analytics />
+    </>
   )
 }
 

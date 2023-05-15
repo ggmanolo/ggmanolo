@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.0.1",
     "clsx": "^1.2.1",
     "embla-carousel-react": "^8.0.0-rc03",
     "eslint": "^8.38.0",

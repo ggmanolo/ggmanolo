@@ -13,8 +13,13 @@ const Meta = () => {
       <title>Manuel Garcia Genta | Web Developer</title>
       <meta
         name="description"
-        content="GGManolo is a Creative Frontend Deveveloper"
+        content="I'm a frontend developer experienced in HTML, CSS, and JavaScript. Check out my portfolio and CV to see my work and skills. Let's build something awesome together."
       />
+      <meta
+        name="keywords"
+        content="Frontend developer, Web developer, HTML, CSS, JavaScript, React, Next.js, Portfolio, CV, Responsive design, User experience, UI/UX, Creative"
+      />
+
       <meta property="og:image" content="/img/og.jpg" />
       <link rel="icon" href="/img/favicon.svg" />
       <link rel="mask-icon" href="/img/mask-icon.svg" color="#0a0a0a" />
