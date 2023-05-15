@@ -18,7 +18,7 @@ const Projects = () => {
   const years = useYearsSince("2014-12-01")
 
   return (
-    <section id="projects">
+    <section id="projects" className={s.section}>
       <Wrapper className={s["projects-section"]}>
         <h3 className={s.title}>
           With <span>+{years} years</span> of experience
@@ -47,6 +47,15 @@ const Projects = () => {
           ))}
         </Wrapper>
       </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 600 600"
+        className={s.svg}
+      >
+        <g opacity={0.15}>
+          <circle cx={300} cy={300} r={200} fill="var(--pink)" />
+        </g>
+      </svg>
     </section>
   )
 }

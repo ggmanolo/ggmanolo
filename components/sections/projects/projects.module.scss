@@ -1,12 +1,22 @@
 @import '@/styles/helpers.scss';
 
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80px;
+  padding-top: 160px;
+  
+  @include mobile {
+    padding-bottom: 0px;
+    padding-top: 98px;
+  }
+}
+
 .projects-section {
   padding-bottom: 80px;
-  padding-top: 80px;
   
   @include mobile {
     padding-bottom: 0;
-    padding-top: 88px;
   }
 }
 
@@ -72,27 +82,19 @@
   }
 }
 
-.controls {
-  display: none;
-
+.svg {
+  position: absolute;
+  height: 800px;
+  width: 800px;
+  filter: blur(65px);
+  right: 50%;
+  bottom: 80px;
+  transform: scaleX(2) translate(25%, 15%) !important;
+  z-index: -1;
+  
   @include mobile {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 48px;
-  }
-
-  button {
-    color: var(--white);
-    padding: 4px;
-    
-    &:disabled {
-      pointer-events: none;
-      color: var(--gray);
-    }
-
-    > svg {
-      height: 24px;
-    }
+    height: 750px;
+    bottom: 0;
+    transform: translate(50%, 17%) !important;
   }
 }

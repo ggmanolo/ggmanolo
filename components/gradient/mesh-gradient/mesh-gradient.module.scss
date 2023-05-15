@@ -6,9 +6,10 @@
 }
 
 .base {
+  width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 2000ms ease;
+  transition: opacity 1000ms ease;
   position: relative;
   z-index: -1;
 }
