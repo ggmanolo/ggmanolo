@@ -8,22 +8,25 @@ import s from "./hero.module.scss"
 const Hero = () => {
   const containerRef = useRef(null)
   const triangleRef = useRef(null)
+  const wrapperRef = useRef(null)
   const titleRef = useRef(null)
   const subTitleRef = useRef(null)
+  const tl = useRef(null)
 
   useEffect(() => {
-    const tl = gsap.timeline()
+    tl.current = gsap.timeline()
     const heroSection = containerRef.current
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
-            tl.fromTo(
-              triangleRef.current,
-              { opacity: 0 },
-              { opacity: 1, duration: 0.5, delay: 0.5 }
-            )
+            tl.current
+              .fromTo(
+                triangleRef.current,
+                { opacity: 0 },
+                { opacity: 1, duration: 0.5, delay: 0.5 }
+              )
               .to(triangleRef.current, {
                 strokeDashoffset: 0,
                 duration: 0.85,
@@ -56,8 +59,9 @@ const Hero = () => {
               )
 
             observer.disconnect()
+            break
           }
-        })
+        }
       },
       { threshold: 0.5 }
     )
@@ -71,13 +75,26 @@ const Hero = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const handleParallax = () => {
+      const scrollPosition = window.pageYOffset
+      gsap.set(wrapperRef.current, { y: scrollPosition * 0.25 })
+    }
+
+    window.addEventListener("scroll", handleParallax)
+
+    return () => {
+      window.removeEventListener("scroll", handleParallax)
+    }
+  }, [])
+
   return (
     <section id="hero" className={s.hero} ref={containerRef}>
       <Gradient />
       <div className={s.stars}>
         <Stars />
       </div>
-      <div className={s.wrapper}>
+      <div className={s.wrapper} ref={wrapperRef}>
         <h1 className={s.title} ref={titleRef}>
           GGMANOLO
         </h1>
