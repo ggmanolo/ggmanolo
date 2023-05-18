@@ -11,6 +11,10 @@
   padding: 44px 24px 24px;
   z-index: 1;
 
+  &:active {
+    cursor: grabbing;
+  }
+
   @include mobile {
     min-width: 340px;
     border-color: var(--white-2);
