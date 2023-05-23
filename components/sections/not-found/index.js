@@ -7,7 +7,6 @@ import Gradient from "@/components/gradient"
 const NotFound = () => {
   return (
     <section id="not-found" className={s.section}>
-      <Gradient />
       <Wrapper className={s.wrapper}>
         <div className={s.title}>
           <span>4</span>
@@ -57,6 +56,7 @@ const NotFound = () => {
           </svg>
         </CtaLink>
       </Wrapper>
+      <Gradient />
     </section>
   )
 }

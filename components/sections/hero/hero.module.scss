@@ -87,20 +87,3 @@
   pointer-events: none;
   z-index: -2;
 }
-
-.stars {
-  display: none;
-  
-  @include mobile {
-    position: absolute;
-    height: 973px;
-    width: 825px;
-    display: block;
-    left: 50%;
-    pointer-events: none;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(60deg);
-    transition: opacity 900ms ease;
-    z-index: 1;
-  }
-}

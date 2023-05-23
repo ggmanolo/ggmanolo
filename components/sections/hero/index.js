@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import Gradient from "@/components/gradient"
-import Stars from "@/components/stars"
 
 import s from "./hero.module.scss"
 
@@ -91,9 +90,6 @@ const Hero = () => {
   return (
     <section id="hero" className={s.hero} ref={containerRef}>
       <Gradient />
-      <div className={s.stars}>
-        <Stars />
-      </div>
       <div className={s.wrapper} ref={wrapperRef}>
         <h1 className={s.title} ref={titleRef}>
           GGMANOLO

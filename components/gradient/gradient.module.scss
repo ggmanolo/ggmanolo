@@ -1,3 +1,5 @@
+@import '@/styles/helpers.scss';
+
 .wrapper {
   position: absolute;
   height: 100%;
@@ -37,4 +39,21 @@
 .down {
   background-image: linear-gradient(to bottom, rgb(10, 10, 10, 0), var(--dark));
   bottom: 0;
+}
+
+.stars {
+  display: none;
+  
+  @include mobile {
+    position: absolute;
+    height: 973px;
+    width: 825px;
+    display: block;
+    left: 50%;
+    pointer-events: none;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(60deg);
+    transition: opacity 900ms ease;
+    z-index: 1;
+  }
 }
