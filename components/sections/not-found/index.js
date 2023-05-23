@@ -16,16 +16,8 @@ const NotFound = () => {
               <path
                 d="M 0,70 A 65,70 0 0,0 65,0 5,5 0 0,1 75,0 75,70 0 0,1 0,70Z"
                 fill="var(--pink)"
-              >
-                <animateTransform
-                  attributeName="transform"
-                  type="rotate"
-                  from="360 0 0"
-                  to="0 0 0"
-                  dur="1.75s"
-                  repeatCount="indefinite"
-                />
-              </path>
+                className={s.comet}
+              />
             </g>
             <path
               d="M 50,0 A 50,50 0 0,0 -50,0Z"
