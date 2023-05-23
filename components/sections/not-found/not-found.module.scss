@@ -36,7 +36,7 @@
   position: relative;
   height: 200px;
   width: 200px;
-  filter: drop-shadow(0 0 1px var(--pink)) drop-shadow(0 -1px 3px rgba(255, 255, 255, 0.8)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 15px var(--pink));
+  filter: drop-shadow(0 0 1px var(--pink)) drop-shadow(0 -1px 1px rgba(255, 255, 255, 0.8)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 10px var(--pink));
   margin: 0 -24px;
   will-change: transform;
 }
@@ -48,7 +48,12 @@
 .comet {
   width: 100px;
   height: 100px;
-  animation: rotate 1.75s infinite;
+  animation: none;
+  transform: rotate(230deg) scale(1);
+  animation-name: rotate;
+  animation-duration: 1.75s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes rotate {
