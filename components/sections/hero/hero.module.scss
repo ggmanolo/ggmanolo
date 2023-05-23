@@ -51,9 +51,9 @@
   margin-left: -24px;
   text-align: center;
   text-decoration: underline;
+  text-shadow: var(--glow);
   transform: skew(-10deg) rotate(-10deg);
   will-change: transform;
-  text-shadow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink), 0 0 45px rgba(209, 0, 177, 0.8);
 
   @include tablet {
     font-size: 120px;
