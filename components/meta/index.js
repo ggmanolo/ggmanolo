@@ -17,7 +17,7 @@ const Meta = () => {
       />
       <meta
         name="keywords"
-        content="Frontend developer, Web developer, HTML, CSS, JavaScript, React, Next.js, Portfolio, CV, Responsive design, User experience, UI/UX, Creative"
+        content="Manuel Garcia Genta, GGManolo, Frontend developer, Web developer, HTML, CSS, JavaScript, React, Next.js, Portfolio, CV, Responsive design, User experience, UI/UX, Creative"
       />
 
       <meta property="og:image" content="/img/og.jpg" />
