@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ggmanolo.com
+
+# Sitemaps
+Sitemap: https://ggmanolo.com/sitemap.xml
