@@ -20,8 +20,8 @@ const Project = ({ data, className }) => {
         />
       </div>
       <div className={s.date}>{data.date}</div>
-      <h4 className={s.title}>{data.title}</h4>
-      <div className={s.description}>{data.description}</div>
+      <div className={s.title}>{data.title}</div>
+      <p className={s.description}>{data.description}</p>
       <CtaLink
         href={data.url}
         className={s.cta}
