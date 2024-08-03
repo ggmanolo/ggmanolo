@@ -1,10 +1,10 @@
-@import './helpers';
-@import './reset';
+@import "./helpers";
+@import "./reset";
 
 :root {
   --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
-  
+
   --black: #000000;
   --white: #ffffff;
   --white-02: rgba(255, 255, 255, 0.02);
@@ -14,14 +14,21 @@
   --dark: #0a0a0a;
   --dark-6: rgba(10, 10, 10, 0.75);
   --gray: #888888;
-  --cyan: #36E2F8;
+  --cyan: #36e2f8;
   --pink: #d100b1;
   --pink-light: #e1a0ce;
   --blue: #151c60;
   --blue-light: #c6cbf5;
 
-  --glow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink), 0 0 45px rgba(209, 0, 177, 0.8);
-  --separator: linear-gradient(90deg, transparent 0%, var(--white-2) 50%, transparent 100%);
+  --glow: 0 0 1px var(--pink), 0 -1px 3px rgba(255, 255, 255, 0.8),
+    0 1px 3px rgba(0, 0, 0, 0.5), 0 0 15px var(--pink),
+    0 0 45px rgba(209, 0, 177, 0.8);
+  --separator: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--white-2) 50%,
+    transparent 100%
+  );
   --width: min(calc(100% - 48px), 1280px);
   --width-mobile: calc(100% - 40px);
 }

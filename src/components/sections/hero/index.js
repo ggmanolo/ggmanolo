@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import Gradient from "@/components/gradient"
@@ -45,13 +46,12 @@ const Hero = () => {
               )
               .fromTo(
                 subTitleRef.current,
-                { autoAlpha: 0, y: -10, skew: "-10deg", rotate: "-10deg" },
+                { autoAlpha: 0, y: -10, rotate: "-10deg" },
                 {
                   autoAlpha: 1,
                   y: 0,
                   duration: 0.85,
                   ease: "sine.inout",
-                  skew: "-10deg",
                   rotate: "-10deg"
                 },
                 ">0.2"
@@ -76,7 +76,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleParallax = () => {
-      const scrollPosition = window.pageYOffset
+      const scrollPosition = window.scrollY
       gsap.set(wrapperRef.current, { y: scrollPosition * 0.25 })
     }
 

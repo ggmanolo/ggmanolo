@@ -1,3 +1,4 @@
+"use client"
 import clsx from "clsx"
 import PropTypes from "prop-types"
 
@@ -6,7 +7,7 @@ import s from "./cv.module.scss"
 const DownloadCV = ({ className }) => {
   const cvUrl =
     "https://docs.google.com/document/d/1WrMCdQJS4F9K_cGo0ywcTvJpiNwFspbOLbD6tek1tUU/export?format=pdf"
-  const cvFilename = "my-cv.pdf"
+  const cvFilename = "Manuel_Garcia_Genta.pdf"
 
   const handleDownloadClick = () => {
     fetch(cvUrl)
