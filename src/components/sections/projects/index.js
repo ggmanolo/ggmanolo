@@ -21,11 +21,11 @@ const Projects = () => {
   return (
     <section id="projects" className={s.section}>
       <Wrapper className={s["projects-section"]}>
-        <h3 className={s.title}>
+        <p className={s.title}>
           With <span>+{years} years</span> of experience
           <br />
           I'm looking for my next gig.
-        </h3>
+        </p>
         <article className={s.description}>
           <p>
             I'm a frontend developer with a passion for visual interactions and

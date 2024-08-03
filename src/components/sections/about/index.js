@@ -7,11 +7,11 @@ const About = () => {
     <section id="about">
       <Wrapper className={s["about-section"]}>
         <div>
-          <h3 className={s.title}>
+          <p className={s.title}>
             Hi, I'm Manuel Garcia Genta
             <br />
             A.K.A. <span>GGManolo</span>
-          </h3>
+          </p>
           <DownloadCV className={s.desktop} />
         </div>
         <article className={s.description}>
