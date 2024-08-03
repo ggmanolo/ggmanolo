@@ -76,7 +76,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleParallax = () => {
-      const scrollPosition = window.pageYOffset
+      const scrollPosition = window.scrollY
       gsap.set(wrapperRef.current, { y: scrollPosition * 0.25 })
     }
 
