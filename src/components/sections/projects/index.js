@@ -1,3 +1,4 @@
+"use client"
 import { useYearsSince } from "@/hooks/use-years-since"
 import useEmblaCarousel from "embla-carousel-react"
 import CtaLink from "@/components/cta"
