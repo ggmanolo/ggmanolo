@@ -1,4 +1,4 @@
-@import '@/styles/helpers.scss';
+@import "@/styles/helpers.scss";
 
 .button {
   width: fit-content;
@@ -16,12 +16,12 @@
   line-height: 1.43;
   padding: 0 24px;
   transition: all 200ms ease;
-  
+
   &:hover {
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid var(--white-2);
     color: var(--white-6);
-    
+
     @include mobile {
       width: 100%;
       border: 1px solid var(--white-08);
