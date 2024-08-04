@@ -7,8 +7,7 @@
   padding-top: 160px;
 
   @include mobile {
-    overflow: visible;
-    padding-bottom: 0px;
+    padding-bottom: 40px;
     padding-top: 98px;
   }
 }
@@ -96,6 +95,6 @@
   @include mobile {
     height: 750px;
     bottom: 0;
-    transform: translate(50%, 17%) !important;
+    transform: translate(50%, 5%) !important;
   }
 }
