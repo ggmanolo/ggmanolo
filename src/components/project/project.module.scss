@@ -1,10 +1,11 @@
 @import "@/styles/helpers.scss";
 
 .wrapper {
-  height: fit-content;
+  flex: 1;
 }
 
 .card {
+  height: 100%;
   width: 458px;
   background: var(--dark-6);
   border: 1px solid var(--white-08);
@@ -20,6 +21,7 @@
   }
 
   @include mobile {
+    max-width: 80vw;
     min-width: 340px;
     border-color: var(--white-2);
     padding: 24px;

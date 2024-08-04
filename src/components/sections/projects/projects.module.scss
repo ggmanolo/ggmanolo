@@ -7,8 +7,7 @@
   padding-top: 160px;
 
   @include mobile {
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: visible;
     padding-bottom: 0px;
     padding-top: 98px;
   }
@@ -57,7 +56,6 @@
 
 .projects {
   margin-top: 80px;
-  // overflow: hidden;
 
   @include mobile {
     margin-top: 96px;

@@ -2,11 +2,25 @@ import PropTypes from "prop-types"
 import CtaLink from "../cta"
 import Image from "next/image"
 import { Tilt } from "react-next-tilt"
+import { useEffect, useState } from "react"
 import clsx from "clsx"
 
 import s from "./project.module.scss"
 
+const isTouchDevice = () => {
+  return (
+    typeof window !== "undefined" &&
+    ("ontouchstart" in window || navigator.maxTouchPoints > 0)
+  )
+}
+
 const Project = ({ data, className }) => {
+  const [isTouch, setIsTouch] = useState(false)
+
+  useEffect(() => {
+    setIsTouch(isTouchDevice())
+  }, [])
+
   return (
     <Tilt
       className={s.wrapper}
@@ -14,6 +28,8 @@ const Project = ({ data, className }) => {
       shadowEnable
       tiltMaxAngleX={10}
       tiltMaxAngleY={15}
+      disabled={isTouch}
+      disabledFilter="none"
     >
       <div className={clsx(s.card, className)}>
         <div className={s.logo}>{data.logo}</div>
