@@ -33,6 +33,9 @@ export const metadata = {
     description:
       "I'm a frontend developer experienced in HTML, CSS, and JavaScript. Check out my portfolio and CV to see my work and skills. Let's build something awesome together.",
     images: ["https://ggmanolo.com/img/og.jpg"]
+  },
+  icons: {
+    icon: "img/favicon.svg"
   }
 }
 
