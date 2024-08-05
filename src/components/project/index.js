@@ -26,8 +26,8 @@ const Project = ({ data, className }) => {
       className={s.wrapper}
       borderRadius="16px"
       shadowEnable
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={15}
+      tiltMaxAngleX={9}
+      tiltMaxAngleY={12}
       disabled={isTouch}
       disabledFilter="none"
     >
