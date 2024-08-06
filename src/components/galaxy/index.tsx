@@ -5,10 +5,12 @@ import * as THREE from "three"
 import s from "./galaxy.module.scss"
 
 const Galaxy = () => {
-  const canvasRef = useRef(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
+    if (!canvas) return
+
     const renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
@@ -21,7 +23,7 @@ const Galaxy = () => {
       0.1,
       2000
     )
-    camera.minDistance = 500
+    camera.position.z = 20
 
     renderer.setSize(canvas.clientWidth, canvas.clientHeight)
     renderer.setClearColor(0x000000, 0)

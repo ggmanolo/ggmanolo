@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 import { Roboto, Yellowtail, Orbitron } from "next/font/google"
 import clsx from "clsx"
 
@@ -22,7 +23,7 @@ const orbitron = Orbitron({
 })
 
 type RootLayoutProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const metadata = {

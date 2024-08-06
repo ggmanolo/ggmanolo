@@ -11,7 +11,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false)
   const [copySuccess, setCopySuccess] = useState(false)
 
-  const copyToClipboard = async (text) => {
+  const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text)
       setCopySuccess(true)
