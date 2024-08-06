@@ -5,7 +5,7 @@ import s from "./wrapper.module.scss"
 
 type WrapperProps = {
   children: ReactNode
-  id: string
+  id?: string
   className?: string
 }
 

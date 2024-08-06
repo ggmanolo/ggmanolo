@@ -6,12 +6,12 @@ import Gradient from "@/components/gradient"
 import s from "./hero.module.scss"
 
 const Hero = () => {
-  const containerRef = useRef(null)
-  const triangleRef = useRef(null)
-  const wrapperRef = useRef(null)
-  const titleRef = useRef(null)
-  const subTitleRef = useRef(null)
-  const tl = useRef(null)
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const triangleRef = useRef<SVGSVGElement | null>(null)
+  const wrapperRef = useRef<HTMLDivElement | null>(null)
+  const titleRef = useRef<HTMLHeadingElement | null>(null)
+  const subTitleRef = useRef<HTMLHeadingElement | null>(null)
+  const tl = useRef<gsap.core.Timeline | null>(null)
 
   useEffect(() => {
     tl.current = gsap.timeline()
@@ -22,7 +22,7 @@ const Hero = () => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             tl.current
-              .fromTo(
+              ?.fromTo(
                 triangleRef.current,
                 { opacity: 0 },
                 { opacity: 1, duration: 0.5, delay: 0.5 }

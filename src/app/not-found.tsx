@@ -1,4 +1,4 @@
-import NotFound from "@/components/sections/not-found"
+import NotFound from "@/sections/not-found"
 
 const FourOFour = () => {
   return <NotFound />
