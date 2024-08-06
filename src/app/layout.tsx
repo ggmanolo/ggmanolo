@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import { Roboto, Yellowtail, Orbitron } from "next/font/google"
 import clsx from "clsx"
 
@@ -22,6 +21,10 @@ const orbitron = Orbitron({
   variable: "--font-orbitron"
 })
 
+type RootLayoutProps = {
+  children: React.ReactNode
+}
+
 export const metadata = {
   title: "Manuel Garcia Genta | Web Developer",
   description:
@@ -39,7 +42,7 @@ export const metadata = {
   }
 }
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html
       lang="en"
@@ -50,6 +53,4 @@ export default function RootLayout({ children }) {
   )
 }
 
-RootLayout.propTypes = {
-  children: PropTypes.node
-}
+export default RootLayout

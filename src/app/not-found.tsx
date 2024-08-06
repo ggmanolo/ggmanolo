@@ -1,5 +1,7 @@
 import NotFound from "@/components/sections/not-found"
 
-export default function Home() {
+const FourOFour = () => {
   return <NotFound />
 }
+
+export default FourOFour
