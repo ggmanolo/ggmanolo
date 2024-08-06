@@ -19,8 +19,8 @@ const About = () => {
             I'm a frontend developer with a passion for visual interactions and
             UI design. I am skilled in HTML, CSS, JavaScript, and various
             frontend frameworks such as React and Next.js. I have experience
-            building responsive and mobile-friendly web applications that
-            deliver exceptional user experiences.
+            building responsive and mobile-friendly websites and web apps from
+            scratch, delivering exceptional user experiences.
           </p>
           <p>
             I am dedicated to creating pixel-perfect designs that are
