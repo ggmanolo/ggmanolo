@@ -23,7 +23,7 @@ export const PROJECTS_DATA = [
     date: "2023/24",
     title: "Ditto",
     description:
-      "Lead Marketing Web Developer. Building Next.js websites for Markeitng purposes and giving support to Ditto's Platform.",
+      "Lead Marketing Web Developer. Building Next.js sites from scratch until deployed. SEO and performance optimization. Supporting Ditto's web Platform.",
     url: "https://ditto.live/"
   },
   {
