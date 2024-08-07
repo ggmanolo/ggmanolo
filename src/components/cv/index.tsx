@@ -1,10 +1,13 @@
 "use client"
 import clsx from "clsx"
-import PropTypes from "prop-types"
 
 import s from "./cv.module.scss"
 
-const DownloadCV = ({ className }) => {
+type DownloadCVProps = {
+  className?: string
+}
+
+const DownloadCV = ({ className }: DownloadCVProps) => {
   const cvUrl =
     "https://docs.google.com/document/d/1WrMCdQJS4F9K_cGo0ywcTvJpiNwFspbOLbD6tek1tUU/export?format=pdf"
   const cvFilename = "Manuel_Garcia_Genta.pdf"
@@ -19,7 +22,7 @@ const DownloadCV = ({ className }) => {
         link.setAttribute("download", cvFilename)
         document.body.appendChild(link)
         link.click()
-        link.parentNode.removeChild(link)
+        link.parentNode?.removeChild(link)
       })
   }
 
@@ -37,10 +40,6 @@ const DownloadCV = ({ className }) => {
       </svg>
     </button>
   )
-}
-
-DownloadCV.propTypes = {
-  className: PropTypes.string
 }
 
 export default DownloadCV

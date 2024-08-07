@@ -1,33 +1,45 @@
 {
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 2022
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
   },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint", "import"],
   "extends": [
-    "eslint:recommended",
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended"
+    "prettier"
   ],
   "settings": {
     "react": {
       "version": "detect"
     }
   },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
   "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
-    "jsx-a11y/anchor-is-valid": [
+    "react/jsx-key": "off",
+    "@typescript-eslint/semi": "off",
+    "import/newline-after-import": [
       "error",
       {
-        "components": ["Link"],
-        "specialLink": ["hrefLeft", "hrefRight"],
-        "aspects": ["invalidHref", "preferButton"]
+        "count": 1
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "never"
       }
     ]
   }

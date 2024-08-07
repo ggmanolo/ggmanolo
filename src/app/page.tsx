@@ -1,10 +1,10 @@
-import Hero from "@/components/sections/hero"
+import Hero from "@/sections/hero"
 import Layout from "@/components/layout"
-import About from "@/components/sections/about"
-import Projects from "@/components/sections/projects"
+import About from "@/sections/about"
+import Projects from "@/sections/projects"
 import Footer from "@/components/footer"
 
-export default function Home() {
+const Home = () => {
   return (
     <Layout>
       <Hero />
@@ -14,3 +14,5 @@ export default function Home() {
     </Layout>
   )
 }
+
+export default Home

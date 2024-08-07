@@ -1,11 +1,23 @@
-import PropTypes from "prop-types"
 import CtaLink from "../cta"
 import Image from "next/image"
 import { Tilt } from "react-next-tilt"
-import { useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import clsx from "clsx"
 
 import s from "./project.module.scss"
+
+type ProjectProps = {
+  className?: string
+  data: {
+    logo: ReactNode
+    img: string
+    placeholder: string
+    date: string
+    title: string
+    description: string
+    url: string
+  }
+}
 
 const isTouchDevice = () => {
   return (
@@ -14,7 +26,7 @@ const isTouchDevice = () => {
   )
 }
 
-const Project = ({ data, className }) => {
+const Project = ({ data, className }: ProjectProps) => {
   const [isTouch, setIsTouch] = useState(false)
 
   useEffect(() => {
@@ -26,8 +38,8 @@ const Project = ({ data, className }) => {
       className={s.wrapper}
       borderRadius="16px"
       shadowEnable
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={15}
+      tiltMaxAngleX={8}
+      tiltMaxAngleY={12}
       disabled={isTouch}
       disabledFilter="none"
     >
@@ -71,19 +83,6 @@ const Project = ({ data, className }) => {
       </div>
     </Tilt>
   )
-}
-
-Project.propTypes = {
-  className: PropTypes.string,
-  data: PropTypes.shape({
-    logo: PropTypes.node,
-    img: PropTypes.string.isRequired,
-    placeholder: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
-  }).isRequired
 }
 
 export default Project
