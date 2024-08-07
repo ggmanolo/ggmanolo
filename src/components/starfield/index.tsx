@@ -8,7 +8,6 @@ const Starfield = () => {
     <div className={s.starfield}>
       <div className={s.wrapper}>
         <Background />
-
         <Meteors />
       </div>
     </div>
