@@ -1,6 +1,7 @@
-@import '@/styles/helpers.scss';
+@import "@/styles/helpers.scss";
 
 .footer {
+  position: relative;
   height: 122px;
   width: var(--width);
   align-items: center;
