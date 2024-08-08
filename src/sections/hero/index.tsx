@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import Gradient from "@/components/gradient"
+import { isMobile } from "react-device-detect"
 
 import s from "./hero.module.scss"
 
@@ -75,15 +76,17 @@ const Hero = () => {
   }, [])
 
   useEffect(() => {
-    const handleParallax = () => {
-      const scrollPosition = window.scrollY
-      gsap.set(wrapperRef.current, { y: scrollPosition * 0.25 })
-    }
+    if (!isMobile) {
+      const handleParallax = () => {
+        const scrollPosition = window.scrollY
+        gsap.set(wrapperRef.current, { y: scrollPosition * 0.25 })
+      }
 
-    window.addEventListener("scroll", handleParallax)
+      window.addEventListener("scroll", handleParallax)
 
-    return () => {
-      window.removeEventListener("scroll", handleParallax)
+      return () => {
+        window.removeEventListener("scroll", handleParallax)
+      }
     }
   }, [])
 

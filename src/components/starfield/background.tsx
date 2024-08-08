@@ -81,7 +81,7 @@ export const Background = () => {
 
   const debouncedSetHyperspeed = useMemo(
     () => debounce(setHyperspeed, 100),
-    [changeStarsSpeed]
+    [setHyperspeed]
   )
 
   useEffect(() => {
