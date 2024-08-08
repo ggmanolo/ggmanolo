@@ -2,6 +2,8 @@
 import { useCallback, useEffect, useMemo, useRef } from "react"
 import { isMobile } from "react-device-detect"
 import debounce from "lodash/debounce"
+import { useStore } from "@/store"
+
 import s from "./starfield.module.scss"
 
 type StarType = {
@@ -29,6 +31,7 @@ export const Background = () => {
   const currentStarsSpeedFactor = useRef(NORMALSPEED)
   const lastFrameTimeRef = useRef<number>(0)
   const starSize = useMemo(() => (isMobile ? 2 : 1.1), [isMobile])
+  const { setHyperspeed } = useStore()
 
   const initializeStars = useCallback(() => {
     const canvas = canvasRef.current
@@ -76,6 +79,11 @@ export const Background = () => {
     [changeStarsSpeed]
   )
 
+  const debouncedSetHyperspeed = useMemo(
+    () => debounce(setHyperspeed, 100),
+    [changeStarsSpeed]
+  )
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -91,8 +99,10 @@ export const Background = () => {
           )
 
           if (hyperSpeedAttr === "true") {
+            setHyperspeed(true)
             changeStarsSpeed(HYPERSPEED)
           } else {
+            debouncedSetHyperspeed(false)
             debouncedChangeStarsSpeed(NORMALSPEED)
           }
         }
@@ -108,7 +118,7 @@ export const Background = () => {
       observer.disconnect()
       cancelAnimationFrame(animationFrameId.current!)
     }
-  }, [changeStarsSpeed, debouncedChangeStarsSpeed])
+  }, [changeStarsSpeed, debouncedChangeStarsSpeed, setHyperspeed])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -219,6 +229,7 @@ export const Background = () => {
     const handleVisibilityChange = () => {
       if (document.visibilityState !== "visible") {
         if (currentStarsSpeedFactor.current === HYPERSPEED) {
+          setHyperspeed(false)
           changeStarsSpeed(NORMALSPEED)
         }
       }
@@ -229,7 +240,7 @@ export const Background = () => {
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange)
     }
-  }, [isMobile, changeStarsSpeed])
+  }, [isMobile, changeStarsSpeed, setHyperspeed])
 
   useEffect(() => {
     if (isMobile) return

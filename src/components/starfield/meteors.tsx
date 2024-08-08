@@ -2,6 +2,7 @@
 import clsx from "clsx"
 import { useEffect, useRef } from "react"
 import { isMobile } from "react-device-detect"
+import { useStore } from "@/store"
 
 import s from "./starfield.module.scss"
 
@@ -10,6 +11,7 @@ const AMOOUNT_OF_METEORS = 4
 const predefinedColors = ["#671D6B", "#8c45d3", "#d100b1"]
 
 export const Meteors = () => {
+  const { hyperspeed } = useStore()
   const itemsRef = useRef<HTMLDivElement[]>([])
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export const Meteors = () => {
   return (
     <div
       className={clsx(s.meteorShower, {
-        // [s.hide]: hyperSpeed
+        [s.hide]: hyperspeed
       })}
     >
       {new Array(AMOOUNT_OF_METEORS).fill(undefined).map((_, idx) => {

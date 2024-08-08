@@ -24,7 +24,8 @@
     "react-gsap": "^3.2.1",
     "react-next-tilt": "^0.4.3",
     "sass": "^1.62.0",
-    "three": "^0.152.2"
+    "three": "^0.152.2",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",

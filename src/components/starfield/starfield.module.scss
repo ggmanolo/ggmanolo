@@ -35,9 +35,10 @@
   pointer-events: none;
   user-select: none;
   mix-blend-mode: screen;
-  transition: opacity 0.7s 0.4s ease-in;
+  transition: opacity 0.5s 0.5s ease-in;
 
   &.hide {
+    transition: opacity 0.15s 0.15s ease-in;
     opacity: 0;
   }
 
