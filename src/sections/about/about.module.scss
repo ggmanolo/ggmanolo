@@ -1,6 +1,7 @@
 @import "@/styles/helpers.scss";
 
 .about-section {
+  position: relative;
   display: grid;
   grid-template-columns: auto min(584px, 50%);
   gap: 48px;
