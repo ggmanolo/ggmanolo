@@ -1,6 +1,5 @@
 "use client"
 import { useCallback, useEffect, useMemo, useRef } from "react"
-import { isMobile } from "react-device-detect"
 import debounce from "lodash/debounce"
 import { useStore } from "@/store"
 
@@ -20,32 +19,28 @@ const HYPERSPEED = 0.6
 const NORMALSPEED = 0.035
 const MIN_FRAME_INTERVAL = 1000 / 90
 const DESKTOP_STAR_COUNT = 900
-const MOBILE_STAR_COUNT = 400
 const BACKGROUND_COLOR = "black"
 const STAR_COLOR = [255, 255, 255]
 
-export const Background = () => {
+const Galaxy = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const starsRef = useRef<StarType[]>([])
   const animationFrameId = useRef<number | null>(null)
   const currentStarsSpeedFactor = useRef(NORMALSPEED)
   const lastFrameTimeRef = useRef<number>(0)
-  const starSize = useMemo(() => (isMobile ? 2 : 1.1), [isMobile])
+  const starSize = 1.1
   const { setHyperspeed } = useStore()
 
   const initializeStars = useCallback(() => {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    starsRef.current = Array.from(
-      { length: isMobile ? MOBILE_STAR_COUNT : DESKTOP_STAR_COUNT },
-      () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        z: Math.random() * 1000
-      })
-    )
-  }, [isMobile])
+    starsRef.current = Array.from({ length: DESKTOP_STAR_COUNT }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      z: Math.random() * 1000
+    }))
+  }, [])
 
   const changeStarsSpeed = useCallback((targetSpeedFactor: number) => {
     const acceleration = 0.01
@@ -200,18 +195,18 @@ export const Background = () => {
     return () => {
       cancelAnimationFrame(animationFrameId.current!)
     }
-  }, [isMobile, initializeStars])
+  }, [initializeStars])
 
   const resizeHandler = useCallback(() => {
     const { innerWidth, innerHeight } = window
     const canvas = canvasRef.current
     if (!canvas) return
 
-    canvas.width = innerWidth * (isMobile ? 2 : 1)
-    canvas.height = innerHeight * (isMobile ? 2 : 1)
+    canvas.width = innerWidth
+    canvas.height = innerHeight
 
     initializeStars()
-  }, [isMobile, initializeStars])
+  }, [initializeStars])
 
   useEffect(() => {
     resizeHandler()
@@ -224,8 +219,6 @@ export const Background = () => {
   }, [resizeHandler])
 
   useEffect(() => {
-    if (isMobile) return
-
     const handleVisibilityChange = () => {
       if (document.visibilityState !== "visible") {
         if (currentStarsSpeedFactor.current === HYPERSPEED) {
@@ -240,11 +233,9 @@ export const Background = () => {
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange)
     }
-  }, [isMobile, changeStarsSpeed, setHyperspeed])
+  }, [changeStarsSpeed, setHyperspeed])
 
   useEffect(() => {
-    if (isMobile) return
-
     let requestId: number | null = null
 
     const handleScroll = () => {
@@ -270,9 +261,11 @@ export const Background = () => {
         cancelAnimationFrame(requestId)
       }
     }
-  }, [isMobile])
+  }, [])
 
   return (
     <canvas className={s.canvas} id={STARFIELD_CANVAS_ID} ref={canvasRef} />
   )
 }
+
+export default Galaxy

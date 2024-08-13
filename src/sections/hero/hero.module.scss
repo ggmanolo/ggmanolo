@@ -1,4 +1,4 @@
-@import '@/styles/helpers.scss';
+@import "@/styles/helpers.scss";
 
 .hero {
   position: relative;
@@ -22,7 +22,14 @@
 
 .title {
   position: absolute;
-  background: linear-gradient(to bottom, var(--blue), var(--blue-light) 40%, var(--black) 40%, var(--pink-light) 65%, var(--white));
+  background: linear-gradient(
+    to bottom,
+    var(--blue),
+    var(--blue-light) 40%,
+    var(--black) 40%,
+    var(--pink-light) 65%,
+    var(--white)
+  );
   background-clip: text;
   color: transparent;
   margin: 0;
@@ -36,6 +43,10 @@
 
   @include tablet {
     top: 12px;
+  }
+
+  @include mobile {
+    font-size: 44px;
   }
 }
 
@@ -59,9 +70,9 @@
     font-size: 120px;
     top: 60px;
   }
-  
+
   @include mobile {
-    font-size: 80px;
+    font-size: 64px;
     margin-left: -20px;
     top: 24px;
   }
