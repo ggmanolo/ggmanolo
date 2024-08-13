@@ -10,7 +10,7 @@ const AMOOUNT_OF_METEORS = 4
 
 const predefinedColors = ["#671D6B", "#8c45d3", "#d100b1"]
 
-export const Meteors = () => {
+const Meteors = () => {
   const { hyperspeed } = useStore()
   const itemsRef = useRef<HTMLDivElement[]>([])
 
@@ -72,3 +72,5 @@ export const Meteors = () => {
     </div>
   )
 }
+
+export default Meteors

@@ -1,6 +1,13 @@
+import s from "./starfield.module.scss"
+
 const Stars = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 973 825">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 973 825"
+      className={s.stars}
+    >
       <rect
         width={1.866}
         height={1.866}
