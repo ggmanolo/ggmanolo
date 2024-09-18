@@ -1,0 +1,41 @@
+@import "@/styles/helpers.scss";
+
+.cta {
+  display: flex;
+  align-items: center;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.button {
+  outline: none !important;
+  position: relative;
+  padding: 0 6px;
+  transition: all 200ms ease-out;
+
+  svg {
+    height: 16px;
+    min-width: 16px;
+  }
+}
+
+.success {
+  pointer-events: none;
+}
+
+.copy {
+  width: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.check {
+  position: absolute;
+  right: 4px;
+}
+
+.show {
+  opacity: 1;
+}

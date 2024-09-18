@@ -1,4 +1,4 @@
-@import '@/styles/helpers.scss';
+@import "@/styles/helpers.scss";
 
 .header {
   width: 100vw;
@@ -24,10 +24,10 @@
   width: var(--width);
   align-items: center;
   display: grid;
-  grid-template-columns: 190px auto 190px;
+  grid-template-columns: 220px auto 220px;
   left: 0;
   margin: 0 auto;
-  
+
   @include mobile {
     height: 80px;
     width: var(--width-mobile);
@@ -46,57 +46,4 @@
   @include mobile {
     display: none;
   }
-}
-
-.button {
-  position: relative;
-  padding: 0 4px;
-  transition: all 200ms ease-out;
-
-  &::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transition: all 200ms ease-in;
-  }
-
-  svg {
-    height: 16px;
-    min-width: 16px;
-  }
-  
-  @include mobile {
-    display: none;
-  }
-}
-
-.success {
-  color: transparent;
-  
-  &:hover {
-    color: transparent;
-  }
-
-  &::after {
-    color: var(--white-6);
-    opacity: 1;
-  }
-}
-
-.copy {
-  width: 16px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.show {
-  opacity: 1;
-}
-
-.check {
-  color: var(--white-6);
-  position: absolute;
-  right: 4px;
 }
