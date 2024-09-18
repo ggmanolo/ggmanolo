@@ -1,6 +1,8 @@
 import Wrapper from "@/components/wrapper"
-import s from "./about.module.scss"
 import DownloadCV from "@/components/cv"
+import EmailCta from "@/components/emailCta"
+
+import s from "./about.module.scss"
 
 const About = () => {
   return (
@@ -30,7 +32,10 @@ const About = () => {
             seamless.
           </p>
         </article>
-        <DownloadCV className={s.mobile} />
+        <div className={s.actions}>
+          <EmailCta className={s.mobile} />
+          <DownloadCV className={s.mobile} />
+        </div>
       </Wrapper>
     </section>
   )

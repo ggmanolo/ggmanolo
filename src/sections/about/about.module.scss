@@ -55,13 +55,26 @@
   }
 }
 
-button.desktop {
+.actions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @include mobile {
+    gap: 24px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+}
+
+.desktop {
   @include mobile {
     display: none;
   }
 }
 
-button.mobile {
+.mobile {
   display: none;
 
   @include mobile {

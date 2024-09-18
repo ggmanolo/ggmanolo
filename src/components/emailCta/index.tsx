@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react"
 import clsx from "clsx"
 import CtaLink from "../cta"
@@ -5,7 +6,11 @@ import CtaLink from "../cta"
 import s from "./emailCta.module.scss"
 import s_cta from "../cta/cta.module.scss"
 
-const EmailCta = () => {
+type EmailCtaProps = {
+  className?: string
+}
+
+const EmailCta = ({ className }: EmailCtaProps) => {
   const [copySuccess, setCopySuccess] = useState(false)
 
   const copyToClipboard = async (text: string) => {
@@ -19,7 +24,7 @@ const EmailCta = () => {
   }
 
   return (
-    <div className={s.cta}>
+    <div className={clsx(s.cta, className)}>
       <CtaLink
         href="mailto:hellothere@ggmanolo.com"
         name="hellothere@ggmanolo.com"

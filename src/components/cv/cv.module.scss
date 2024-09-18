@@ -23,7 +23,6 @@
     color: var(--white-6);
 
     @include mobile {
-      width: 100%;
       border: 1px solid var(--white-08);
       background: var(--white-08);
       color: rgba(255, 255, 255, 0.84);
