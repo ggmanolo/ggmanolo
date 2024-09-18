@@ -46,7 +46,8 @@
   }
 
   @include mobile {
-    font-size: 44px;
+    font-size: 48px;
+    -webkit-text-stroke-width: 1px;
   }
 }
 
@@ -72,9 +73,9 @@
   }
 
   @include mobile {
-    font-size: 64px;
-    margin-left: -20px;
-    top: 24px;
+    font-size: 56px;
+    margin-left: -16px;
+    top: 32px;
   }
 }
 
