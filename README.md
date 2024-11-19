@@ -4,7 +4,7 @@ Here you can find some of my projects and collaborations, as well as information
 
 ## Contact
 
-If you'd like to get in touch, you can reach me via email at [man.mdp@gmail.com](mailto:man.mdp@gmail.com) or through my [LinkedIn profile](https://www.linkedin.com/in/ggmanolo/).
+If you'd like to get in touch, you can reach me via email at [hellothere@ggmanolo.com](mailto:hellothere@ggmanolo.com) or through my [LinkedIn profile](https://www.linkedin.com/in/ggmanolo/).
 
 ## Let's build something awesome together!
 
