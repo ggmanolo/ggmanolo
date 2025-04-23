@@ -6,17 +6,20 @@ import clsx from "clsx"
 
 import s from "./project.module.scss"
 
+export type ProjectDataType = {
+  id: number
+  logo: ReactNode
+  img: string
+  placeholder: string
+  date: string
+  title: string
+  description: string
+  url?: string
+}
+
 type ProjectProps = {
   className?: string
-  data: {
-    logo: ReactNode
-    img: string
-    placeholder: string
-    date: string
-    title: string
-    description: string
-    url: string
-  }
+  data: ProjectDataType
 }
 
 const isTouchDevice = () => {
@@ -58,28 +61,30 @@ const Project = ({ data, className }: ProjectProps) => {
         <div className={s.date}>{data.date}</div>
         <div className={s.title}>{data.title}</div>
         <p className={s.description}>{data.description}</p>
-        <CtaLink
-          href={data.url}
-          className={s.cta}
-          target="_blank"
-          name="View Project"
-          variant="button"
-        >
-          View Project
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 16 16"
+        {data.url && (
+          <CtaLink
+            href={data.url}
+            className={s.cta}
+            target="_blank"
+            name="View Project"
+            variant="button"
           >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.315}
-              d="m11.3 4.7-6.6 6.601m1.968-6.634 4.634.033.033 4.633"
-            />
-          </svg>
-        </CtaLink>
+            View Project
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 16 16"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.315}
+                d="m11.3 4.7-6.6 6.601m1.968-6.634 4.634.033.033 4.633"
+              />
+            </svg>
+          </CtaLink>
+        )}
       </div>
     </Tilt>
   )

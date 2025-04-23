@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react"
 import CtaLink from "@/components/cta"
 import Project from "@/components/project"
 import Wrapper from "@/components/wrapper"
-import { PROJECTS_DATA } from "./Data"
+import { PROJECTS_DATA } from "./data"
 
 import s from "./projects.module.scss"
 
@@ -41,7 +41,7 @@ const Projects = () => {
         <Wrapper className={s.projects__container}>
           {PROJECTS_DATA.map((project) => (
             <Project
-              key={project.id}
+              key={`project-${project.id}`}
               data={project}
               className={s.projects__slide}
             />
