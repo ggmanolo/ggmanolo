@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   padding: 44px 24px 32px;
+  user-select: none;
   z-index: 1;
 
   &:active {

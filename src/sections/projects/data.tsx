@@ -10,7 +10,7 @@ import TheySaid from "@/components/svg/they-said"
 
 export const PROJECTS_DATA: ProjectDataType[] = [
   {
-    id: 9,
+    id: 10,
     logo: <EpicGamesSvg />,
     img: "/img/projects/epic.jpg",
     placeholder:
