@@ -35,6 +35,7 @@ const EmailCta = ({ className }: EmailCtaProps) => {
         name="email"
         className={clsx(s_cta.link, s.button, copySuccess && s.success)}
         onClick={() => copyToClipboard("hellothere@ggmanolo.com")}
+        aria-label="Copy email address to clipboard"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
