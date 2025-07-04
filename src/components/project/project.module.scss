@@ -13,7 +13,8 @@
   cursor: grab;
   display: flex;
   flex-direction: column;
-  padding: 44px 24px 24px;
+  padding: 44px 24px 32px;
+  user-select: none;
   z-index: 1;
 
   &:active {
@@ -37,6 +38,7 @@
 
   > svg {
     height: $size;
+    max-width: calc(4 * $size);
   }
 }
 
@@ -68,13 +70,15 @@
   margin-bottom: 8px;
 }
 
+.position {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
 .description {
   color: var(--white-6);
   font-size: 14px;
   line-height: 1.71;
-  margin-bottom: 40px;
-}
-
-.cta {
-  margin-top: auto;
 }
