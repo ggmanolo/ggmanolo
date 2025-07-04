@@ -1,8 +1,8 @@
 "use client"
 import { useState, useEffect } from "react"
 
-export const useYearsSince = (startDate) => {
-  const [years, setYears] = useState(0)
+export const useYearsSince = (startDate: string | Date): number => {
+  const [years, setYears] = useState<number>(0)
 
   useEffect(() => {
     const start = new Date(startDate)
