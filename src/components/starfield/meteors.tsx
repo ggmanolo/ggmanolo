@@ -3,7 +3,6 @@ import clsx from "clsx"
 import { useEffect, useRef } from "react"
 import { isMobile } from "react-device-detect"
 import { useStore } from "@/store"
-
 import s from "./starfield.module.scss"
 
 const AMOOUNT_OF_METEORS = 4
