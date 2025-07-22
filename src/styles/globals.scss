@@ -37,16 +37,16 @@
 html {
   line-height: 1.6;
   box-sizing: border-box;
-  text-rendering: geometricprecision;
+  text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  -webkit-font-smoothing: subpixel-antialiased;
   -moz-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color-scheme: dark;
   color: var(--white);
   background-color: var(--dark);
   scroll-behavior: smooth;
+  font-display: swap;
 }
 
 body {

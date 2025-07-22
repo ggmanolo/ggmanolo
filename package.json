@@ -2,6 +2,9 @@
   "name": "ggmanolo",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,6 +13,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
+    "caniuse-lite": "^1.0.30001727",
     "clsx": "^1.2.1",
     "embla-carousel-react": "^8.0.0-rc03",
     "eslint": "^8.38.0",
@@ -29,9 +33,11 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7",
-    "@types/node": "22.1.0",
+    "@types/node": "^22.16.5",
     "@types/react": "18.3.3",
     "@types/three": "^0.167.1",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",

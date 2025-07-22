@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import Hero from "@/sections/hero"
 import Layout from "@/components/layout"
 import About from "@/sections/about"
@@ -11,6 +12,7 @@ const Home = () => {
       <Projects />
       <About />
       <Footer />
+      <Analytics />
     </Layout>
   )
 }

@@ -1,11 +1,31 @@
 {
-    "name": "GGManolo",
-    "short_name": "GGManolo",
-    "icons": [{
-        "src": "/img/google-touch-icon.png",
-        "sizes": "512x512"
-    }],
-    "background_color": "#0a0a0a",
-    "theme_color": "#0a0a0a",
-    "display": "fullscreen"
+  "name": "Manuel Garcia Genta - Frontend Developer",
+  "short_name": "GGManolo",
+  "description": "Frontend developer specializing in React, Next.js, and modern web technologies. Portfolio and CV.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d100b1",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "portfolio"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/google-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
 }
