@@ -1,9 +1,9 @@
 "use client"
-import { useYearsSince } from "@/hooks/use-years-since"
 import useEmblaCarousel from "embla-carousel-react"
 import CtaLink from "@/components/cta"
 import Project from "@/components/project"
 import Wrapper from "@/components/wrapper"
+import { calculateYearsSince } from "@/utils/calculate-years-since"
 import { PROJECTS_DATA } from "./data"
 
 import s from "./projects.module.scss"
@@ -16,7 +16,7 @@ const Projects = () => {
       "(max-width: 767px)": { dragFree: false }
     }
   })
-  const years = useYearsSince("2014-12-01")
+  const years = calculateYearsSince("2014-12-01")
 
   return (
     <section id="projects" className={s.section}>
@@ -28,9 +28,10 @@ const Projects = () => {
         </p>
         <article className={s.description}>
           <p>
-            I'm a frontend developer with a passion for visual interactions and
-            UI design. I am skilled in HTML, CSS, JavaScript, and various
-            frontend frameworks such as React and Next.js.{" "}
+            I build high-quality product experiences by combining solid frontend
+            engineering with strong visual instinct.
+          </p>
+          <p>
             <CtaLink href="#about" name="Learn more">
               Learn more.
             </CtaLink>

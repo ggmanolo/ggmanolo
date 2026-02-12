@@ -1,10 +1,13 @@
 import Wrapper from "@/components/wrapper"
 import DownloadCV from "@/components/cv"
 import EmailCta from "@/components/emailCta"
+import { calculateYearsSince } from "@/utils/calculate-years-since"
 
 import s from "./about.module.scss"
 
 const About = () => {
+  const years = calculateYearsSince("2014-12-01")
+
   return (
     <section id="about">
       <Wrapper className={s["about-section"]}>
@@ -18,18 +21,20 @@ const About = () => {
         </div>
         <article className={s.description}>
           <p>
-            I'm a frontend developer with a passion for visual interactions and
-            UI design. I am skilled in HTML, CSS, JavaScript, and various
-            frontend frameworks such as React and Next.js. I have experience
-            building responsive and mobile-friendly websites and web apps from
-            scratch, delivering exceptional user experiences.
+            I'm a Senior Frontend Engineer with <strong>+{years} years</strong>{" "}
+            of experience building production-ready web applications.
           </p>
           <p>
-            I am dedicated to creating pixel-perfect designs that are
-            accessible, responsive, and cross-browser compatible. As a UI/UX
-            specialist, I thrive on finding creative solutions to complex design
-            challenges and ensuring that every user interaction is intuitive and
-            seamless.
+            My strength lies in translating design into scalable, performant
+            interfaces while maintaining a strong sense of visual quality and
+            product coherence. I enjoy working at the intersection of
+            engineering and design, ensuring that what users see and feel is as
+            intentional as the code behind it.
+          </p>
+          <p>
+            I've led frontend initiatives from scratch, defined architecture for
+            marketing and product surfaces, and collaborated closely with design
+            teams in fully remote environments.
           </p>
         </article>
         <div className={s.actions}>
