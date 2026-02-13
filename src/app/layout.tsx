@@ -28,18 +28,20 @@ type RootLayoutProps = {
 }
 
 export const metadata = {
-  title: "Manuel Garcia Genta | Frontend Developer & UI/UX Specialist",
+  title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
   description:
-    "Frontend developer specializing in React, Next.js, HTML, CSS, and JavaScript. Creating pixel-perfect, responsive web applications with exceptional user experiences. View my portfolio and CV.",
+    "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
   metadataBase: new URL("https://ggmanolo.com"),
   keywords: [
-    "frontend developer",
-    "web developer",
-    "React developer",
-    "Next.js developer",
-    "JavaScript developer",
-    "UI/UX designer",
-    "portfolio",
+    "Senior Frontend Engineer",
+    "UI Engineer",
+    "Product Engineer",
+    "Frontend Architecture",
+    "React Engineer",
+    "Frontend Developer",
+    "React Developer",
+    "Next.js Developer",
+    "UI/UX Designer",
     "Manuel Garcia Genta",
     "GGManolo"
   ],
@@ -61,24 +63,24 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://ggmanolo.com",
-    title: "Manuel Garcia Genta | Frontend Developer & UI/UX Specialist",
+    title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
     description:
-      "Frontend developer specializing in React, Next.js, HTML, CSS, and JavaScript. Creating pixel-perfect, responsive web applications with exceptional user experiences.",
+      "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
     images: [
       {
         url: "https://ggmanolo.com/img/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Manuel Garcia Genta - Frontend Developer"
+        alt: "Manuel Garcia Genta - Senior Frontend & UI Engineer"
       }
     ],
     siteName: "GGManolo Portfolio"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manuel Garcia Genta | Frontend Developer & UI/UX Specialist",
+    title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
     description:
-      "Frontend developer specializing in React, Next.js, HTML, CSS, and JavaScript. Creating pixel-perfect, responsive web applications with exceptional user experiences.",
+      "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
     images: ["https://ggmanolo.com/img/og.jpg"],
     creator: "@ggmanolo"
   },
