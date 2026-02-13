@@ -4,14 +4,10 @@ This repository contains the source code of my personal website and portfolio.
 
 Beyond showcasing my work, this project reflects how I approach frontend architecture, UI engineering, and performance-driven interfaces.
 
----
-
 ## About Me
 
 I'm a Senior Frontend & UI Engineer specializing in React and Next.js.  
 I build product-focused, visually refined web applications with strong technical and design standards.
-
----
 
 ## Tech Stack
 
@@ -21,8 +17,6 @@ I build product-focused, visually refined web applications with strong technical
 - SCSS Modules
 - GSAP (animations)
 - Structured Data (SEO optimization)
-
----
 
 ## Technical Approach
 
@@ -36,8 +30,6 @@ This project is intentionally built with:
 
 The hero animation is powered by GSAP timelines and IntersectionObserver to ensure controlled entrance transitions and smooth performance.
 
----
-
 ## Why This Project Matters
 
 This website represents how I merge engineering and design:
@@ -49,16 +41,12 @@ This website represents how I merge engineering and design:
 
 It’s not just a portfolio — it’s a representation of how I build.
 
----
-
 ## Running Locally
 
 ```bash
 yarn
 yarn dev
 ```
-
----
 
 ## Contact
 
