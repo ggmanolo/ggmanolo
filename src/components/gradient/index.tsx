@@ -1,6 +1,5 @@
 import clsx from "clsx"
 import MeshGradient from "./mesh-gradient"
-
 import s from "./gradient.module.scss"
 
 const Gradient = () => (

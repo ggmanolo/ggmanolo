@@ -2,7 +2,6 @@
 import { useState } from "react"
 import clsx from "clsx"
 import CtaLink from "../cta"
-
 import s from "./emailCta.module.scss"
 import s_cta from "../cta/cta.module.scss"
 
@@ -18,7 +17,7 @@ const EmailCta = ({ className }: EmailCtaProps) => {
       await navigator.clipboard.writeText(text)
       setCopySuccess(true)
       setTimeout(() => setCopySuccess(false), 2000)
-    } catch (err) {
+    } catch {
       setCopySuccess(false)
     }
   }

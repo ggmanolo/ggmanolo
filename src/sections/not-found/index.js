@@ -1,8 +1,7 @@
 import Wrapper from "@/components/wrapper"
-
-import s from "./not-found.module.scss"
 import CtaLink from "@/components/cta"
 import Gradient from "@/components/gradient"
+import s from "./not-found.module.scss"
 
 const NotFound = () => {
   return (

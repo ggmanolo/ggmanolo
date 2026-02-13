@@ -2,12 +2,11 @@
 import { useEffect } from "react"
 import PropTypes from "prop-types"
 import clsx from "clsx"
-
 import s from "./mesh-gradient.module.scss"
 
 const MeshGradient = ({ className }) => {
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error - Dynamic import of vanilla JS gradient library
     import("./raw").then(({ gradient }) =>
       gradient.initGradient("#gradient-canvas")
     )

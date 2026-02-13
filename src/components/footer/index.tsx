@@ -1,5 +1,4 @@
 import CtaLink from "../cta"
-
 import s from "./footer.module.scss"
 
 const Footer = () => {

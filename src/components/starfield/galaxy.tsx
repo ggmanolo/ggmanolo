@@ -2,7 +2,6 @@
 import { useCallback, useEffect, useMemo, useRef } from "react"
 import debounce from "lodash/debounce"
 import { useStore } from "@/store"
-
 import s from "./starfield.module.scss"
 
 type StarType = {
@@ -113,7 +112,12 @@ const Galaxy = () => {
       observer.disconnect()
       cancelAnimationFrame(animationFrameId.current!)
     }
-  }, [changeStarsSpeed, debouncedChangeStarsSpeed, setHyperspeed])
+  }, [
+    changeStarsSpeed,
+    debouncedChangeStarsSpeed,
+    debouncedSetHyperspeed,
+    setHyperspeed
+  ])
 
   useEffect(() => {
     const canvas = canvasRef.current
