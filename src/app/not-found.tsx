@@ -1,7 +1,13 @@
 import NotFound from "@/sections/not-found"
+import Starfield from "@/components/starfield"
 
 const FourOFour = () => {
-  return <NotFound />
+  return (
+    <>
+      <Starfield />
+      <NotFound />
+    </>
+  )
 }
 
 export default FourOFour
