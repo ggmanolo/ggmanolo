@@ -1,7 +1,14 @@
 "use client"
 import clsx from "clsx"
 import Link from "next/link"
-import { forwardRef, ReactNode, useCallback, MouseEventHandler } from "react"
+import {
+  forwardRef,
+  ReactNode,
+  useCallback,
+  MouseEventHandler,
+  useEffect,
+  MouseEvent
+} from "react"
 
 import s from "./cta.module.scss"
 
@@ -28,6 +35,20 @@ const CtaLink = forwardRef<HTMLAnchorElement, CtaLinkProps>((props, ref) => {
   } = props
   const isInternalLink = href.startsWith("#") || href.startsWith("/")
   const isButton = variant === "button"
+
+  const handleMouseMove = useCallback((e: MouseEvent<Document>) => {
+    document.documentElement.style.setProperty("--x", e.clientX.toFixed(2))
+    document.documentElement.style.setProperty("--y", e.clientY.toFixed(2))
+  }, [])
+
+  useEffect(() => {
+    if (isButton) {
+      document.addEventListener("pointermove", handleMouseMove as any)
+      return () => {
+        document.removeEventListener("pointermove", handleMouseMove as any)
+      }
+    }
+  }, [isButton, handleMouseMove])
 
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
     (e) => {

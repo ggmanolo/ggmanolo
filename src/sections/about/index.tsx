@@ -1,6 +1,5 @@
 import Wrapper from "@/components/wrapper"
 import DownloadCV from "@/components/cv"
-import EmailCta from "@/components/emailCta"
 import { calculateYearsSince } from "@/utils/calculate-years-since"
 
 import s from "./about.module.scss"
@@ -38,7 +37,6 @@ const About = () => {
           </p>
         </article>
         <div className={s.actions}>
-          <EmailCta className={s.mobile} />
           <DownloadCV className={s.mobile} />
         </div>
       </Wrapper>
