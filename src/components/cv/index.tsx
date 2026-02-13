@@ -1,6 +1,5 @@
 "use client"
 import clsx from "clsx"
-
 import s from "./cv.module.scss"
 
 type DownloadCVProps = {

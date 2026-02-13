@@ -2,7 +2,6 @@ import Image from "next/image"
 import { Tilt } from "react-next-tilt"
 import { useEffect, useState } from "react"
 import clsx from "clsx"
-
 import s from "./project.module.scss"
 
 export type ProjectDataType = {

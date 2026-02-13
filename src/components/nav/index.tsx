@@ -1,5 +1,4 @@
 import CtaLink from "@/components/cta"
-
 import s from "./nav.module.scss"
 
 const Nav = () => {

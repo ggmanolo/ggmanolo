@@ -1,6 +1,5 @@
 import Wrapper from "@/components/wrapper"
 import CtaLink from "@/components/cta"
-
 import s from "./ctaSection.module.scss"
 
 const CtaSection = () => {

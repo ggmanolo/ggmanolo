@@ -5,7 +5,6 @@ import Project from "@/components/project"
 import Wrapper from "@/components/wrapper"
 import { calculateYearsSince } from "@/utils/calculate-years-since"
 import { PROJECTS_DATA } from "./data"
-
 import s from "./projects.module.scss"
 
 const Projects = () => {

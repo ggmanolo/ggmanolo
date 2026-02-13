@@ -1,7 +1,6 @@
 import Wrapper from "@/components/wrapper"
 import DownloadCV from "@/components/cv"
 import { calculateYearsSince } from "@/utils/calculate-years-since"
-
 import s from "./about.module.scss"
 
 const About = () => {

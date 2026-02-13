@@ -1,7 +1,7 @@
 "use client"
 import clsx from "clsx"
 import { useEffect, useRef, useMemo } from "react"
-import { isMobile } from "react-device-detect"
+import { useIsMobile } from "@/hooks/use-media-query"
 import { useStore } from "@/store"
 import s from "./starfield.module.scss"
 
@@ -12,6 +12,7 @@ const predefinedColors = ["#671D6B", "#8c45d3", "#d100b1"]
 const Meteors = () => {
   const { hyperspeed } = useStore()
   const itemsRef = useRef<HTMLDivElement[]>([])
+  const isMobile = useIsMobile()
 
   // Memoize the meteor elements to prevent unnecessary re-renders
   const meteorElements = useMemo(
@@ -69,7 +70,8 @@ const Meteors = () => {
         item.removeEventListener("animationiteration", listener)
       }
     }
-  }, [isMobile])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div

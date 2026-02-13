@@ -1,6 +1,5 @@
 import { ReactNode } from "react"
 import clsx from "clsx"
-
 import s from "./wrapper.module.scss"
 
 type WrapperProps = {

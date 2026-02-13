@@ -32,6 +32,9 @@ export const metadata = {
   description:
     "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
   metadataBase: new URL("https://ggmanolo.com"),
+  alternates: {
+    canonical: "https://ggmanolo.com"
+  },
   keywords: [
     "Senior Frontend Engineer",
     "UI Engineer",

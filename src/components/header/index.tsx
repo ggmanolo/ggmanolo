@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import clsx from "clsx"
 import Image from "next/image"
 import Nav from "@/components/nav"
-
 import s from "./header.module.scss"
 import EmailCta from "../emailCta"
 
@@ -32,6 +31,7 @@ const Header = () => {
             height={36}
             width={36}
             quality={100}
+            priority
           />
         </div>
         <Nav />

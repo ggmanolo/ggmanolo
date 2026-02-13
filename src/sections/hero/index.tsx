@@ -1,9 +1,8 @@
 "use client"
 import React, { useEffect, useRef } from "react"
 import { gsap } from "gsap"
+import { useIsMobile } from "@/hooks/use-media-query"
 import Gradient from "@/components/gradient"
-import { isMobile } from "react-device-detect"
-
 import s from "./hero.module.scss"
 
 const Hero = () => {
@@ -13,6 +12,7 @@ const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   const subTitleRef = useRef<HTMLHeadingElement | null>(null)
   const tl = useRef<gsap.core.Timeline | null>(null)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     tl.current = gsap.timeline()
@@ -88,7 +88,7 @@ const Hero = () => {
         window.removeEventListener("scroll", handleParallax)
       }
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <section id="hero" className={s.hero} ref={containerRef}>
