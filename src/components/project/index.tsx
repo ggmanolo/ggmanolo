@@ -13,7 +13,7 @@ export type ProjectDataType = {
   title: string
   position?: string
   description: string
-  tech: string
+  tech: string[]
 }
 
 type ProjectProps = {
@@ -62,7 +62,7 @@ const Project = ({ data, className }: ProjectProps) => {
         </div>
         {data.position && <p className={s.position}>{data.position}</p>}
         <p className={s.description}>{data.description}</p>
-        <p className={s.tech}>{data.tech}</p>
+        <p className={s.tech}>{data.tech.join(" · ")}</p>
       </div>
     </Tilt>
   )
