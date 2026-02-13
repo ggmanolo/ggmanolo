@@ -1,19 +1,19 @@
 import Image from "next/image"
 import { Tilt } from "react-next-tilt"
-import { ReactNode, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import clsx from "clsx"
 
 import s from "./project.module.scss"
 
 export type ProjectDataType = {
   id: number
-  logo: ReactNode
   img: string
   placeholder: string
   date: string
   title: string
   position?: string
   description: string
+  tech: string
 }
 
 type ProjectProps = {
@@ -46,7 +46,10 @@ const Project = ({ data, className }: ProjectProps) => {
       disabledFilter="none"
     >
       <div className={clsx(s.card, className)}>
-        <div className={s.logo}>{data.logo}</div>
+        <div className={s["title-wrapper"]}>
+          <span className={s.title}>{data.title}</span>
+          <span className={s.date}>{data.date}</span>
+        </div>
         <div className={s.img}>
           <Image
             alt={data.title}
@@ -57,10 +60,9 @@ const Project = ({ data, className }: ProjectProps) => {
             blurDataURL={data.placeholder}
           />
         </div>
-        <div className={s.date}>{data.date}</div>
-        <div className={s.title}>{data.title}</div>
-        {data.position && <p className={s.position}>[ {data.position} ]</p>}
+        {data.position && <p className={s.position}>{data.position}</p>}
         <p className={s.description}>{data.description}</p>
+        <p className={s.tech}>{data.tech}</p>
       </div>
     </Tilt>
   )
