@@ -2,6 +2,11 @@
 
 .wrapper {
   flex: 1;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
 }
 
 .card {
@@ -10,16 +15,11 @@
   background: var(--dark-6);
   border: 1px solid var(--white-08);
   border-radius: 16px;
-  cursor: grab;
   display: flex;
   flex-direction: column;
   padding: 44px 24px 32px;
   user-select: none;
   z-index: 1;
-
-  &:active {
-    cursor: grabbing;
-  }
 
   @include mobile {
     max-width: 80vw;
@@ -57,22 +57,28 @@
   }
 }
 
-.date {
-  color: var(--gray);
-  font-size: 14px;
-  line-height: 1.71;
+.title-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .title {
   font-weight: 700;
   font-size: 24px;
   line-height: 1.25;
-  margin-bottom: 8px;
+}
+
+.date {
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.71;
 }
 
 .position {
-  color: var(--gray);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 8px;
 }
@@ -81,4 +87,13 @@
   color: var(--white-6);
   font-size: 14px;
   line-height: 1.71;
+  margin-bottom: 16px;
+}
+
+.tech {
+  border-top: 1px solid var(--white-08);
+  color: var(--white-6);
+  font-size: 11px;
+  margin-top: auto;
+  padding-top: 16px;
 }

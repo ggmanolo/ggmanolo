@@ -4,28 +4,29 @@ const StructuredData = () => {
     "@type": "Person",
     name: "Manuel Garcia Genta",
     alternateName: "GGManolo",
-    description: "Frontend Developer & UI/UX Specialist",
+    description:
+      "Senior Frontend & UI Engineer specializing in React, Next.js and product-driven interfaces.",
     url: "https://ggmanolo.com",
     image: "https://ggmanolo.com/img/avatar.png",
     sameAs: [
       "https://www.linkedin.com/in/ggmanolo/",
       "https://github.com/ggmanolo"
     ],
-    jobTitle: "Frontend Developer",
+    jobTitle: "Senior Frontend Engineer",
     worksFor: {
       "@type": "Organization",
-      name: "Freelance"
+      name: "Independent / Contract"
     },
     knowsAbout: [
       "React",
       "Next.js",
-      "JavaScript",
       "TypeScript",
-      "HTML",
-      "CSS",
-      "UI/UX Design",
-      "Web Development",
-      "Frontend Development"
+      "Frontend Architecture",
+      "UI Engineering",
+      "Design Systems",
+      "Product Development",
+      "Performance Optimization",
+      "Web Applications"
     ],
     email: "hellothere@ggmanolo.com",
     address: {

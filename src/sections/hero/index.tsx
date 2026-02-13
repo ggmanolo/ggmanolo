@@ -47,13 +47,13 @@ const Hero = () => {
               )
               .fromTo(
                 subTitleRef.current,
-                { autoAlpha: 0, y: -10, rotate: "-10deg" },
+                { autoAlpha: 0, y: -10, rotate: "-8deg" },
                 {
                   autoAlpha: 1,
                   y: 0,
                   duration: 0.85,
                   ease: "sine.inout",
-                  rotate: "-10deg"
+                  rotate: "-8deg"
                 },
                 ">0.2"
               )
@@ -98,7 +98,7 @@ const Hero = () => {
           GGMANOLO
         </h1>
         <h2 className={s.subtitle} ref={subTitleRef}>
-          Developer
+          Creative Engineer
         </h2>
         <svg
           xmlns="http://www.w3.org/2000/svg"

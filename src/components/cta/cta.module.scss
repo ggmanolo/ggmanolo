@@ -7,7 +7,9 @@
   gap: 8px;
   justify-content: center;
   text-decoration: underline;
-  transition: all 200ms ease;
+  transition:
+    all 200ms ease,
+    box-shadow 100ms ease;
 
   &:hover {
     color: var(--white-6);
@@ -39,40 +41,95 @@
   line-height: 1.43;
   padding: 0 24px;
   text-decoration: none;
-  // gradient border with radius
-  $border: 1px;
+  $border: 2px;
   background: var(--dark);
-  background-clip: padding-box;
-  border: solid $border transparent;
+  border: $border solid rgba(255, 255, 255, 0.2);
   position: relative;
+  transition: all 100ms ease;
 
-  &:before {
-    position: absolute;
-    background-image: linear-gradient(
-      258.55deg,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0.2) 25%,
-      rgba(255, 255, 255, 0.2) 75%,
-      rgba(255, 255, 255, 0.5) 100%
-    );
-    border-radius: inherit;
-    bottom: 0;
+  // CSS variables for glow effect
+  --spotlight-size: 150px;
+
+  &::before,
+  &::after {
+    pointer-events: none;
     content: "";
-    left: 0;
-    margin: -$border;
-    right: 0;
-    top: 0;
-    z-index: -1;
+    position: absolute;
+    inset: calc($border * -1);
+    border: $border solid transparent;
+    border-radius: inherit;
+    background-attachment: fixed;
+    background-size: calc(100% + (2 * $border)) calc(100% + (2 * $border));
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    mask:
+      linear-gradient(transparent, transparent), linear-gradient(white, white);
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+  }
+
+  // Pink gradient emphasis light
+  &::before {
+    background-image: radial-gradient(
+      calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
+        calc(var(--x, 50) * 1px) calc(var(--y, 50) * 1px),
+      hsl(330 100% 70% / 1) 0%,
+      hsl(320 100% 60% / 0.8) 30%,
+      hsl(310 100% 50% / 0.4) 60%,
+      transparent 100%
+    );
+    filter: brightness(1.3);
+  }
+
+  // Bright white/pink spotlight at center
+  &::after {
+    background-image: radial-gradient(
+      calc(var(--spotlight-size) * 0.4) calc(var(--spotlight-size) * 0.4) at
+        calc(var(--x, 50) * 1px) calc(var(--y, 50) * 1px),
+      hsl(340 100% 90% / 1) 0%,
+      hsl(330 100% 80% / 0.6) 40%,
+      transparent 100%
+    );
   }
 
   &:hover {
     background-color: var(--black);
-    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 16px 4px rgba(255, 255, 255, 0.1);
     color: var(--white);
 
     @include mobile {
       background-color: var(--dark);
       box-shadow: none;
+    }
+  }
+
+  @include mobile {
+    $border-mobile: 1px;
+    background-clip: padding-box;
+    border: solid $border-mobile transparent;
+
+    &::before {
+      background-image: linear-gradient(
+        258.55deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.2) 25%,
+        rgba(255, 255, 255, 0.2) 75%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      background-attachment: initial;
+      background-size: initial;
+      inset: 0;
+      border: none;
+      margin: -$border-mobile;
+      mask: none;
+      mask-clip: initial;
+      mask-composite: initial;
+      filter: none;
+      z-index: -1;
+    }
+
+    &::after {
+      display: none;
     }
   }
 }

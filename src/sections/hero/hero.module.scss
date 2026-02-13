@@ -36,7 +36,7 @@
   opacity: 0;
   text-align: center;
   text-transform: uppercase;
-  top: -4px;
+  top: 16px;
   will-change: transform;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--white);
@@ -46,36 +46,36 @@
   }
 
   @include mobile {
-    font-size: 48px;
+    font-size: 52px;
+    top: 24px;
     -webkit-text-stroke-width: 1px;
   }
 }
 
 .subtitle {
   position: absolute;
-  top: 45px;
+  top: 80px;
   width: 100%;
   color: var(--pink);
   font-family: var(--font-yellowtail);
-  font-size: 138px;
+  font-size: 96px;
   line-height: 1.52;
   opacity: 0;
-  margin-left: -24px;
+  margin-left: -12px;
   text-align: center;
   text-decoration: underline;
   text-shadow: var(--glow);
-  transform: skew(-10deg) rotate(-10deg);
   will-change: transform;
 
   @include tablet {
-    font-size: 120px;
+    font-size: 80px;
     top: 60px;
   }
 
   @include mobile {
-    font-size: 56px;
-    margin-left: -16px;
-    top: 32px;
+    font-size: 38px;
+    margin-left: 0px;
+    top: 56px;
   }
 }
 
