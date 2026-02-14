@@ -1,0 +1,108 @@
+@import "@/styles/helpers.scss";
+
+.marquee {
+  overflow: hidden;
+  padding: 64px 0;
+  background: transparent;
+  position: relative;
+  user-select: none;
+
+  @include tablet {
+    padding: 48px 0;
+  }
+
+  @include mobile {
+    padding: 32px 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, var(--dark), transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, var(--dark), transparent);
+  }
+}
+
+.marqueeTrack {
+  display: flex;
+  width: fit-content;
+  animation: scroll 40s linear infinite;
+  will-change: transform;
+
+  @include tablet {
+    animation-duration: 30s;
+  }
+
+  @include mobile {
+    animation-duration: 25s;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+
+    .logo {
+      opacity: 0.35;
+    }
+  }
+}
+
+.marqueeContent {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.marqueeItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 64px;
+  height: 80px;
+
+  @include tablet {
+    padding: 0 32px;
+  }
+
+  @include mobile {
+    padding: 0 24px;
+  }
+
+  &:hover {
+    .logo {
+      opacity: 0.75;
+    }
+  }
+}
+
+.logo {
+  color: var(--gray);
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+@keyframes scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
