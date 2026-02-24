@@ -1,6 +1,5 @@
 "use client"
-import { useCallback, useEffect, useMemo, useRef } from "react"
-import debounce from "lodash/debounce"
+import { useCallback, useEffect, useRef } from "react"
 import { useStore } from "@/store"
 import s from "./starfield.module.scss"
 
@@ -12,7 +11,6 @@ type StarType = {
   prevY?: number
 }
 
-export const STARFIELD_HYPER_DATA_ATTR = "data-hyper-speed"
 export const STARFIELD_CANVAS_ID = "starfield"
 const HYPERSPEED = 0.6
 const NORMALSPEED = 0.035
@@ -25,10 +23,11 @@ const Galaxy = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const starsRef = useRef<StarType[]>([])
   const animationFrameId = useRef<number | null>(null)
+  const speedAdjustmentFrameId = useRef<number | null>(null)
   const currentStarsSpeedFactor = useRef(NORMALSPEED)
   const lastFrameTimeRef = useRef<number>(0)
   const starSize = 1.1
-  const { setHyperspeed } = useStore()
+  const hyperspeed = useStore((state) => state.hyperspeed)
 
   const initializeStars = useCallback(() => {
     const canvas = canvasRef.current
@@ -41,83 +40,59 @@ const Galaxy = () => {
     }))
   }, [])
 
-  const changeStarsSpeed = useCallback((targetSpeedFactor: number) => {
-    const acceleration = 0.01
-    let currentSpeedFactor = currentStarsSpeedFactor.current
-
-    const adjustSpeed = () => {
-      if (currentSpeedFactor < targetSpeedFactor) {
-        currentSpeedFactor = Math.min(
-          currentSpeedFactor + acceleration,
-          targetSpeedFactor
-        )
-      } else if (currentSpeedFactor > targetSpeedFactor) {
-        currentSpeedFactor = Math.max(
-          currentSpeedFactor - acceleration,
-          targetSpeedFactor
-        )
+  const changeStarsSpeed = useCallback(
+    (targetSpeedFactor: number, accelerationRate: number) => {
+      // Cancel any in-progress speed adjustment to prevent race conditions
+      if (speedAdjustmentFrameId.current !== null) {
+        cancelAnimationFrame(speedAdjustmentFrameId.current)
+        speedAdjustmentFrameId.current = null
       }
 
-      currentStarsSpeedFactor.current = currentSpeedFactor
+      let currentSpeedFactor = currentStarsSpeedFactor.current
 
-      if (currentSpeedFactor !== targetSpeedFactor) {
-        animationFrameId.current = requestAnimationFrame(adjustSpeed)
-      }
-    }
-
-    adjustSpeed()
-  }, [])
-
-  const debouncedChangeStarsSpeed = useMemo(
-    () => debounce(changeStarsSpeed, 100),
-    [changeStarsSpeed]
-  )
-
-  const debouncedSetHyperspeed = useMemo(
-    () => debounce(setHyperspeed, 100),
-    [setHyperspeed]
-  )
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const observer = new MutationObserver((mutationsList) => {
-      mutationsList.forEach((mutation) => {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === STARFIELD_HYPER_DATA_ATTR
-        ) {
-          const hyperSpeedAttr = (mutation.target as HTMLElement).getAttribute(
-            STARFIELD_HYPER_DATA_ATTR
+      const adjustSpeed = () => {
+        if (currentSpeedFactor < targetSpeedFactor) {
+          currentSpeedFactor = Math.min(
+            currentSpeedFactor + accelerationRate,
+            targetSpeedFactor
           )
-
-          if (hyperSpeedAttr === "true") {
-            setHyperspeed(true)
-            changeStarsSpeed(HYPERSPEED)
-          } else {
-            debouncedSetHyperspeed(false)
-            debouncedChangeStarsSpeed(NORMALSPEED)
-          }
+        } else if (currentSpeedFactor > targetSpeedFactor) {
+          currentSpeedFactor = Math.max(
+            currentSpeedFactor - accelerationRate,
+            targetSpeedFactor
+          )
         }
-      })
-    })
 
-    observer.observe(canvas, {
-      attributes: true,
-      attributeFilter: [STARFIELD_HYPER_DATA_ATTR]
-    })
+        currentStarsSpeedFactor.current = currentSpeedFactor
 
-    return () => {
-      observer.disconnect()
-      cancelAnimationFrame(animationFrameId.current!)
+        if (currentSpeedFactor !== targetSpeedFactor) {
+          speedAdjustmentFrameId.current = requestAnimationFrame(adjustSpeed)
+        }
+      }
+
+      adjustSpeed()
+    },
+    []
+  )
+
+  // Subscribe to store hyperspeed changes
+  // Fast acceleration on activation, smooth deceleration on deactivation
+  useEffect(() => {
+    if (hyperspeed) {
+      // Instant activation for responsive feel
+      changeStarsSpeed(HYPERSPEED, 1.0)
+    } else {
+      // Smooth deceleration
+      changeStarsSpeed(NORMALSPEED, 0.01)
     }
-  }, [
-    changeStarsSpeed,
-    debouncedChangeStarsSpeed,
-    debouncedSetHyperspeed,
-    setHyperspeed
-  ])
+
+    // Cleanup: cancel any in-progress speed adjustment
+    return () => {
+      if (speedAdjustmentFrameId.current !== null) {
+        cancelAnimationFrame(speedAdjustmentFrameId.current)
+      }
+    }
+  }, [hyperspeed, changeStarsSpeed])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -221,51 +196,6 @@ const Galaxy = () => {
       window.removeEventListener("resize", resizeHandler)
     }
   }, [resizeHandler])
-
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState !== "visible") {
-        if (currentStarsSpeedFactor.current === HYPERSPEED) {
-          setHyperspeed(false)
-          changeStarsSpeed(NORMALSPEED)
-        }
-      }
-    }
-
-    document.addEventListener("visibilitychange", handleVisibilityChange)
-
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange)
-    }
-  }, [changeStarsSpeed, setHyperspeed])
-
-  useEffect(() => {
-    let requestId: number | null = null
-
-    const handleScroll = () => {
-      const canvas = canvasRef.current
-      if (!canvas) return
-
-      canvas.setAttribute(STARFIELD_HYPER_DATA_ATTR, "true")
-
-      if (requestId !== null) {
-        cancelAnimationFrame(requestId)
-      }
-
-      requestId = requestAnimationFrame(() => {
-        canvas.setAttribute(STARFIELD_HYPER_DATA_ATTR, "false")
-      })
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-      if (requestId !== null) {
-        cancelAnimationFrame(requestId)
-      }
-    }
-  }, [])
 
   return (
     <canvas className={s.canvas} id={STARFIELD_CANVAS_ID} ref={canvasRef} />

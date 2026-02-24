@@ -9,6 +9,8 @@ import {
   useEffect,
   MouseEvent
 } from "react"
+import { useHasHover } from "@/hooks/use-media-query"
+import { useHyperspeedTrigger } from "@/store"
 import s from "./cta.module.scss"
 
 type CtaLinkProps = {
@@ -35,6 +37,8 @@ const CtaLink = forwardRef<HTMLAnchorElement, CtaLinkProps>(
     } = props
     const isInternalLink = href.startsWith("#") || href.startsWith("/")
     const isButton = variant === "button"
+    const hasHover = useHasHover()
+    const { activate, deactivate } = useHyperspeedTrigger()
 
     const handleMouseMove = useCallback((e: MouseEvent<Document>) => {
       document.documentElement.style.setProperty("--x", e.clientX.toFixed(2))
@@ -65,6 +69,18 @@ const CtaLink = forwardRef<HTMLAnchorElement, CtaLinkProps>(
       [href]
     )
 
+    const handleMouseEnter = useCallback(() => {
+      if (isButton && hasHover) {
+        activate()
+      }
+    }, [isButton, hasHover, activate])
+
+    const handleMouseLeave = useCallback(() => {
+      if (isButton && hasHover) {
+        deactivate()
+      }
+    }, [isButton, hasHover, deactivate])
+
     return (
       <Link
         aria-label={name}
@@ -79,6 +95,8 @@ const CtaLink = forwardRef<HTMLAnchorElement, CtaLinkProps>(
         ref={ref}
         target={target}
         onClick={isInternalLink ? handleClick : undefined}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...rest}
       >
         {children}
