@@ -11,7 +11,8 @@ const Starfield = () => {
   return (
     <div className={s.starfield}>
       <div className={s.wrapper}>
-        {isMobile ? <Stars /> : <Galaxy />}
+        {/* Show Galaxy by default until hydration, then switch based on device */}
+        {isMobile === true ? <Stars /> : <Galaxy />}
         <Meteors />
       </div>
     </div>

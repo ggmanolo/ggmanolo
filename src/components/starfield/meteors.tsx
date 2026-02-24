@@ -70,6 +70,9 @@ const Meteors = () => {
         item.removeEventListener("animationiteration", listener)
       }
     }
+    // Effect should only run once on mount to set up animation listeners
+    // isMobile is checked for early return but doesn't need to be a dependency
+    // since we don't want to tear down and recreate listeners on resize
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

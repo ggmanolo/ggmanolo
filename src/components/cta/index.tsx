@@ -56,6 +56,11 @@ const CtaLink = forwardRef<HTMLAnchorElement, CtaLinkProps>(
 
     const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
       (e) => {
+        // Deactivate hyperspeed when clicking to prevent it staying active after navigation
+        if (isButton && hasHover) {
+          deactivate()
+        }
+
         if (href.startsWith("#")) {
           e.preventDefault()
           const destination = document.querySelector(href)
@@ -66,7 +71,7 @@ const CtaLink = forwardRef<HTMLAnchorElement, CtaLinkProps>(
           }
         }
       },
-      [href]
+      [href, isButton, hasHover, deactivate]
     )
 
     const handleMouseEnter = useCallback(() => {

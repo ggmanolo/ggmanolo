@@ -4,6 +4,7 @@ import CtaLink from "@/components/cta"
 import Project from "@/components/project"
 import Wrapper from "@/components/wrapper"
 import { calculateYearsSince } from "@/utils/calculate-years-since"
+import { CAREER_START_DATE } from "@/constants"
 import { PROJECTS_DATA } from "./data"
 import s from "./projects.module.scss"
 
@@ -15,7 +16,7 @@ const Projects = () => {
       "(max-width: 767px)": { dragFree: false }
     }
   })
-  const years = calculateYearsSince("2014-12-01")
+  const years = calculateYearsSince(CAREER_START_DATE)
 
   return (
     <section id="projects" className={s.section}>

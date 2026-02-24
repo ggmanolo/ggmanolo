@@ -1,10 +1,11 @@
 import Wrapper from "@/components/wrapper"
 import DownloadCV from "@/components/cv"
 import { calculateYearsSince } from "@/utils/calculate-years-since"
+import { CAREER_START_DATE } from "@/constants"
 import s from "./about.module.scss"
 
 const About = () => {
-  const years = calculateYearsSince("2014-12-01")
+  const years = calculateYearsSince(CAREER_START_DATE)
 
   return (
     <section id="about">

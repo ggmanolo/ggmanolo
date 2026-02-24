@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { Roboto, Yellowtail, Orbitron } from "next/font/google"
+import Script from "next/script"
 import clsx from "clsx"
-import StructuredData from "@/components/structured-data"
 
 import "@/styles/globals.scss"
 
@@ -94,19 +94,74 @@ export const metadata = {
     ],
     apple: "/img/apple-touch-icon.png"
   },
-  manifest: "/site.webmanifest"
+  manifest: "/site.webmanifest",
+  themeColor: "#d100b1",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5
+  }
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": ["Person", "ProfilePage"],
+    name: "Manuel Garcia Genta",
+    alternateName: "GGManolo",
+    description:
+      "Senior Frontend & UI Engineer specializing in React, Next.js and product-driven interfaces.",
+    url: "https://ggmanolo.com",
+    image: {
+      "@type": "ImageObject",
+      url: "https://ggmanolo.com/img/avatar.png",
+      width: "400",
+      height: "400"
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/ggmanolo/",
+      "https://github.com/ggmanolo"
+    ],
+    jobTitle: "Senior Frontend Engineer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Independent / Contract"
+    },
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Frontend Architecture",
+      "UI Engineering",
+      "Design Systems",
+      "Product Development",
+      "Performance Optimization",
+      "Web Applications"
+    ],
+    email: "hellothere@ggmanolo.com",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "AR"
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://ggmanolo.com"
+    }
+  }
+
   return (
     <html
       lang="en"
       className={clsx(roboto.className, yellowtail.variable, orbitron.variable)}
     >
-      <head>
-        <StructuredData />
-      </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </body>
     </html>
   )
 }

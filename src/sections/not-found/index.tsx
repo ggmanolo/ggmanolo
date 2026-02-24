@@ -1,6 +1,5 @@
 import Wrapper from "@/components/wrapper"
 import CtaLink from "@/components/cta"
-import Gradient from "@/components/gradient"
 import s from "./not-found.module.scss"
 
 const NotFound = () => {
@@ -30,24 +29,9 @@ const NotFound = () => {
           It looks like you are <strong>lost in space</strong>
         </p>
         <CtaLink href="/" variant="button" name="Go Back" className={s.button}>
-          Go Back
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlSpace="preserve"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.315}
-              d="M3.4 8h9.3m-6.1 3.3L3.4 8l3.3-3.3"
-            />
-          </svg>
+          Go home
         </CtaLink>
       </Wrapper>
-      <Gradient />
     </section>
   )
 }

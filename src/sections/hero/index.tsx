@@ -72,17 +72,26 @@ const Hero = () => {
 
     return () => {
       observer.disconnect()
+      tl.current?.kill()
     }
   }, [])
 
   useEffect(() => {
     if (!isMobile) {
+      let ticking = false
+
       const handleParallax = () => {
-        const scrollPosition = window.scrollY
-        gsap.set(wrapperRef.current, { y: scrollPosition * 0.25 })
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollPosition = window.scrollY
+            gsap.set(wrapperRef.current, { y: scrollPosition * 0.25 })
+            ticking = false
+          })
+          ticking = true
+        }
       }
 
-      window.addEventListener("scroll", handleParallax)
+      window.addEventListener("scroll", handleParallax, { passive: true })
 
       return () => {
         window.removeEventListener("scroll", handleParallax)
