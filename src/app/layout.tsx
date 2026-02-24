@@ -94,19 +94,30 @@ export const metadata = {
     ],
     apple: "/img/apple-touch-icon.png"
   },
-  manifest: "/site.webmanifest"
+  manifest: "/site.webmanifest",
+  themeColor: "#d100b1",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5
+  }
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": ["Person", "ProfilePage"],
     name: "Manuel Garcia Genta",
     alternateName: "GGManolo",
     description:
       "Senior Frontend & UI Engineer specializing in React, Next.js and product-driven interfaces.",
     url: "https://ggmanolo.com",
-    image: "https://ggmanolo.com/img/avatar.png",
+    image: {
+      "@type": "ImageObject",
+      url: "https://ggmanolo.com/img/avatar.png",
+      width: "400",
+      height: "400"
+    },
     sameAs: [
       "https://www.linkedin.com/in/ggmanolo/",
       "https://github.com/ggmanolo"
@@ -131,6 +142,10 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     address: {
       "@type": "PostalAddress",
       addressCountry: "AR"
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://ggmanolo.com"
     }
   }
 
