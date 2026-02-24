@@ -27,11 +27,6 @@ const nextConfig = {
   //   return config;
   // },
 
-  // Experimental features for better performance
-  experimental: {
-    serverComponentsExternalPackages: ["three"]
-  },
-
   // Security headers
   async headers() {
     return [

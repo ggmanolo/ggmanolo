@@ -10,11 +10,23 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
+    // Check initial scroll position on mount
+    setScrolled(window.pageYOffset > 150)
+
+    let ticking = false
+
     const handleScroll = () => {
-      const scrolled = window.pageYOffset
-      setScrolled(scrolled > 150)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.pageYOffset
+          setScrolled(scrolled > 150)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
 
     return () => {
       window.removeEventListener("scroll", handleScroll)

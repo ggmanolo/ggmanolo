@@ -1,8 +1,8 @@
 "use client"
 import { useEffect, useState } from "react"
 
-export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false)
+export function useMediaQuery(query: string): boolean | undefined {
+  const [matches, setMatches] = useState<boolean | undefined>(undefined)
 
   useEffect(() => {
     const media = window.matchMedia(query)
@@ -20,10 +20,10 @@ export function useMediaQuery(query: string): boolean {
   return matches
 }
 
-export function useIsMobile(): boolean {
+export function useIsMobile(): boolean | undefined {
   return useMediaQuery("(max-width: 768px)")
 }
 
-export function useHasHover(): boolean {
+export function useHasHover(): boolean | undefined {
   return useMediaQuery("(hover: hover) and (pointer: fine)")
 }

@@ -1,6 +1,5 @@
 import Wrapper from "@/components/wrapper"
 import CtaLink from "@/components/cta"
-import Gradient from "@/components/gradient"
 import s from "./not-found.module.scss"
 
 const NotFound = () => {
@@ -47,7 +46,6 @@ const NotFound = () => {
           </svg>
         </CtaLink>
       </Wrapper>
-      <Gradient />
     </section>
   )
 }
