@@ -94,13 +94,14 @@ export const metadata = {
     ],
     apple: "/img/apple-touch-icon.png"
   },
-  manifest: "/site.webmanifest",
-  themeColor: "#d100b1",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5
-  }
+  manifest: "/site.webmanifest"
+}
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#d100b1"
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => {
