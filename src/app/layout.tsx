@@ -71,7 +71,7 @@ export const metadata = {
       "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
     images: [
       {
-        url: "https://ggmanolo.com/img/og.jpg",
+        url: "https://ggmanolo.com/img/og.jpg?v=2",
         width: 1200,
         height: 630,
         alt: "Manuel Garcia Genta - Senior Frontend & UI Engineer"
@@ -84,7 +84,7 @@ export const metadata = {
     title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
     description:
       "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
-    images: ["https://ggmanolo.com/img/og.jpg"],
+    images: ["https://ggmanolo.com/img/og.jpg?v=2"],
     creator: "@ggmanolo"
   },
   icons: {
