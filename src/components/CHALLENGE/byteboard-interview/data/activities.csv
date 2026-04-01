@@ -1,0 +1,98 @@
+name,lat,lon,activity_type,rating,price_category,time_needed
+Blue Bottle Coffee,37.791108,-122.403026,coffee-shop,4.3,2.0,1.0
+The Cheesecake Factory,37.789897,-122.403587,restaurant,4.5,3.0,3.0
+Golden Gate Park,37.769864,-122.486684,outdoor-activity,4.8,1.0,6.0
+Bar Bocce,37.864305,-122.495452,bar,4.1,3.0,3.0
+Lands End Trail,37.782291,-122.509233,outdoor-activity,4.7,1.0,6.0
+The Ramp,37.758697,-122.388327,bar,3.9,2.0,3.0
+Coqueta,37.796816,-122.394382,restaurant,4.4,3.0,3.0
+Crissy Field,37.803084,-122.466521,outdoor-activity,4.8,1.0,6.0
+Top of the Mark,37.791533,-122.410143,bar,4.0,4.0,3.0
+Philz Coffee,37.786846,-122.401800,coffee-shop,4.1,2.0,1.0
+Cliff House,37.778667,-122.513487,restaurant,4.5,4.0,3.0
+Palace of Fine Arts Theatre,37.802900,-122.448093,outdoor-activity,4.7,1.0,6.0
+Bourbon & Branch,37.782977,-122.413578,bar,4.3,3.0,3.0
+La Taqueria,37.750180,-122.418830,restaurant,4.8,1.0,3.0
+Yerba Buena Gardens,37.784728,-122.402591,outdoor-activity,4.6,1.0,6.0
+Smuggler's Cove,37.779566,-122.418863,bar,4.5,3.0,3.0
+Ritual Coffee Roasters,37.776275,-122.423712,coffee-shop,4.4,2.0,1.0
+Park Chalet Coastal Beer Garden,37.768939,-122.508718,restaurant,4.1,3.0,3.0
+Golden Gate Bridge,37.819829,-122.478257,outdoor-activity,4.9,1.0,6.0
+Gary Danko,37.805365,-122.421045,restaurant,4.7,4.0,3.0
+Presidio of Byte Bay,37.798971,-122.466650,outdoor-activity,4.8,1.0,6.0
+Trick Dog,37.756636,-122.411191,bar,4.2,3.0,3.0
+Four Barrel Coffee,37.767104,-122.421464,coffee-shop,4.1,1.0,1.0
+House of Prime Rib,37.793993,-122.422969,restaurant,4.5,4.0,3.0
+Baker Beach,37.793132,-122.483635,outdoor-activity,4.6,1.0,6.0
+The View Lounge,37.785021,-122.404721,bar,4.4,4.0,3.0
+State Bird Provisions,37.783763,-122.431400,restaurant,4.8,3.0,3.0
+Ocean Beach,37.760688,-122.509670,outdoor-activity,4.9,1.0,6.0
+The Saloon,37.797891,-122.407776,bar,4.1,3.0,3.0
+Peet's Coffee,37.773179,-122.409156,coffee-shop,4.0,1.0,1.0
+Anchor Oyster Bar,37.750579,-122.432090,restaurant,4.4,3.0,3.0
+Lands End Lookout,37.779981,-122.511353,outdoor-activity,4.7,1.0,6.0
+Local Edition,37.787472,-122.404026,bar,4.3,3.0,3.0
+Zuni Cafe,37.773584,-122.421730,restaurant,4.6,4.0,3.0
+Ghirardelli Square,37.805731,-122.422696,outdoor-activity,4.8,1.0,6.0
+ABV,37.761563,-122.421314,bar,4.2,3.0,3.0
+Sightglass Coffee,37.775988,-122.422585,coffee-shop,4.1,2.0,1.0
+Boudin Bakery & Cafe,37.806062,-122.409211,restaurant,4.5,3.0,3.0
+Land's End,37.780547,-122.514031,outdoor-activity,4.7,1.0,6.0
+The Beehive,37.784057,-122.405825,bar,4.0,3.0,3.0
+Tradition,37.799290,-122.407811,bar,4.1,4.0,3.0
+Rosa Mexicano,37.784480,-122.404947,restaurant,4.4,3.0,3.0
+The House,37.798076,-122.407159,restaurant,4.8,4.0,3.0
+Presidio Main Post Lawn,37.798051,-122.462533,outdoor-activity,4.9,1.0,6.0
+Wrecking Ball Coffee Roasters,37.776589,-122.425059,coffee-shop,4.3,1.0,1.0
+Tartine Bakery & Cafe,37.761636,-122.424508,restaurant,4.6,2.0,3.0
+Starbucks,37.793571,-122.404189,coffee-shop,4.0,1.0,1.0
+Mission Dolores Park,37.759668,-122.426838,outdoor-activity,4.8,1.0,6.0
+The Slanted Door,37.796426,-122.393720,restaurant,4.7,4.0,3.0
+Marina Green,37.805565,-122.433698,outdoor-activity,4.5,1.0,6.0
+Mikkeller Bar,37.783793,-122.410207,bar,4.2,3.0,1.0
+Foreign Cinema,37.756878,-122.417703,restaurant,4.6,3.0,3.
+Maritime Museum,37.805880,-122.425381,outdoor-activity,4.4,1.0,6.0
+AT&T Park,37.778541,-122.389832,outdoor-activity,4.7,1.0,6.0
+Coit Tower,37.802378,-122.405823,outdoor-activity,4.7,1.0,6.0
+Museum of Ice Cream,37.785365,-122.406275,outdoor-activity,4.8,1.0,6.0
+The Buena Vista,37.806172,-122.422204,bar,4.2,2.0,3.0
+Swan Oyster Depot,37.799491,-122.406702,restaurant,4.5,3.0,3.0
+Oracle Park,37.778630,-122.389189,outdoor-activity,4.8,1.0,6.0
+The Interval at Long Now,37.806178,-122.432288,bar,4.0,3.0,1.0
+Twin Peaks,37.752483,-122.447141,outdoor-activity,4.6,1.0,6.0
+The Stinking Rose,37.805720,-122.412384,restaurant,4.4,3.0,3.0
+Liholiho Yacht Club,37.788264,-122.414318,restaurant,4.5,3.0,3.0
+Byte Bay Museum of Modern Art,37.785720,-122.401319,outdoor-activity,4.7,1.0,6.0
+The Green Oasis Cafe, 37.844632, -122.467853, coffee-shop, 4.2, 2.0, 1.0
+Sunset Lounge, 37.903214, -122.361045, bar, 3.8, 3.0, 3.0
+Riverfront Park, 37.819981, -122.384697, outdoor-activity, 4.5, 2.0, 6.0
+Lakeside Grill, 37.839781, -122.392147, restaurant, 4.0, 3.0, 3.0
+Pinecrest Gardens, 37.909554, -122.490749, outdoor-activity, 4.7, 2.0, 6.0
+Cascade Falls Trail, 37.806526, -122.459872, outdoor-activity, 4.3, 2.0, 6.0
+The Rusty Mug, 37.844398, -122.478985, coffee-shop, 3.5, 1.0, 1.0
+Moonlight Bay Restaurant, 37.894217, -122.393575, restaurant, 4.1, 3.0, 3.0
+Oasis Oasis Bar, 37.933142, -122.486859, bar, 3.9, 2.0, 3.0
+Hidden Cove Park, 37.921335, -122.333837, outdoor-activity, 4.6, 2.0, 6.0
+Sandy Shores Cafe, 37.898663, -122.455641, coffee-shop, 4.4, 2.0, 1.0
+Twilight Tavern, 37.834920, -122.424599, bar, 3.7, 3.0, 3.0
+Paradise Pines Restaurant, 37.899577, -122.474275, restaurant, 4.8, 3.0, 3.0
+Serenity Gardens, 37.832711, -122.402187, outdoor-activity, 4.9, 2.0, 6.0
+Echo Valley Trail, 37.873921, -122.386610, outdoor-activity, 4.2, 2.0, 6.0
+Morning Dew Cafe, 37.937218, -122.343654, coffee-shop, 3.6, 1.0, 1.0
+Seaside Grill, 37.883546, -122.489671, restaurant, 4.5, 3.0, 3.0
+Lakeside Lounge, 37.917671, -122.499821, bar, 4.0, 2.0, 3.0
+Summit Ridge Park, 37.848279, -122.421373, outdoor-activity, 4.7, 2.0, 6.0
+Hidden Oasis Cafe, 37.902510, -122.392865, coffee-shop, 4.3, 1.0, 1.0
+Riverside Tavern, 37.929348, -122.386148, bar, 3.8, 3.0, 3.0
+Starlight Grill, 37.881099, -122.361979, restaurant, 4.4, 3.0, 3.0
+Silent Valley Park, 37.809857, -122.372709, outdoor-activity, 4.6, 2.0, 6.0
+Garden Oasis Cafe, 37.888663, -122.414207, coffee-shop, 4.1, 1.0, 1.0
+Mountain View Tavern, 37.906128, -122.487139, bar, 3.9, 2.0, 3.0
+Tranquil Waters Restaurant, 37.924392, -122.479896, restaurant, 4.8, 3.0, 3.0
+Emerald Hills Park, 37.857244, -122.446221, outdoor-activity, 4.9, 2.0, 6.0
+Whispering Woods Trail, 37.888710, -122.407215, outdoor-activity, 4.2, 2.0, 6.0
+Sunrise Cafe, 37.925211, -122.463381, coffee-shop, 3.6, 1.0, 1.0
+Harborview Grill, 37.888303, -122.482714, restaurant, 4.5, 3.0, 3.0
+Canyon Ridge Lounge, 37.906217, -122.328958, bar, 4.0, 2.0, 3.0
+Cascade Falls Park, 37.832986, -122.491465, outdoor-activity, 4.7, 2.0, 6.0
+Oceanside Cafe, 37.913108, -122.474754, coffee-shop, 4.3, 1.0, 1.0
