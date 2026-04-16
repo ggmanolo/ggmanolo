@@ -1,5 +1,5 @@
-@import "./helpers";
-@import "./reset";
+@use "./helpers" as *;
+@use "./reset";
 
 :root {
   --font-system:
