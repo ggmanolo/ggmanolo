@@ -48,7 +48,8 @@ const Project = ({ data, className }: ProjectProps) => {
     // This promotes the element to its own GPU compositor layer right before animation starts,
     // making transforms faster. Removed on mouseLeave to free GPU memory.
     if (tiltRef.current) tiltRef.current.style.willChange = "transform"
-    if (spotGlareRef.current) spotGlareRef.current.style.willChange = "transform, opacity"
+    if (spotGlareRef.current)
+      spotGlareRef.current.style.willChange = "transform, opacity"
     if (glareRef.current) glareRef.current.style.opacity = "0.1"
   }, [isTouch])
 
@@ -122,7 +123,11 @@ const Project = ({ data, className }: ProjectProps) => {
     >
       <div ref={tiltRef} className={clsx(s.card, className)}>
         <div ref={glareRef} className={s.glare} aria-hidden="true" />
-        <div ref={spotGlareRef} className={s["spot-glare"]} aria-hidden="true" />
+        <div
+          ref={spotGlareRef}
+          className={s["spot-glare"]}
+          aria-hidden="true"
+        />
         <div className={s["title-wrapper"]}>
           <span className={s.title}>{data.title}</span>
           <span className={s.date}>{data.date}</span>
