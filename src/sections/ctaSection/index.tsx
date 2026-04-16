@@ -10,11 +10,7 @@ const CtaSection = () => {
           Open to remote opportunities where <span>frontend quality</span> and{" "}
           <span>product experience</span> truly matter.
         </p>
-        <CtaLink
-          href="mailto:hellothere@ggmanolo.com"
-          name="Get in touch"
-          variant="button"
-        >
+        <CtaLink href="mailto:hellothere@ggmanolo.com" name="Get in touch" variant="button">
           Get in touch
         </CtaLink>
       </Wrapper>

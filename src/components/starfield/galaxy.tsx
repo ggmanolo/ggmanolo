@@ -36,44 +36,35 @@ const Galaxy = () => {
     starsRef.current = Array.from({ length: DESKTOP_STAR_COUNT }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      z: Math.random() * 1000
+      z: Math.random() * 1000,
     }))
   }, [])
 
-  const changeStarsSpeed = useCallback(
-    (targetSpeedFactor: number, accelerationRate: number) => {
-      // Cancel any in-progress speed adjustment to prevent race conditions
-      if (speedAdjustmentFrameId.current !== null) {
-        cancelAnimationFrame(speedAdjustmentFrameId.current)
-        speedAdjustmentFrameId.current = null
+  const changeStarsSpeed = useCallback((targetSpeedFactor: number, accelerationRate: number) => {
+    // Cancel any in-progress speed adjustment to prevent race conditions
+    if (speedAdjustmentFrameId.current !== null) {
+      cancelAnimationFrame(speedAdjustmentFrameId.current)
+      speedAdjustmentFrameId.current = null
+    }
+
+    let currentSpeedFactor = currentStarsSpeedFactor.current
+
+    const adjustSpeed = () => {
+      if (currentSpeedFactor < targetSpeedFactor) {
+        currentSpeedFactor = Math.min(currentSpeedFactor + accelerationRate, targetSpeedFactor)
+      } else if (currentSpeedFactor > targetSpeedFactor) {
+        currentSpeedFactor = Math.max(currentSpeedFactor - accelerationRate, targetSpeedFactor)
       }
 
-      let currentSpeedFactor = currentStarsSpeedFactor.current
+      currentStarsSpeedFactor.current = currentSpeedFactor
 
-      const adjustSpeed = () => {
-        if (currentSpeedFactor < targetSpeedFactor) {
-          currentSpeedFactor = Math.min(
-            currentSpeedFactor + accelerationRate,
-            targetSpeedFactor
-          )
-        } else if (currentSpeedFactor > targetSpeedFactor) {
-          currentSpeedFactor = Math.max(
-            currentSpeedFactor - accelerationRate,
-            targetSpeedFactor
-          )
-        }
-
-        currentStarsSpeedFactor.current = currentSpeedFactor
-
-        if (currentSpeedFactor !== targetSpeedFactor) {
-          speedAdjustmentFrameId.current = requestAnimationFrame(adjustSpeed)
-        }
+      if (currentSpeedFactor !== targetSpeedFactor) {
+        speedAdjustmentFrameId.current = requestAnimationFrame(adjustSpeed)
       }
+    }
 
-      adjustSpeed()
-    },
-    []
-  )
+    adjustSpeed()
+  }, [])
 
   // Subscribe to store hyperspeed changes
   // Fast acceleration on activation, smooth deceleration on deactivation
@@ -197,9 +188,7 @@ const Galaxy = () => {
     }
   }, [resizeHandler])
 
-  return (
-    <canvas className={s.canvas} id={STARFIELD_CANVAS_ID} ref={canvasRef} />
-  )
+  return <canvas className={s.canvas} id={STARFIELD_CANVAS_ID} ref={canvasRef} />
 }
 
 export default Galaxy

@@ -4,9 +4,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/"
+      allow: "/",
     },
     sitemap: "https://ggmanolo.com/sitemap.xml",
-    host: "https://ggmanolo.com"
+    host: "https://ggmanolo.com",
   }
 }

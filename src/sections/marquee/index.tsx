@@ -12,18 +12,18 @@ const Marquee = () => {
       id: "innovus-labs",
       Svg: InnovusLabsSvg,
       name: "Innovus Labs",
-      height: "28px"
+      height: "28px",
     },
     {
       id: "making-sense",
       Svg: MakingSenseSvg,
       name: "Making Sense",
-      height: "32px"
+      height: "32px",
     },
     { id: "ditto", Svg: DittoSvg, name: "Ditto", height: "32px" },
     { id: "basement", Svg: BasementSvg, name: "Basement", height: "22px" },
     { id: "globant", Svg: GlobantSvg, name: "Globant", height: "30px" },
-    { id: "epic-games", Svg: EpicGamesSvg, name: "Epic Games", height: "40px" }
+    { id: "epic-games", Svg: EpicGamesSvg, name: "Epic Games", height: "40px" },
   ]
 
   return (
@@ -32,22 +32,14 @@ const Marquee = () => {
         <div className={styles.marqueeContent}>
           {logos.map(({ id, Svg, name, height }) => (
             <div key={`${id}-1`} className={styles.marqueeItem}>
-              <Svg
-                className={styles.logo}
-                aria-label={name}
-                style={{ height }}
-              />
+              <Svg className={styles.logo} aria-label={name} style={{ height }} />
             </div>
           ))}
         </div>
         <div className={styles.marqueeContent} aria-hidden="true">
           {logos.map(({ id, Svg, name, height }) => (
             <div key={`${id}-2`} className={styles.marqueeItem}>
-              <Svg
-                className={styles.logo}
-                aria-label={name}
-                style={{ height }}
-              />
+              <Svg className={styles.logo} aria-label={name} style={{ height }} />
             </div>
           ))}
         </div>

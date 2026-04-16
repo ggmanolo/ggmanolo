@@ -1,4 +1,4 @@
-@import "@/styles/helpers.scss";
+@use "@/styles/helpers" as *;
 
 .header {
   width: 100vw;

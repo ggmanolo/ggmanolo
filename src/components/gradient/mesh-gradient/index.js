@@ -1,30 +1,22 @@
 "use client"
 import { useEffect } from "react"
-import PropTypes from "prop-types"
 import clsx from "clsx"
 import s from "./mesh-gradient.module.scss"
 
-const MeshGradient = ({ className }) => {
+const MeshGradient = ({ className = undefined }) => {
   useEffect(() => {
     // @ts-expect-error - Dynamic import of vanilla JS gradient library
-    import("./raw").then(({ gradient }) =>
-      gradient.initGradient("#gradient-canvas")
-    )
+    import("./raw").then(({ gradient }) => gradient.initGradient("#gradient-canvas"))
   }, [])
 
   return (
     <canvas
       id="gradient-canvas"
       className={clsx(className, s.base, s.canvas)}
-      style={null}
       data-js-darken-top
       data-transition-in
     />
   )
-}
-
-MeshGradient.propTypes = {
-  className: PropTypes.string
 }
 
 export default MeshGradient

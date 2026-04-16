@@ -13,8 +13,8 @@ const Projects = () => {
     align: "start",
     dragFree: true,
     breakpoints: {
-      "(max-width: 767px)": { dragFree: false }
-    }
+      "(max-width: 767px)": { dragFree: false },
+    },
   })
   const years = calculateYearsSince(CAREER_START_DATE)
 
@@ -28,8 +28,8 @@ const Projects = () => {
         </p>
         <article className={s.description}>
           <p>
-            I build high-quality product experiences by combining solid frontend
-            engineering with strong visual instinct.
+            I build high-quality product experiences by combining solid frontend engineering with
+            strong visual instinct.
           </p>
           <p>
             <CtaLink href="#about" name="Learn more">
@@ -41,19 +41,11 @@ const Projects = () => {
       <div className={s.projects} ref={emblaRef}>
         <Wrapper className={s.projects__container}>
           {PROJECTS_DATA.map((project) => (
-            <Project
-              key={`project-${project.id}`}
-              data={project}
-              className={s.projects__slide}
-            />
+            <Project key={`project-${project.id}`} data={project} className={s.projects__slide} />
           ))}
         </Wrapper>
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 600 600"
-        className={s.svg}
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" className={s.svg}>
         <g opacity={0.15}>
           <circle cx={300} cy={300} r={200} fill="var(--pink)" />
         </g>

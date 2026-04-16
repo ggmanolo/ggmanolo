@@ -24,10 +24,7 @@ const EmailCta = ({ className }: EmailCtaProps) => {
 
   return (
     <div className={clsx(s.cta, className)}>
-      <CtaLink
-        href="mailto:hellothere@ggmanolo.com"
-        name="hellothere@ggmanolo.com"
-      >
+      <CtaLink href="mailto:hellothere@ggmanolo.com" name="hellothere@ggmanolo.com">
         hellothere@ggmanolo.com
       </CtaLink>
       <button

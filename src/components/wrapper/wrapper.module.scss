@@ -1,4 +1,4 @@
-@import '@/styles/helpers.scss';
+@use "@/styles/helpers" as *;
 
 .section {
   width: var(--width);

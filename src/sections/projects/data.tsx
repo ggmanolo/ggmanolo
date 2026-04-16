@@ -12,7 +12,7 @@ export const PROJECTS_DATA: ProjectDataType[] = [
     position: "Senior Frontend Engineer",
     description:
       "Led the migration of legacy Angular tools to modern React and Next.js stacks, improving maintainability and UI performance. Owned UI consistency across internal tools and introduced scalable frontend patterns for long-term developer productivity.",
-    tech: ["React", "Next.js", "TypeScript", "Grafana", "Migration"]
+    tech: ["React", "Next.js", "TypeScript", "Grafana", "Migration"],
   },
 
   {
@@ -26,7 +26,7 @@ export const PROJECTS_DATA: ProjectDataType[] = [
     position: "Staff / Lead Frontend Engineer",
     description:
       "Led the frontend discipline and built the company's main product from scratch to production, defining architecture, implementation standards, and performance guidelines. Acted as the primary technical decision maker on the frontend, aligning product goals with scalable UI systems and consistent visual quality across the platform.",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind", "Architecture "]
+    tech: ["React", "Next.js", "TypeScript", "Tailwind", "Architecture "],
   },
 
   {
@@ -40,7 +40,7 @@ export const PROJECTS_DATA: ProjectDataType[] = [
     position: "Lead Marketing Web Developer",
     description:
       "Designed and built the marketing site end-to-end, collaborating closely with design. Defined frontend structure, performance strategy, SEO considerations, and visual quality standards while executing pixel-perfect UI aligned with product goals.",
-    tech: ["Next.js", "TypeScript", "GraphQL", "DatoCMS", "SEO"]
+    tech: ["Next.js", "TypeScript", "GraphQL", "DatoCMS", "SEO"],
   },
 
   {
@@ -54,7 +54,7 @@ export const PROJECTS_DATA: ProjectDataType[] = [
     position: "Frontend Developer",
     description:
       "Contributed to a range of high-visibility web experiences, implementing interactive and responsive interfaces across Next.js and React projects. Focused on translating design intent into production-ready UI with attention to performance, visual polish, and frontend consistency.",
-    tech: ["React", "Next.js", "TypeScript", "GSAP", "Stripe", "Shopify"]
+    tech: ["React", "Next.js", "TypeScript", "GSAP", "Stripe", "Shopify"],
   },
 
   {
@@ -68,7 +68,7 @@ export const PROJECTS_DATA: ProjectDataType[] = [
     position: "UX/Frontend Developer",
     description:
       "Worked closely with design and marketing teams to implement user-centered web interfaces. Aligned frontend execution with UX concepts, integrating CMS systems and ensuring consistency across screens and devices.",
-    tech: ["React", "JavaScript", "WordPress", "UX Implementation"]
+    tech: ["React", "JavaScript", "WordPress", "UX Implementation"],
   },
 
   {
@@ -81,6 +81,6 @@ export const PROJECTS_DATA: ProjectDataType[] = [
     position: "Frontend Developer",
     description:
       "Built reusable UI components and supported enterprise web applications, establishing a solid foundation in scalable frontend patterns and team workflows. Contributed to both legacy and modern stacks, reinforcing collaborative development practices.",
-    tech: ["jQuery", "AngularJS"]
-  }
+    tech: ["jQuery", "AngularJS"],
+  },
 ]
