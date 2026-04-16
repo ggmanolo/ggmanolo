@@ -2,12 +2,11 @@
 import clsx from "clsx"
 import Link from "next/link"
 import {
-  forwardRef,
   ReactNode,
+  Ref,
   useCallback,
   MouseEventHandler,
-  useEffect,
-  MouseEvent
+  useEffect
 } from "react"
 import { useHasHover } from "@/hooks/use-media-query"
 import { useHyperspeedTrigger } from "@/store"
@@ -21,95 +20,93 @@ type CtaLinkProps = {
   isActive?: boolean
   variant?: "link" | "button"
   target?: "_blank" | "_self" | "_parent" | "_top"
+  ref?: Ref<HTMLAnchorElement>
 }
 
-const CtaLink = forwardRef<HTMLAnchorElement, CtaLinkProps>(
-  function CtaLink(props, ref) {
-    const {
-      className,
-      href,
-      name,
-      children,
-      isActive = false,
-      variant = "link",
-      target,
-      ...rest
-    } = props
-    const isInternalLink = href.startsWith("#") || href.startsWith("/")
-    const isButton = variant === "button"
-    const hasHover = useHasHover()
-    const { activate, deactivate } = useHyperspeedTrigger()
+function CtaLink(props: CtaLinkProps) {
+  const {
+    className,
+    href,
+    name,
+    children,
+    isActive = false,
+    variant = "link",
+    target,
+    ref,
+    ...rest
+  } = props
+  const isInternalLink = href.startsWith("#") || href.startsWith("/")
+  const isButton = variant === "button"
+  const hasHover = useHasHover()
+  const { activate, deactivate } = useHyperspeedTrigger()
 
-    const handleMouseMove = useCallback((e: MouseEvent<Document>) => {
-      document.documentElement.style.setProperty("--x", e.clientX.toFixed(2))
-      document.documentElement.style.setProperty("--y", e.clientY.toFixed(2))
-    }, [])
+  const handleMouseMove = useCallback((e: PointerEvent) => {
+    document.documentElement.style.setProperty("--x", e.clientX.toFixed(2))
+    document.documentElement.style.setProperty("--y", e.clientY.toFixed(2))
+  }, [])
 
-    useEffect(() => {
-      if (isButton) {
-        document.addEventListener("pointermove", handleMouseMove as any)
-        return () => {
-          document.removeEventListener("pointermove", handleMouseMove as any)
-        }
+  useEffect(() => {
+    if (isButton) {
+      document.addEventListener("pointermove", handleMouseMove)
+      return () => {
+        document.removeEventListener("pointermove", handleMouseMove)
       }
-    }, [isButton, handleMouseMove])
+    }
+  }, [isButton, handleMouseMove])
 
-    const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
-      (e) => {
-        // Deactivate hyperspeed when clicking to prevent it staying active after navigation
-        if (isButton && hasHover) {
-          deactivate()
-        }
-
-        if (href.startsWith("#")) {
-          e.preventDefault()
-          const destination = document.querySelector(href)
-          if (destination) {
-            destination.scrollIntoView({
-              behavior: "smooth"
-            })
-          }
-        }
-      },
-      [href, isButton, hasHover, deactivate]
-    )
-
-    const handleMouseEnter = useCallback(() => {
-      if (isButton && hasHover) {
-        activate()
-      }
-    }, [isButton, hasHover, activate])
-
-    const handleMouseLeave = useCallback(() => {
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
+    (e) => {
+      // Deactivate hyperspeed when clicking to prevent it staying active after navigation
       if (isButton && hasHover) {
         deactivate()
       }
-    }, [isButton, hasHover, deactivate])
 
-    return (
-      <Link
-        aria-label={name}
-        data-content={name}
-        className={clsx(
-          className,
-          s.link,
-          isActive && !isButton && s.active,
-          isButton && s.button
-        )}
-        href={href}
-        ref={ref}
-        target={target}
-        onClick={isInternalLink ? handleClick : undefined}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        {...rest}
-      >
-        {children}
-      </Link>
-    )
-  }
-)
+      if (href.startsWith("#")) {
+        e.preventDefault()
+        const destination = document.querySelector(href)
+        if (destination) {
+          destination.scrollIntoView({
+            behavior: "smooth"
+          })
+        }
+      }
+    },
+    [href, isButton, hasHover, deactivate]
+  )
 
-CtaLink.displayName = "CtaLink"
+  const handleMouseEnter = useCallback(() => {
+    if (isButton && hasHover) {
+      activate()
+    }
+  }, [isButton, hasHover, activate])
+
+  const handleMouseLeave = useCallback(() => {
+    if (isButton && hasHover) {
+      deactivate()
+    }
+  }, [isButton, hasHover, deactivate])
+
+  return (
+    <Link
+      aria-label={name}
+      data-content={name}
+      className={clsx(
+        className,
+        s.link,
+        isActive && !isButton && s.active,
+        isButton && s.button
+      )}
+      href={href}
+      ref={ref}
+      target={target}
+      onClick={isInternalLink ? handleClick : undefined}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      {...rest}
+    >
+      {children}
+    </Link>
+  )
+}
 
 export default CtaLink
