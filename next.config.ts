@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next"
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   // Performance optimizations
@@ -12,20 +13,6 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-
-  // Bundle analyzer (uncomment when needed)
-  // webpack: (config, { dev, isServer }) => {
-  //   if (!dev && !isServer) {
-  //     const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-  //     config.plugins.push(
-  //       new BundleAnalyzerPlugin({
-  //         analyzerMode: 'static',
-  //         openAnalyzer: false,
-  //       })
-  //     );
-  //   }
-  //   return config;
-  // },
 
   // Security headers
   async headers() {
@@ -79,4 +66,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+export default nextConfig
