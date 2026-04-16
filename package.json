@@ -21,7 +21,6 @@
     "next": "^15.5.10",
     "react": "^19",
     "react-dom": "^19",
-    "react-next-tilt": "^0.4.3",
     "sass": "^1.97.3",
     "zustand": "^5.0.11"
   },
