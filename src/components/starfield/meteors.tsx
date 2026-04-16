@@ -30,7 +30,7 @@ const Meteors = () => {
           </div>
         </div>
       )),
-    []
+    [],
   )
 
   useEffect(() => {
@@ -79,7 +79,7 @@ const Meteors = () => {
   return (
     <div
       className={clsx(s.meteorShower, {
-        [s.hide]: hyperspeed
+        [s.hide]: hyperspeed,
       })}
     >
       {meteorElements}

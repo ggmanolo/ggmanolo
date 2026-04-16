@@ -9,13 +9,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
     "clsx": "^1.2.1",
     "embla-carousel-react": "^8.6.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9",
     "eslint-config-next": "^15.5.10",
     "gsap": "^3.14.2",
     "next": "^15.5.10",
@@ -28,12 +30,8 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.55.0",
-    "@typescript-eslint/parser": "^8.55.0",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-config-prettier": "^10.1.0",
+    "prettier": "^3.5.0",
     "typescript": "^5.9.3"
   },
   "resolutions": {

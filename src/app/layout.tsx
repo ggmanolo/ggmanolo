@@ -9,18 +9,18 @@ const roboto = Roboto({
   weight: ["400", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  display: "swap"
+  display: "swap",
 })
 
 const yellowtail = Yellowtail({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-yellowtail"
+  variable: "--font-yellowtail",
 })
 
 const orbitron = Orbitron({
   subsets: ["latin"],
-  variable: "--font-orbitron"
+  variable: "--font-orbitron",
 })
 
 type RootLayoutProps = {
@@ -33,7 +33,7 @@ export const metadata = {
     "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
   metadataBase: new URL("https://ggmanolo.com"),
   alternates: {
-    canonical: "https://ggmanolo.com"
+    canonical: "https://ggmanolo.com",
   },
   keywords: [
     "Senior Frontend Engineer",
@@ -46,7 +46,7 @@ export const metadata = {
     "Next.js Developer",
     "UI/UX Designer",
     "Manuel Garcia Genta",
-    "GGManolo"
+    "GGManolo",
   ],
   authors: [{ name: "Manuel Garcia Genta", url: "https://ggmanolo.com" }],
   creator: "Manuel Garcia Genta",
@@ -59,8 +59,8 @@ export const metadata = {
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet": -1
-    }
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
@@ -69,30 +69,30 @@ export const metadata = {
     title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
     description:
       "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
-    siteName: "GGManolo Portfolio"
+    siteName: "GGManolo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
     description:
       "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
-    creator: "@ggmanolo"
+    creator: "@ggmanolo",
   },
   icons: {
     icon: [
       { url: "/img/favicon.svg", type: "image/svg+xml" },
-      { url: "/img/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+      { url: "/img/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    apple: "/img/apple-touch-icon.png"
+    apple: "/img/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest"
+  manifest: "/site.webmanifest",
 }
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#d100b1"
+  themeColor: "#d100b1",
 }
 
 const RootLayout = ({ children }: RootLayoutProps) => {
@@ -108,16 +108,13 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       "@type": "ImageObject",
       url: "https://ggmanolo.com/img/avatar.png",
       width: "400",
-      height: "400"
+      height: "400",
     },
-    sameAs: [
-      "https://www.linkedin.com/in/ggmanolo/",
-      "https://github.com/ggmanolo"
-    ],
+    sameAs: ["https://www.linkedin.com/in/ggmanolo/", "https://github.com/ggmanolo"],
     jobTitle: "Senior Frontend Engineer",
     worksFor: {
       "@type": "Organization",
-      name: "Independent / Contract"
+      name: "Independent / Contract",
     },
     knowsAbout: [
       "React",
@@ -128,24 +125,21 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       "Design Systems",
       "Product Development",
       "Performance Optimization",
-      "Web Applications"
+      "Web Applications",
     ],
     email: "hellothere@ggmanolo.com",
     address: {
       "@type": "PostalAddress",
-      addressCountry: "AR"
+      addressCountry: "AR",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://ggmanolo.com"
-    }
+      "@id": "https://ggmanolo.com",
+    },
   }
 
   return (
-    <html
-      lang="en"
-      className={clsx(roboto.className, yellowtail.variable, orbitron.variable)}
-    >
+    <html lang="en" className={clsx(roboto.className, yellowtail.variable, orbitron.variable)}>
       <body>
         {children}
         <Script

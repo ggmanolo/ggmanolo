@@ -26,12 +26,12 @@ const Hero = () => {
               ?.fromTo(
                 triangleRef.current,
                 { opacity: 0 },
-                { opacity: 1, duration: 0.5, delay: 0.5 }
+                { opacity: 1, duration: 0.5, delay: 0.5 },
               )
               .to(triangleRef.current, {
                 strokeDashoffset: 0,
                 duration: 0.85,
-                ease: "slowmo.inout"
+                ease: "slowmo.inout",
               })
               .fromTo(
                 titleRef.current,
@@ -41,9 +41,9 @@ const Hero = () => {
                   scale: 1,
                   duration: 0.75,
                   y: 0,
-                  ease: "slowmo.inout"
+                  ease: "slowmo.inout",
                 },
-                ">0.3"
+                ">0.3",
               )
               .fromTo(
                 subTitleRef.current,
@@ -53,9 +53,9 @@ const Hero = () => {
                   y: 0,
                   duration: 0.85,
                   ease: "sine.inout",
-                  rotate: "-8deg"
+                  rotate: "-8deg",
                 },
-                ">0.2"
+                ">0.2",
               )
 
             observer.disconnect()
@@ -63,7 +63,7 @@ const Hero = () => {
           }
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     )
 
     if (heroSection) {

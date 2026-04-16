@@ -7,7 +7,7 @@ type StoreState = {
 
 export const useStore = create<StoreState>((set) => ({
   hyperspeed: false,
-  setHyperspeed: (hyperspeed: boolean) => set({ hyperspeed })
+  setHyperspeed: (hyperspeed: boolean) => set({ hyperspeed }),
 }))
 
 // Custom hook for components that need to trigger hyperspeed
@@ -16,6 +16,6 @@ export const useHyperspeedTrigger = () => {
 
   return {
     activate: () => setHyperspeed(true),
-    deactivate: () => setHyperspeed(false)
+    deactivate: () => setHyperspeed(false),
   }
 }

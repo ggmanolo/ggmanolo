@@ -1,13 +1,7 @@
 "use client"
 import clsx from "clsx"
 import Link from "next/link"
-import {
-  ReactNode,
-  Ref,
-  useCallback,
-  MouseEventHandler,
-  useEffect
-} from "react"
+import { ReactNode, Ref, useCallback, MouseEventHandler, useEffect } from "react"
 import { useHasHover } from "@/hooks/use-media-query"
 import { useHyperspeedTrigger } from "@/store"
 import s from "./cta.module.scss"
@@ -66,12 +60,12 @@ function CtaLink(props: CtaLinkProps) {
         const destination = document.querySelector(href)
         if (destination) {
           destination.scrollIntoView({
-            behavior: "smooth"
+            behavior: "smooth",
           })
         }
       }
     },
-    [href, isButton, hasHover, deactivate]
+    [href, isButton, hasHover, deactivate],
   )
 
   const handleMouseEnter = useCallback(() => {
@@ -90,12 +84,7 @@ function CtaLink(props: CtaLinkProps) {
     <Link
       aria-label={name}
       data-content={name}
-      className={clsx(
-        className,
-        s.link,
-        isActive && !isButton && s.active,
-        isButton && s.button
-      )}
+      className={clsx(className, s.link, isActive && !isButton && s.active, isButton && s.button)}
       href={href}
       ref={ref}
       target={target}

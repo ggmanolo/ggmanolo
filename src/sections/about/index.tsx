@@ -20,20 +20,19 @@ const About = () => {
         </div>
         <article className={s.description}>
           <p>
-            I'm a Senior Frontend Engineer with <strong>+{years} years</strong>{" "}
-            of experience building production-ready web applications.
+            I'm a Senior Frontend Engineer with <strong>+{years} years</strong> of experience
+            building production-ready web applications.
           </p>
           <p>
-            My strength lies in translating design into scalable, performant
-            interfaces while maintaining a strong sense of visual quality and
-            product coherence. I enjoy working at the intersection of
-            engineering and design, ensuring that what users see and feel is as
+            My strength lies in translating design into scalable, performant interfaces while
+            maintaining a strong sense of visual quality and product coherence. I enjoy working at
+            the intersection of engineering and design, ensuring that what users see and feel is as
             intentional as the code behind it.
           </p>
           <p>
-            I've led frontend initiatives from scratch, defined architecture for
-            marketing and product surfaces, and collaborated closely with design
-            teams in fully remote environments.
+            I've led frontend initiatives from scratch, defined architecture for marketing and
+            product surfaces, and collaborated closely with design teams in fully remote
+            environments.
           </p>
         </article>
         <div className={s.actions}>

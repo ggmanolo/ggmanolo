@@ -74,8 +74,7 @@
     background-size: calc(100% + (2 * $border)) calc(100% + (2 * $border));
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    mask:
-      linear-gradient(transparent, transparent), linear-gradient(white, white);
+    mask: linear-gradient(transparent, transparent), linear-gradient(white, white);
     mask-clip: padding-box, border-box;
     mask-composite: intersect;
     z-index: -1;
@@ -128,16 +127,9 @@
   @include mobile {
     background:
       linear-gradient(var(--dark), var(--dark)) padding-box,
-      radial-gradient(ellipse 80% 200% at 50% 0%, #d950c0 0%, transparent 50%)
-        border-box,
+      radial-gradient(ellipse 80% 200% at 50% 0%, #d950c0 0%, transparent 50%) border-box,
       /* white gradient — same as --separator */
-        linear-gradient(
-          90deg,
-          var(--white-2) 0%,
-          transparent 50%,
-          var(--white-2) 100%
-        )
-        border-box;
+        linear-gradient(90deg, var(--white-2) 0%, transparent 50%, var(--white-2) 100%) border-box;
     border: 1px solid transparent;
 
     &::before,
