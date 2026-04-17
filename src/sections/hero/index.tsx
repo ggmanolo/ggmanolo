@@ -18,6 +18,21 @@ const Hero = () => {
     tl.current = gsap.timeline()
     const heroSection = containerRef.current
 
+    // neon color states — mimic the CodePen technique: swap color+shadow, never touch opacity
+    const unlitColor = "#3d0a30"
+    const litColor = "#d100b1"
+    // unlit tube: very faint outline-like shadow, simulates the glass tube shape
+    const unlitShadow =
+      "0 0 1px rgba(180, 20, 140, 0.25), 0 0 3px rgba(180, 20, 140, 0.12)"
+    // flash bursts (flashes 1 & 2) — instant, full power
+    const flashShadow =
+      "0 0 2px #ff00d9, 0 -1px 5px rgba(255,255,255,0.95), 0 1px 3px rgba(0,0,0,0.5), 0 0 30px #d100b1, 0 0 70px rgba(209,0,177,0.95)"
+    // seed shadow for the "catches" transition — minimal, glow starts from here
+    const ignitionShadow =
+      "0 0 1px rgba(209,0,177,0.4), 0 -1px 2px rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.5), 0 0 4px rgba(209,0,177,0.3), 0 0 8px rgba(209,0,177,0.2)"
+    const normalShadow =
+      "0 0 1px #d100b1, 0 -1px 3px rgba(255,255,255,0.8), 0 1px 3px rgba(0,0,0,0.5), 0 0 15px #d100b1, 0 0 45px rgba(209,0,177,0.8)"
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -45,18 +60,37 @@ const Hero = () => {
                 },
                 ">0.3",
               )
-              .fromTo(
-                subTitleRef.current,
-                { autoAlpha: 0, y: -10, rotate: "-8deg" },
-                {
-                  autoAlpha: 1,
-                  y: 0,
-                  duration: 0.85,
-                  ease: "sine.inout",
-                  rotate: "-8deg",
+              // neon tube warm-up — unlit state: tube is visible but not ionized
+              .set(subTitleRef.current, { autoAlpha: 1, color: unlitColor, textShadow: unlitShadow, rotate: "-8deg" }, ">0.5")
+              // flash 1 — longer burst, fails (120ms ON)
+              .set(subTitleRef.current, { color: litColor, textShadow: flashShadow })
+              .to(subTitleRef.current, { duration: 0.12, ease: "none" })
+              .set(subTitleRef.current, { color: unlitColor, textShadow: unlitShadow })
+              // dark pause (300ms)
+              .to(subTitleRef.current, { duration: 0.3, ease: "none" })
+              // flash 2 — shorter burst, fails (70ms ON)
+              .set(subTitleRef.current, { color: litColor, textShadow: flashShadow })
+              .to(subTitleRef.current, { duration: 0.07, ease: "none" })
+              .set(subTitleRef.current, { color: unlitColor, textShadow: unlitShadow })
+              // dark pause (160ms)
+              .to(subTitleRef.current, { duration: 0.16, ease: "none" })
+              // flash 3a — stutter (50ms ON)
+              .set(subTitleRef.current, { color: litColor, textShadow: flashShadow })
+              .to(subTitleRef.current, { duration: 0.05, ease: "none" })
+              .set(subTitleRef.current, { color: unlitColor, textShadow: unlitShadow })
+              // micro pause (50ms) then catches — glow grows from seed to normal
+              .to(subTitleRef.current, { duration: 0.05, ease: "none" })
+              .set(subTitleRef.current, { color: litColor, textShadow: ignitionShadow })
+              .to(subTitleRef.current, {
+                textShadow: normalShadow,
+                duration: 0.6,
+                ease: "power2.out",
+                onComplete: () => {
+                  // hand off text-shadow control to CSS for the infinite pulse loop
+                  gsap.set(subTitleRef.current, { clearProps: "textShadow,color" })
+                  subTitleRef.current?.classList.add(s.subtitlePulsing)
                 },
-                ">0.2",
-              )
+              })
 
             observer.disconnect()
             break

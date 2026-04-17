@@ -79,6 +79,31 @@
   }
 }
 
+@keyframes neonPulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 1px #d100b1,
+      0 -1px 3px rgba(255, 255, 255, 0.8),
+      0 1px 3px rgba(0, 0, 0, 0.5),
+      0 0 15px #d100b1,
+      0 0 45px rgba(209, 0, 177, 0.8);
+  }
+
+  50% {
+    text-shadow:
+      0 0 2px #d100b1,
+      0 -1px 5px rgba(255, 255, 255, 0.95),
+      0 1px 3px rgba(0, 0, 0, 0.5),
+      0 0 24px #d100b1,
+      0 0 68px rgba(209, 0, 177, 0.95);
+  }
+}
+
+.subtitlePulsing {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
 .triangle {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
