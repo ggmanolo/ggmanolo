@@ -22,6 +22,7 @@
 
 .title {
   position: absolute;
+  z-index: 2;
   background: linear-gradient(
     to bottom,
     var(--blue),
@@ -54,6 +55,7 @@
 
 .subtitle {
   position: absolute;
+  z-index: 2;
   top: 80px;
   width: 100%;
   color: var(--pink);
@@ -65,6 +67,7 @@
   text-align: center;
   text-decoration: underline;
   text-shadow: var(--glow);
+  transform: rotate(-8deg);
   will-change: transform;
 
   @include tablet {
@@ -79,9 +82,50 @@
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes neonPulse {
+    0%,
+    100% {
+      text-shadow:
+        0 0 1px #d100b1,
+        0 -1px 3px rgba(255, 255, 255, 0.85),
+        0 1px 3px rgba(0, 0, 0, 0.5),
+        0 0 20px #d100b1,
+        0 0 52px rgba(209, 0, 177, 0.85);
+    }
+
+    50% {
+      text-shadow:
+        0 0 2px #d100b1,
+        0 -1px 4px rgba(255, 255, 255, 0.92),
+        0 1px 3px rgba(0, 0, 0, 0.5),
+        0 0 26px #d100b1,
+        0 0 60px rgba(209, 0, 177, 0.92);
+    }
+  }
+
+  .subtitlePulsing {
+    animation: neonPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes triangleGlow {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 6px rgba(54, 226, 248, 0.55));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 12px rgba(54, 226, 248, 0.8));
+    }
+  }
+
+  .trianglePulsing {
+    will-change: filter;
+    animation: triangleGlow 4s ease-in-out infinite;
+  }
+}
+
 .triangle {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
   opacity: 0;
 
   @include mobile {
