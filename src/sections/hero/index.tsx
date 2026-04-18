@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { useIsMobile } from "@/hooks/use-media-query"
 import Gradient from "@/components/gradient"
@@ -36,9 +36,23 @@ const Hero = () => {
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+            if (prefersReducedMotion) {
+              gsap.set(triangleRef.current, { opacity: 1, fillOpacity: 1, strokeOpacity: 1, clearProps: "filter" })
+              triangleRef.current?.classList.add(s.trianglePulsing)
+              gsap.set(titleRef.current, { autoAlpha: 1 })
+              gsap.set(subTitleRef.current, { autoAlpha: 1 })
+              subTitleRef.current?.classList.add(s.subtitlePulsing)
+              observer.disconnect()
+              return
+            }
+
+            const dropY = -(window.innerHeight * 0.35)
+
             tl.current
               // triangle drops from above — invisible, falls hard
-              ?.set(triangleRef.current, { opacity: 1, fillOpacity: 0, strokeOpacity: 0, filter: "none", y: -280 }, "+=0.4")
+              ?.set(triangleRef.current, { opacity: 1, fillOpacity: 0, strokeOpacity: 0, filter: "none", y: dropY }, "+=0.4")
               .to(triangleRef.current, {
                 y: 0,
                 fillOpacity: 1,
@@ -114,7 +128,7 @@ const Hero = () => {
           }
         }
       },
-      { threshold: 0.5 },
+      { threshold: 0.25 },
     )
 
     if (heroSection) {
@@ -124,6 +138,8 @@ const Hero = () => {
     return () => {
       observer.disconnect()
       tl.current?.kill()
+      triangleRef.current?.classList.remove(s.trianglePulsing)
+      subTitleRef.current?.classList.remove(s.subtitlePulsing)
     }
   }, [])
 
