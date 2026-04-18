@@ -65,7 +65,7 @@ const Hero = () => {
                 filter: "drop-shadow(0 0 20px #36e2f8) drop-shadow(0 0 60px rgba(54,226,248,0.95))",
               })
               .to(triangleRef.current, {
-                filter: "drop-shadow(0 0 4px #36e2f8) drop-shadow(0 0 14px rgba(54,226,248,0.4))",
+                filter: "drop-shadow(0 0 6px rgba(54,226,248,0.55))",
                 duration: 0.6,
                 ease: "expo.out",
                 onComplete: () => {
