@@ -22,69 +22,86 @@ const Hero = () => {
     const unlitColor = "#3d0a30"
     const litColor = "#d100b1"
     // unlit tube: very faint outline-like shadow, simulates the glass tube shape
-    const unlitShadow =
-      "0 0 1px rgba(180, 20, 140, 0.25), 0 0 3px rgba(180, 20, 140, 0.12)"
+    const unlitShadow = "0 0 1px rgba(180, 20, 140, 0.25), 0 0 3px rgba(180, 20, 140, 0.12)"
     // flash bursts (flashes 1 & 2) — instant, full power
     const flashShadow =
       "0 0 2px #ff00d9, 0 -1px 5px rgba(255,255,255,0.95), 0 1px 3px rgba(0,0,0,0.5), 0 0 30px #d100b1, 0 0 70px rgba(209,0,177,0.95)"
     // seed shadow for the "catches" transition — minimal, glow starts from here
     const ignitionShadow =
-      "0 0 1px rgba(209,0,177,0.4), 0 -1px 2px rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.5), 0 0 4px rgba(209,0,177,0.3), 0 0 8px rgba(209,0,177,0.2)"
+      "0 0 1px rgba(209,0,177,0.8), 0 -1px 2px rgba(255,255,255,0.55), 0 1px 3px rgba(0,0,0,0.5), 0 0 12px rgba(209,0,177,0.75), 0 0 26px rgba(209,0,177,0.55)"
     const normalShadow =
-      "0 0 1px #d100b1, 0 -1px 3px rgba(255,255,255,0.8), 0 1px 3px rgba(0,0,0,0.5), 0 0 15px #d100b1, 0 0 45px rgba(209,0,177,0.8)"
+      "0 0 1px #d100b1, 0 -1px 3px rgba(255,255,255,0.85), 0 1px 3px rgba(0,0,0,0.5), 0 0 20px #d100b1, 0 0 52px rgba(209,0,177,0.85)"
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             tl.current
-              ?.fromTo(
-                triangleRef.current,
-                { opacity: 0 },
-                { opacity: 1, duration: 0.5, delay: 0.5 },
-              )
+              // triangle drops from above — invisible, falls hard
+              ?.set(triangleRef.current, { opacity: 1, fillOpacity: 0, strokeOpacity: 0, filter: "none", y: -280 }, "+=0.4")
               .to(triangleRef.current, {
-                strokeDashoffset: 0,
-                duration: 0.85,
-                ease: "slowmo.inout",
+                y: 0,
+                fillOpacity: 1,
+                duration: 0.5,
+                ease: "power4.in",
               })
-              .fromTo(
-                titleRef.current,
-                { autoAlpha: 0, scale: 1.2, y: -10 },
-                {
-                  autoAlpha: 1,
-                  scale: 1,
-                  duration: 0.75,
-                  y: 0,
-                  ease: "slowmo.inout",
+              // impact — glow burst fires from the force
+              .set(triangleRef.current, {
+                strokeOpacity: 1,
+                filter: "drop-shadow(0 0 20px #36e2f8) drop-shadow(0 0 60px rgba(54,226,248,0.95))",
+              })
+              .to(triangleRef.current, {
+                filter: "drop-shadow(0 0 4px #36e2f8) drop-shadow(0 0 14px rgba(54,226,248,0.4))",
+                duration: 0.6,
+                ease: "expo.out",
+                onComplete: () => {
+                  gsap.set(triangleRef.current, { clearProps: "filter" })
+                  triangleRef.current?.classList.add(s.trianglePulsing)
                 },
-                ">0.3",
+              })
+              // stamp — GGMANOLO snaps in with chromatic aberration that converges
+              // breathing room: 400ms gap lets the triangle glow settle before the title hits
+              .set(titleRef.current, {
+                autoAlpha: 1, scale: 0.96, y: 0,
+                filter: "drop-shadow(6px 0 0 rgba(255,0,80,0.9)) drop-shadow(-6px 0 0 rgba(0,220,255,0.9))",
+                textShadow: "0 0 30px rgba(255,255,255,0.85)",
+              }, ">0.4")
+              .to(titleRef.current, {
+                scale: 1,
+                filter: "drop-shadow(0px 0 0 rgba(255,0,80,0)) drop-shadow(0px 0 0 rgba(0,220,255,0))",
+                textShadow: "0 0 0px rgba(255,255,255,0)",
+                duration: 0.45,
+                ease: "power2.out",
+              })
+              // neon tube — enters already lit, then flickers unstably before settling
+              // breathing room: 600ms gap after title stamp
+              .set(
+                subTitleRef.current,
+                { autoAlpha: 1, color: litColor, textShadow: normalShadow, rotate: "-8deg" },
+                ">0.6",
               )
-              // neon tube warm-up — unlit state: tube is visible but not ionized
-              .set(subTitleRef.current, { autoAlpha: 1, color: unlitColor, textShadow: unlitShadow, rotate: "-8deg" }, ">0.5")
-              // flash 1 — longer burst, fails (120ms ON)
-              .set(subTitleRef.current, { color: litColor, textShadow: flashShadow })
-              .to(subTitleRef.current, { duration: 0.12, ease: "none" })
+              // on for a moment (250ms) — eye registers it's lit
+              .to(subTitleRef.current, { duration: 0.25, ease: "none" })
+              // flicker 1 — LENTO: drops dark (320ms OFF) — unstable, losing charge
               .set(subTitleRef.current, { color: unlitColor, textShadow: unlitShadow })
-              // dark pause (300ms)
-              .to(subTitleRef.current, { duration: 0.3, ease: "none" })
-              // flash 2 — shorter burst, fails (70ms ON)
+              .to(subTitleRef.current, { duration: 0.32, ease: "none" })
+              // back on — burst (130ms ON)
               .set(subTitleRef.current, { color: litColor, textShadow: flashShadow })
-              .to(subTitleRef.current, { duration: 0.07, ease: "none" })
+              .to(subTitleRef.current, { duration: 0.13, ease: "none" })
+              // flicker 2 — RAPIDO: quick dark (90ms OFF)
               .set(subTitleRef.current, { color: unlitColor, textShadow: unlitShadow })
-              // dark pause (160ms)
-              .to(subTitleRef.current, { duration: 0.16, ease: "none" })
-              // flash 3a — stutter (50ms ON)
+              .to(subTitleRef.current, { duration: 0.09, ease: "none" })
+              // flicker 3 — RAPIDO: micro burst (60ms ON)
               .set(subTitleRef.current, { color: litColor, textShadow: flashShadow })
-              .to(subTitleRef.current, { duration: 0.05, ease: "none" })
+              .to(subTitleRef.current, { duration: 0.06, ease: "none" })
+              // micro dark (50ms) then catches — glow grows from seed to stable
               .set(subTitleRef.current, { color: unlitColor, textShadow: unlitShadow })
-              // micro pause (50ms) then catches — glow grows from seed to normal
               .to(subTitleRef.current, { duration: 0.05, ease: "none" })
               .set(subTitleRef.current, { color: litColor, textShadow: ignitionShadow })
               .to(subTitleRef.current, {
                 textShadow: normalShadow,
-                duration: 0.6,
-                ease: "power2.out",
+                duration: 0.8,
+                ease: "sine.inOut",
                 onComplete: () => {
                   // hand off text-shadow control to CSS for the infinite pulse loop
                   gsap.set(subTitleRef.current, { clearProps: "textShadow,color" })

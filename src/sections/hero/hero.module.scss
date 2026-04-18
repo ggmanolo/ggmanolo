@@ -22,6 +22,7 @@
 
 .title {
   position: absolute;
+  z-index: 2;
   background: linear-gradient(
     to bottom,
     var(--blue),
@@ -54,6 +55,7 @@
 
 .subtitle {
   position: absolute;
+  z-index: 2;
   top: 80px;
   width: 100%;
   color: var(--pink);
@@ -84,19 +86,19 @@
   100% {
     text-shadow:
       0 0 1px #d100b1,
-      0 -1px 3px rgba(255, 255, 255, 0.8),
+      0 -1px 3px rgba(255, 255, 255, 0.85),
       0 1px 3px rgba(0, 0, 0, 0.5),
-      0 0 15px #d100b1,
-      0 0 45px rgba(209, 0, 177, 0.8);
+      0 0 20px #d100b1,
+      0 0 52px rgba(209, 0, 177, 0.85);
   }
 
   50% {
     text-shadow:
       0 0 2px #d100b1,
-      0 -1px 5px rgba(255, 255, 255, 0.95),
+      0 -1px 4px rgba(255, 255, 255, 0.92),
       0 1px 3px rgba(0, 0, 0, 0.5),
-      0 0 24px #d100b1,
-      0 0 68px rgba(209, 0, 177, 0.95);
+      0 0 26px #d100b1,
+      0 0 60px rgba(209, 0, 177, 0.92);
   }
 }
 
@@ -104,9 +106,22 @@
   animation: neonPulse 3s ease-in-out infinite;
 }
 
+@keyframes triangleGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px #36e2f8) drop-shadow(0 0 14px rgba(54, 226, 248, 0.4));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 6px #36e2f8) drop-shadow(0 0 20px rgba(54, 226, 248, 0.58));
+  }
+}
+
+.trianglePulsing {
+  animation: triangleGlow 4s ease-in-out infinite;
+}
+
 .triangle {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
   opacity: 0;
 
   @include mobile {
