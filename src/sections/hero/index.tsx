@@ -91,7 +91,7 @@ const Hero = () => {
               // breathing room: 600ms gap after title stamp
               .set(
                 subTitleRef.current,
-                { autoAlpha: 1, color: litColor, textShadow: normalShadow, rotate: "-8deg" },
+                { autoAlpha: 1, color: litColor, textShadow: normalShadow },
                 ">0.6",
               )
               // on for a moment (250ms) — eye registers it's lit
