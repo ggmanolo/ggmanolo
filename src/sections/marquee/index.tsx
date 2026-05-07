@@ -13,34 +13,68 @@ const Marquee = () => {
       Svg: InnovusLabsSvg,
       name: "Innovus Labs",
       height: "28px",
+      url: "https://innovus.ai/",
     },
     {
       id: "making-sense",
       Svg: MakingSenseSvg,
       name: "Making Sense",
       height: "32px",
+      url: "https://makingsense.com/",
     },
-    { id: "ditto", Svg: DittoSvg, name: "Ditto", height: "32px" },
-    { id: "basement", Svg: BasementSvg, name: "Basement", height: "22px" },
-    { id: "globant", Svg: GlobantSvg, name: "Globant", height: "30px" },
-    { id: "epic-games", Svg: EpicGamesSvg, name: "Epic Games", height: "40px" },
+    { id: "ditto", Svg: DittoSvg, name: "Ditto", height: "32px", url: "https://ditto.com/" },
+    {
+      id: "basement",
+      Svg: BasementSvg,
+      name: "Basement",
+      height: "22px",
+      url: "https://basement.studio/",
+    },
+    {
+      id: "globant",
+      Svg: GlobantSvg,
+      name: "Globant",
+      height: "30px",
+      url: "https://globant.com/",
+    },
+    {
+      id: "epic-games",
+      Svg: EpicGamesSvg,
+      name: "Epic Games",
+      height: "40px",
+      url: "https://epicgames.com/",
+    },
   ]
 
   return (
     <section className={styles.marquee}>
       <div className={styles.marqueeTrack}>
         <div className={styles.marqueeContent}>
-          {logos.map(({ id, Svg, name, height }) => (
-            <div key={`${id}-1`} className={styles.marqueeItem}>
-              <Svg className={styles.logo} aria-label={name} style={{ height }} />
-            </div>
+          {logos.map(({ id, Svg, name, height, url }) => (
+            <a
+              key={`${id}-1`}
+              className={styles.marqueeItem}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={name}
+            >
+              <Svg className={styles.logo} aria-hidden="true" style={{ height }} />
+            </a>
           ))}
         </div>
         <div className={styles.marqueeContent} aria-hidden="true">
-          {logos.map(({ id, Svg, name, height }) => (
-            <div key={`${id}-2`} className={styles.marqueeItem}>
-              <Svg className={styles.logo} aria-label={name} style={{ height }} />
-            </div>
+          {logos.map(({ id, Svg, name, height, url }) => (
+            <a
+              key={`${id}-2`}
+              className={styles.marqueeItem}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={-1}
+            >
+              <Svg className={styles.logo} aria-hidden="true" style={{ height }} />
+            </a>
           ))}
         </div>
       </div>

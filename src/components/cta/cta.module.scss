@@ -129,7 +129,8 @@
       linear-gradient(var(--dark), var(--dark)) padding-box,
       radial-gradient(ellipse 80% 200% at 50% 0%, #d950c0 0%, transparent 50%) border-box,
       /* white gradient — same as --separator */
-        linear-gradient(90deg, var(--white-2) 0%, transparent 50%, var(--white-2) 100%) border-box;
+        linear-gradient(90deg, var(--white-2) 0%, transparent 50%, var(--white-2) 100%) border-box,
+      linear-gradient(to top, var(--white-1) 0%, transparent 40%) border-box;
     border: 1px solid transparent;
 
     &::before,
