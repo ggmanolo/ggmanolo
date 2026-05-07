@@ -64,7 +64,7 @@ const Marquee = () => {
           ))}
         </div>
         <div className={styles.marqueeContent} aria-hidden="true">
-          {logos.map(({ id, Svg, name, height, url }) => (
+          {logos.map(({ id, Svg, height, url }) => (
             <a
               key={`${id}-2`}
               className={styles.marqueeItem}
