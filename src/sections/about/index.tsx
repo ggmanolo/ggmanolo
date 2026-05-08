@@ -20,7 +20,7 @@ const About = () => {
         </div>
         <article className={s.description}>
           <p>
-            I'm a Senior Frontend Engineer with <strong>+{years} years</strong> of experience
+            I'm a Staff Frontend Engineer with <strong>+{years} years</strong> of experience
             building production-ready web applications.
           </p>
           <p>
@@ -32,7 +32,8 @@ const About = () => {
           <p>
             I've led frontend initiatives from scratch, defined architecture for marketing and
             product surfaces, and collaborated closely with design teams in fully remote
-            environments.
+            environments. I also design and implement AI-augmented engineering workflows with
+            project-scoped agent configurations to enforce coding standards at scale.
           </p>
         </article>
         <div className={s.actions}>
