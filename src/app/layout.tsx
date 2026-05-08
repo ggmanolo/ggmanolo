@@ -28,14 +28,15 @@ type RootLayoutProps = {
 }
 
 export const metadata = {
-  title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
+  title: "Manuel Garcia Genta | Staff Frontend Engineer",
   description:
-    "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
+    "Staff Frontend Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design, technical standards, and AI-augmented engineering workflows.",
   metadataBase: new URL("https://ggmanolo.com"),
   alternates: {
     canonical: "https://ggmanolo.com",
   },
   keywords: [
+    "Staff Frontend Engineer",
     "Senior Frontend Engineer",
     "UI Engineer",
     "Product Engineer",
@@ -44,7 +45,12 @@ export const metadata = {
     "Frontend Developer",
     "React Developer",
     "Next.js Developer",
-    "UI/UX Designer",
+    "TypeScript Developer",
+    "GSAP Animation",
+    "Tailwind CSS",
+    "Sanity CMS",
+    "Agentic AI Development",
+    "AI-augmented development",
     "Manuel Garcia Genta",
     "GGManolo",
   ],
@@ -102,7 +108,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     name: "Manuel Garcia Genta",
     alternateName: "GGManolo",
     description:
-      "Senior Frontend & UI Engineer specializing in React, Next.js and product-driven interfaces.",
+      "Staff Frontend Engineer specializing in React, Next.js and product-driven interfaces with AI-augmented engineering workflows.",
     url: "https://ggmanolo.com",
     image: {
       "@type": "ImageObject",
@@ -111,7 +117,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       height: "400",
     },
     sameAs: ["https://www.linkedin.com/in/ggmanolo/", "https://github.com/ggmanolo"],
-    jobTitle: "Senior Frontend Engineer",
+    jobTitle: "Staff Frontend Engineer",
     worksFor: {
       "@type": "Organization",
       name: "Independent / Contract",
