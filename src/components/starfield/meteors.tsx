@@ -20,7 +20,7 @@ const Meteors = () => {
       new Array(AMOUNT_OF_METEORS).fill(undefined).map((_, idx) => (
         <div
           className={clsx(s.meteor, s[`meteor${idx + 1}`])}
-          key={idx}
+          key={`meteor-${idx}`}
           ref={(el: HTMLDivElement | null) => {
             if (el) itemsRef.current[idx] = el
           }}

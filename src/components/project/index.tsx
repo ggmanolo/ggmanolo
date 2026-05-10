@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { useEffect, useState, useRef, useCallback } from "react"
+import { useEffect, useRef, useCallback } from "react"
 import clsx from "clsx"
 import s from "./project.module.scss"
 
@@ -19,12 +19,7 @@ type ProjectProps = {
   data: ProjectDataType
 }
 
-const isTouchDevice = () => {
-  return typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0)
-}
-
 const Project = ({ data, className }: ProjectProps) => {
-  const [isTouch, setIsTouch] = useState(false)
   // wrapperRef: flat event target — never transforms, so hit-area is always accurate.
   // tiltRef: the visual card that receives rotateX/Y. Keeping these separate is
   // the same pattern react-next-tilt uses (container + tilt element) to avoid
@@ -35,23 +30,18 @@ const Project = ({ data, className }: ProjectProps) => {
   const spotGlareRef = useRef<HTMLDivElement>(null)
   const rafRef = useRef<number | null>(null)
 
-  useEffect(() => {
-    setIsTouch(isTouchDevice())
-  }, [])
-
   const handleMouseEnter = useCallback(() => {
-    if (isTouch) return
     // Add will-change dynamically on mouseEnter (same as react-next-tilt's updateWillChange).
     // This promotes the element to its own GPU compositor layer right before animation starts,
     // making transforms faster. Removed on mouseLeave to free GPU memory.
     if (tiltRef.current) tiltRef.current.style.willChange = "transform"
     if (spotGlareRef.current) spotGlareRef.current.style.willChange = "transform, opacity"
     if (glareRef.current) glareRef.current.style.opacity = "0.1"
-  }, [isTouch])
+  }, [])
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (isTouch || !wrapperRef.current || !tiltRef.current) return
+      if (!wrapperRef.current || !tiltRef.current) return
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
 
       // getBoundingClientRect on wrapperRef is always reliable because
@@ -84,11 +74,10 @@ const Project = ({ data, className }: ProjectProps) => {
         }
       })
     },
-    [isTouch],
+    [],
   )
 
   const handleMouseLeave = useCallback(() => {
-    if (isTouch) return
     if (rafRef.current) cancelAnimationFrame(rafRef.current)
     const el = tiltRef.current
     if (el) {
@@ -106,12 +95,12 @@ const Project = ({ data, className }: ProjectProps) => {
       spotGlareRef.current.style.opacity = "0"
       spotGlareRef.current.style.willChange = ""
     }
-  }, [isTouch])
+  }, [])
 
   return (
     <div
       ref={wrapperRef}
-      className={clsx(s.wrapper, !isTouch && s.tiltEnabled)}
+      className={s.wrapper}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

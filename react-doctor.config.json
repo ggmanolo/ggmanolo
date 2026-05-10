@@ -1,0 +1,23 @@
+{
+  "ignore": {
+    "files": [".yarn/releases/**"],
+    "overrides": [
+      {
+        "files": ["src/app/layout.tsx"],
+        "rules": ["react/no-danger"]
+      },
+      {
+        "files": ["src/components/project/index.tsx"],
+        "rules": ["react-doctor/js-batch-dom-css"]
+      },
+      {
+        "files": ["src/components/cta/index.tsx"],
+        "rules": ["react-doctor/advanced-event-handler-refs"]
+      },
+      {
+        "files": ["src/app/page.tsx"],
+        "rules": ["react-doctor/missing-metadata"]
+      }
+    ]
+  }
+}
