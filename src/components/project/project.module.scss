@@ -8,7 +8,9 @@
   perspective: 1000px;
   transform-style: preserve-3d;
 
-  &.tiltEnabled {
+  // cursor only applies on pointer devices — touch devices don't trigger mouse events
+  // anyway, so this is purely cosmetic and avoids any JS-driven class toggling.
+  @media (hover: hover) and (pointer: fine) {
     cursor: grab;
 
     &:active {

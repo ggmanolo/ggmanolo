@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 
-export function useMediaQuery(query: string): boolean | undefined {
+function useMediaQuery(query: string): boolean | undefined {
   const [matches, setMatches] = useState<boolean | undefined>(undefined)
 
   useEffect(() => {
