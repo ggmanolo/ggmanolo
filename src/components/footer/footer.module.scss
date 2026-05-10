@@ -8,13 +8,14 @@
   border-top: 1px solid;
   border-image-slice: 1;
   border-image-source: var(--separator);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   margin: 0 auto;
 
   @include mobile {
     height: 64px;
     width: var(--width-mobile);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -24,8 +25,63 @@
       display: none;
     }
   }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  @include mobile {
+    justify-content: flex-start;
+    grid-column: 1;
+  }
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  transition: color 200ms ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    color: var(--white-6);
+
+    @include mobile {
+      color: var(--white);
+    }
+  }
 }
 
 .back {
   text-decoration: none;
+  justify-self: end;
+
+  @include mobile {
+    grid-column: 2;
+  }
+}
+
+.label {
+  @include mobile {
+    display: none;
+  }
+}
+
+.githubIcon {
+  display: none;
+
+  @include mobile {
+    display: flex;
+  }
 }
