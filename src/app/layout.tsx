@@ -72,16 +72,16 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://ggmanolo.com",
-    title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
+    title: "Manuel Garcia Genta | Staff Frontend Engineer",
     description:
-      "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
+      "Staff Frontend Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design, technical standards, and AI-augmented engineering workflows.",
     siteName: "GGManolo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manuel Garcia Genta | Senior Frontend & UI Engineer",
+    title: "Manuel Garcia Genta | Staff Frontend Engineer",
     description:
-      "Senior Frontend & UI Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design and technical standards.",
+      "Staff Frontend Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design, technical standards, and AI-augmented engineering workflows.",
     creator: "@ggmanolo",
   },
   icons: {
@@ -104,43 +104,42 @@ export const viewport = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": ["Person", "ProfilePage"],
-    name: "Manuel Garcia Genta",
-    alternateName: "GGManolo",
-    description:
-      "Staff Frontend Engineer specializing in React, Next.js and product-driven interfaces with AI-augmented engineering workflows.",
-    url: "https://ggmanolo.com",
-    image: {
-      "@type": "ImageObject",
-      url: "https://ggmanolo.com/img/avatar.png",
-      width: "400",
-      height: "400",
-    },
-    sameAs: ["https://www.linkedin.com/in/ggmanolo/", "https://github.com/ggmanolo"],
-    jobTitle: "Staff Frontend Engineer",
-    worksFor: {
-      "@type": "Organization",
-      name: "Independent / Contract",
-    },
-    knowsAbout: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Frontend Architecture",
-      "UI Engineering",
-      "Design Systems",
-      "Product Development",
-      "Performance Optimization",
-      "Web Applications",
-    ],
-    email: "hellothere@ggmanolo.com",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "AR",
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://ggmanolo.com",
+    "@type": "ProfilePage",
+    mainEntity: {
+      "@type": "Person",
+      name: "Manuel Garcia Genta",
+      alternateName: "GGManolo",
+      description:
+        "Staff Frontend Engineer specializing in React, Next.js and product-driven interfaces with AI-augmented engineering workflows.",
+      url: "https://ggmanolo.com",
+      image: {
+        "@type": "ImageObject",
+        url: "https://ggmanolo.com/img/avatar.png",
+        width: "400",
+        height: "400",
+      },
+      sameAs: ["https://www.linkedin.com/in/ggmanolo/", "https://github.com/ggmanolo"],
+      jobTitle: "Staff Frontend Engineer",
+      worksFor: {
+        "@type": "Organization",
+        name: "Independent / Contract",
+      },
+      knowsAbout: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Frontend Architecture",
+        "UI Engineering",
+        "Design Systems",
+        "Product Development",
+        "Performance Optimization",
+        "Web Applications",
+      ],
+      email: "hellothere@ggmanolo.com",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "AR",
+      },
     },
   }
 
