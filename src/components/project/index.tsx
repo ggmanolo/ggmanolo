@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { useEffect, useRef, useCallback } from "react"
+import { useRef, useCallback } from "react"
 import clsx from "clsx"
 import s from "./project.module.scss"
 
