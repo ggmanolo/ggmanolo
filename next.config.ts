@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
       "img-src 'self' data: https://vercel.live https://vercel.com",
       // Vercel Analytics + Vercel toolbar websocket/beacon
       "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://vercel.live wss://ws-us3.pusher.com",
+      // Vercel Live toolbar web worker (uses blob: URLs)
+      "worker-src blob:",
       // Vercel toolbar iframe
       "frame-src https://vercel.live",
       "frame-ancestors 'none'",
