@@ -27,8 +27,8 @@ const nextConfig: NextConfig = {
       "font-src 'self' https://vercel.live https://assets.vercel.com",
       // Local images + data URIs (inline SVGs) + Vercel toolbar assets
       "img-src 'self' data: https://vercel.live https://vercel.com",
-      // Vercel Analytics + Vercel toolbar websocket/beacon
-      "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://vercel.live wss://ws-us3.pusher.com",
+      // Vercel Analytics + Vercel toolbar websocket/beacon + CV download (Google Docs export)
+      "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://vercel.live wss://ws-us3.pusher.com https://docs.google.com",
       // Vercel toolbar iframe
       "frame-src https://vercel.live",
       "frame-ancestors 'none'",
