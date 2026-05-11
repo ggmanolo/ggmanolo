@@ -9,24 +9,13 @@ type DownloadCVProps = {
 const DownloadCV = ({ className }: DownloadCVProps) => {
   const cvUrl =
     "https://docs.google.com/document/d/1WrMCdQJS4F9K_cGo0ywcTvJpiNwFspbOLbD6tek1tUU/export?format=pdf"
-  const cvFilename = "Manuel_Garcia_Genta.pdf"
 
-  const handleDownloadClick = () => {
-    fetch(cvUrl)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const url = window.URL.createObjectURL(new Blob([blob]))
-        const link = document.createElement("a")
-        link.href = url
-        link.setAttribute("download", cvFilename)
-        document.body.appendChild(link)
-        link.click()
-        link.parentNode?.removeChild(link)
-      })
+  const handleOpenClick = () => {
+    window.open(cvUrl, "_blank", "noopener,noreferrer")
   }
 
   return (
-    <button onClick={handleDownloadClick} className={clsx(s.button, className)}>
+    <button onClick={handleOpenClick} className={clsx(s.button, className)}>
       <span>Download Resume</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <path
