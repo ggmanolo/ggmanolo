@@ -1,4 +1,3 @@
-"use client"
 import clsx from "clsx"
 import s from "./cv.module.scss"
 
@@ -6,16 +5,17 @@ type DownloadCVProps = {
   className?: string
 }
 
+const cvUrl =
+  "https://docs.google.com/document/d/1WrMCdQJS4F9K_cGo0ywcTvJpiNwFspbOLbD6tek1tUU/export?format=pdf"
+
 const DownloadCV = ({ className }: DownloadCVProps) => {
-  const cvUrl =
-    "https://docs.google.com/document/d/1WrMCdQJS4F9K_cGo0ywcTvJpiNwFspbOLbD6tek1tUU/export?format=pdf"
-
-  const handleOpenClick = () => {
-    window.open(cvUrl, "_blank", "noopener,noreferrer")
-  }
-
   return (
-    <button onClick={handleOpenClick} className={clsx(s.button, className)}>
+    <a
+      href={cvUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={clsx(s.button, className)}
+    >
       <span>Download Resume</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <path
@@ -26,7 +26,7 @@ const DownloadCV = ({ className }: DownloadCVProps) => {
           d="M14 10v2.667A1.334 1.334 0 0 1 12.667 14H3.333A1.334 1.334 0 0 1 2 12.667V10m2.667-3.333L8 10l3.333-3.333M8 10V2"
         />
       </svg>
-    </button>
+    </a>
   )
 }
 
