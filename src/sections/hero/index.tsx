@@ -17,6 +17,8 @@ const Hero = () => {
   useEffect(() => {
     tl.current = gsap.timeline()
     const heroSection = containerRef.current
+    const triangleEl = triangleRef.current
+    const subTitleEl = subTitleRef.current
 
     // neon color states — mimic the CodePen technique: swap color+shadow, never touch opacity
     const unlitColor = "#3d0a30"
@@ -138,8 +140,8 @@ const Hero = () => {
     return () => {
       observer.disconnect()
       tl.current?.kill()
-      triangleRef.current?.classList.remove(s.trianglePulsing)
-      subTitleRef.current?.classList.remove(s.subtitlePulsing)
+      triangleEl?.classList.remove(s.trianglePulsing)
+      subTitleEl?.classList.remove(s.subtitlePulsing)
     }
   }, [])
 
