@@ -22,7 +22,7 @@ Review all staged `.ts`, `.tsx`, and `.js` changes against these rules.
 - **Styling**: SCSS Modules (no Tailwind, no inline styles except via JS DOM mutation for animations)
 - **State**: Zustand
 - **Animations**: GSAP, native `requestAnimationFrame` — no CSS-in-JS
-- **Package manager**: Yarn 1.x (classic)
+- **Package manager**: pnpm 10.x
 
 ---
 
