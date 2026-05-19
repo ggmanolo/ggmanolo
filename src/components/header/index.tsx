@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import clsx from "clsx"
 import Image from "next/image"
+import Link from "next/link"
 import Nav from "@/components/nav"
 import s from "./header.module.scss"
 import EmailCta from "../emailCta"
@@ -36,7 +37,13 @@ const Header = () => {
   return (
     <header className={clsx(s.header, scrolled && s.scrolled)}>
       <div className={s.wrapper}>
-        <div className={s.ggmanolo}>
+        <Link
+          href="https://github.com/ggmanolo"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile"
+          className={s.ggmanolo}
+        >
           <Image
             alt="profile"
             src="/img/avatar.png"
@@ -45,7 +52,7 @@ const Header = () => {
             quality={100}
             priority
           />
-        </div>
+        </Link>
         <Nav />
         <EmailCta />
       </div>
