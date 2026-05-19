@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
-    "brace-expansion": ">=5.0.5",
     "clsx": "^1.2.1",
     "embla-carousel-react": "^8.6.0",
     "eslint": "^9",
@@ -35,13 +34,17 @@
     "prettier": "^3.5.0",
     "typescript": "^5.9.3"
   },
-  "resolutions": {
-    "glob": ">=10.5.0",
-    "minimatch": ">=10.2.3",
-    "picomatch": ">=4.0.4",
-    "brace-expansion": ">=5.0.6",
-    "flatted": ">=3.4.0",
-    "immutable": ">=5.1.5",
-    "postcss": ">=8.5.10"
-  }
+  "pnpm": {
+    "onlyBuiltDependencies": ["@parcel/watcher", "sharp", "unrs-resolver"],
+    "overrides": {
+      "glob": ">=10.5.0",
+      "minimatch": ">=10.2.3",
+      "picomatch": ">=4.0.4",
+      "brace-expansion": ">=5.0.6",
+      "flatted": ">=3.4.0",
+      "immutable": ">=5.1.5",
+      "postcss": ">=8.5.10"
+    }
+  },
+  "packageManager": "pnpm@10.23.0"
 }

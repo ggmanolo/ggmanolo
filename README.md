@@ -44,8 +44,8 @@ It’s not just a portfolio — it’s a representation of how I build.
 ## Running Locally
 
 ```bash
-yarn
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 ## Contact
