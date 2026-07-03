@@ -1,0 +1,23 @@
+# GGManolo
+
+> Portfolio of Manuel Garcia Genta (GGManolo), a Staff Frontend Engineer and Creative Engineer specializing in React, Next.js, and high-performance product interfaces.
+
+## Portfolio
+
+- [Home](https://ggmanolo.com/): Main landing page with hero, selected projects, about, and contact.
+- [Projects](https://ggmanolo.com/#projects): Selected frontend and product work.
+- [About](https://ggmanolo.com/#about): Background, experience, and engineering focus.
+- [Contact](https://ggmanolo.com/#cta): Get in touch and email CTA.
+
+## Contact
+
+- [Email](mailto:hellothere@ggmanolo.com): Primary contact for opportunities and collaboration.
+- [Resume (PDF)](https://docs.google.com/document/d/1WrMCdQJS4F9K_cGo0ywcTvJpiNwFspbOLbD6tek1tUU/export?format=pdf): Downloadable CV.
+
+## Optional
+
+- [GitHub profile](https://github.com/ggmanolo): Open-source work and activity.
+- [Site source code](https://github.com/ggmanolo/ggmanolo): This portfolio's repository.
+- [LinkedIn](https://www.linkedin.com/in/ggmanolo/): Professional profile.
+- [X (Twitter)](https://x.com/ggmanolo): Social profile.
+- [Sitemap](https://ggmanolo.com/sitemap.xml): Machine-readable site index.
