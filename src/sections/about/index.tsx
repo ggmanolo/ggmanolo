@@ -14,7 +14,7 @@ const About = () => {
           <p className={s.title}>
             Hi, I'm Manuel Garcia Genta
             <br />
-            A.K.A. <span>GGManolo</span>
+            A.K.A. <span>GGManolo</span> — ggmanolo.com
           </p>
           <DownloadCV className={s.desktop} />
         </div>

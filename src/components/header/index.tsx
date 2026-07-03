@@ -41,7 +41,7 @@ const Header = () => {
           href="https://github.com/ggmanolo"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GitHub profile"
+          aria-label="GGManolo on GitHub"
           className={s.ggmanolo}
         >
           <Image

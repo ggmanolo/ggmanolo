@@ -8,10 +8,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ---
 
-# AGENTS.md — ggmanolo coding standards
+# AGENTS.md — ggmanolo agent context
 
-This file is read by Gentleman Guardian Angel (GGA) before every commit.
-Review all staged `.ts`, `.tsx`, and `.js` changes against these rules.
+Read this file before writing any code for this project. Follow the rules below for all `.ts`, `.tsx`, and `.js` changes.
 
 ---
 
@@ -85,11 +84,3 @@ Review all staged `.ts`, `.tsx`, and `.js` changes against these rules.
 - No AI attribution in commit messages (no "Co-Authored-By: AI")
 - Scope in lowercase: `fix(project): ...`, `chore(deps): ...`
 
----
-
-## What to flag
-
-- `APPROVE` if the diff follows all rules above
-- `REJECT` with specific line references if any rule is violated
-- Do NOT flag style preferences, inferred types from destructuring, or patterns covered by the exceptions listed above
-- Do NOT invent rules not listed in this file — only enforce what is explicitly stated

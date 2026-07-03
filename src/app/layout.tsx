@@ -27,15 +27,24 @@ type RootLayoutProps = {
   children: ReactNode
 }
 
+const siteUrl = "https://ggmanolo.com"
+const brandName = "GGManolo"
+const pageTitle = `${brandName} | Creative Engineer`
+const pageDescription =
+  "Staff Frontend Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design, technical standards, and AI-augmented engineering workflows."
+
 export const metadata = {
-  title: "Manuel Garcia Genta | Staff Frontend Engineer",
-  description:
-    "Staff Frontend Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design, technical standards, and AI-augmented engineering workflows.",
-  metadataBase: new URL("https://ggmanolo.com"),
+  title: pageTitle,
+  description: pageDescription,
+  applicationName: brandName,
+  metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "https://ggmanolo.com",
+    canonical: siteUrl,
   },
   keywords: [
+    "ggmanolo",
+    "GGManolo",
+    "Manuel Garcia Genta",
     "Staff Frontend Engineer",
     "Senior Frontend Engineer",
     "UI Engineer",
@@ -47,16 +56,15 @@ export const metadata = {
     "Next.js Developer",
     "TypeScript Developer",
     "GSAP Animation",
-    "Tailwind CSS",
-    "Sanity CMS",
     "Agentic AI Development",
     "AI-augmented development",
-    "Manuel Garcia Genta",
-    "GGManolo",
   ],
-  authors: [{ name: "Manuel Garcia Genta", url: "https://ggmanolo.com" }],
-  creator: "Manuel Garcia Genta",
-  publisher: "Manuel Garcia Genta",
+  authors: [
+    { name: brandName, url: siteUrl },
+    { name: "Manuel Garcia Genta", url: siteUrl },
+  ],
+  creator: brandName,
+  publisher: brandName,
   robots: {
     index: true,
     follow: true,
@@ -71,18 +79,17 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ggmanolo.com",
-    title: "Manuel Garcia Genta | Staff Frontend Engineer",
-    description:
-      "Staff Frontend Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design, technical standards, and AI-augmented engineering workflows.",
-    siteName: "GGManolo Portfolio",
+    url: siteUrl,
+    title: pageTitle,
+    description: pageDescription,
+    siteName: brandName,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manuel Garcia Genta | Staff Frontend Engineer",
-    description:
-      "Staff Frontend Engineer specializing in React and Next.js. I build visually refined, high-performance product interfaces with strong design, technical standards, and AI-augmented engineering workflows.",
+    title: pageTitle,
+    description: pageDescription,
     creator: "@ggmanolo",
+    site: "@ggmanolo",
   },
   icons: {
     icon: [
@@ -104,43 +111,67 @@ export const viewport = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    mainEntity: {
-      "@type": "Person",
-      name: "Manuel Garcia Genta",
-      alternateName: "GGManolo",
-      description:
-        "Staff Frontend Engineer specializing in React, Next.js and product-driven interfaces with AI-augmented engineering workflows.",
-      url: "https://ggmanolo.com",
-      image: {
-        "@type": "ImageObject",
-        url: "https://ggmanolo.com/img/avatar.png",
-        width: "400",
-        height: "400",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: brandName,
+        alternateName: ["ggmanolo", "Manuel Garcia Genta"],
+        description: pageDescription,
+        publisher: { "@id": `${siteUrl}/#person` },
       },
-      sameAs: ["https://www.linkedin.com/in/ggmanolo/", "https://github.com/ggmanolo"],
-      jobTitle: "Staff Frontend Engineer",
-      worksFor: {
-        "@type": "Organization",
-        name: "Independent / Contract",
+      {
+        "@type": "Person",
+        "@id": `${siteUrl}/#person`,
+        name: "Manuel Garcia Genta",
+        alternateName: [brandName, "ggmanolo"],
+        description:
+          "Staff Frontend Engineer specializing in React, Next.js and product-driven interfaces with AI-augmented engineering workflows.",
+        url: siteUrl,
+        image: {
+          "@type": "ImageObject",
+          url: `${siteUrl}/img/avatar.png`,
+          width: "400",
+          height: "400",
+        },
+        sameAs: [
+          "https://www.linkedin.com/in/ggmanolo/",
+          "https://github.com/ggmanolo",
+          "https://x.com/ggmanolo",
+        ],
+        jobTitle: "Staff Frontend Engineer",
+        worksFor: {
+          "@type": "Organization",
+          name: "Independent / Contract",
+        },
+        knowsAbout: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Frontend Architecture",
+          "UI Engineering",
+          "Design Systems",
+          "Product Development",
+          "Performance Optimization",
+          "Web Applications",
+        ],
+        email: "hellothere@ggmanolo.com",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "AR",
+        },
       },
-      knowsAbout: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Frontend Architecture",
-        "UI Engineering",
-        "Design Systems",
-        "Product Development",
-        "Performance Optimization",
-        "Web Applications",
-      ],
-      email: "hellothere@ggmanolo.com",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "AR",
+      {
+        "@type": "ProfilePage",
+        "@id": `${siteUrl}/#webpage`,
+        url: siteUrl,
+        name: pageTitle,
+        description: pageDescription,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        mainEntity: { "@id": `${siteUrl}/#person` },
       },
-    },
+    ],
   }
 
   return (
